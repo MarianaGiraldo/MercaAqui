@@ -13,3 +13,6 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+vendor/composer/autoload_files.php
+vendor/composer/autoload_static.php
+vendor/composer/autoload_psr4.php

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableProductos extends Migration
+class CreateProductosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,7 +16,9 @@ class CreateTableProductos extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->set('tipo', ['Aseo', 'Alimentos frescos', 'Alimentos congelados', 'Bebidas', 'Empacados', 'Basicos del hogar', 'Cuidado Personal'] );
+            $table->set('tipo', ['Aseo', 'Alimentos frescos', 'Alimentos congelados', 'Bebidas', 'Alimentos Empacados', 'Basicos del hogar', 'Cuidado Personal'] );
+            $table->integer('precio');
+            $table->integer('cantidad_disponible');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateTableProductos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table__productos');
+        Schema::dropIfExists('productos');
     }
 }
