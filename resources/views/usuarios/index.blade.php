@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
 <div class="row">
-    <form class="col s7">
+    <div class="col s2"></div>
+    <form class="col s8">
       <div class="row">
         <div class="input-field col s6">
           <input placeholder="Pepito" id="nombre" type="text" class="validate">
@@ -15,13 +15,13 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="contraseña" type="password" class="validate">
+          <input placeholder="No uses contraseña123" id="contraseña" type="password" class="validate">
           <label for="contraseña">Contraseña</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="correo" type="email" class="validate">
+          <input placeholder="correodeejemplo@correo.com" id="correo" type="email" class="validate">
           <label for="correo">Correo</label>
         </div>
       </div>
@@ -35,5 +35,5 @@
       <button class="btn waves-effect waves-light cyan" type="submit" name="action">Enviar</button>
     </form>
   </div>
-    </div>
+  <div class="col s2"></div>
 @endsection
