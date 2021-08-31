@@ -12,17 +12,20 @@
     <script src="{{URL::asset('js/app.js')}} "></script>
     <title>Merca Aqui</title>
     <style>
+        @isset($fondo)
         .parallax-index{
-            background-image: url('imagenes/fondo1.jpg');
+            background-image: url('imagenes/{{$fondo}}');
             width: 100%;
             height: 100vh;
             background-attachment: fixed;
             background-size: cover;
         }
+        @endisset
+
     </style>
 </head>
 <body>
-    <nav class="green lighten-2" role="navigation">
+    <nav class="" role="navigation" style="background-color: #1d80f7">
         <div class="nav-wrapper container">
           <a id="logo-container" href="#" class="brand-logo">Logo</a>
           <ul class="right hide-on-med-and-down">
@@ -36,9 +39,12 @@
         </div>
     </nav>
 
-
-            @yield('content')
-
+    <div class="parallax-container">
+      <div class="parallax-index"></div>
+  </div>
+  <div class="container">
+     @yield('content')
+  </div>
 
 </body>
 </html>

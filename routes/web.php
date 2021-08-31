@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index',['fondo'=>'fondo1.jpg']);
 });
 
 Route::get('/usuarios', function () {
