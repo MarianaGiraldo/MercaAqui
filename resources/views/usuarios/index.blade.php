@@ -15,13 +15,13 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="contraseña" type="password" class="validate">
+          <input placeholder="No uses contraseña123" id="contraseña" type="password" class="validate">
           <label for="contraseña">Contraseña</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="correo" type="email" class="validate">
+          <input placeholder="correodeejemplo@correo.com" id="correo" type="email" class="validate">
           <label for="correo">Correo</label>
         </div>
       </div>
