@@ -14,9 +14,8 @@ class CreateUsersColumns extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->set('tipo_usuario', ['Administrador', 'Vendedor'] );
-            $table->string('celular');
-            $table->date('fecha_nacimiento');
+            $table->string('celular')->nullable();
+            $table->date('fecha_nacimiento')->nullable();
         });
     }
 

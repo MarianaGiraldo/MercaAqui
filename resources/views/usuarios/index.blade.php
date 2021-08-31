@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@can('verRegistro')
 <div class="row">
     <div class="col s2"></div>
     <form class="col s8">
@@ -32,8 +33,13 @@
                 <option value="2">Vendedor</option>
             </select>
       </div>
-      <button class="btn waves-effect waves-light cyan" type="submit" name="action">Enviar</button>
+      @can('eliminarProducto')<button class="btn waves-effect waves-light cyan" type="submit" name="action">Enviar</button>@endcan
     </form>
   </div>
   <div class="col s2"></div>
+@else
+  <div>
+    <a href="/">No estas autorizado, regresar al Home</a>
+  </div>
+@endcan
 @endsection
