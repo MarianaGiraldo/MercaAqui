@@ -24,9 +24,9 @@
 <body>
     <nav class="green lighten-2" role="navigation">
         <div class="nav-wrapper container">
-          <a id="logo-container" href="#" class="brand-logo">Logo</a>
+          <a id="logo-container" href="/" class="brand-logo">Inicio</a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="#">Navbar Link</a></li>
+            <li><a href="/usuarios">Usuarios</a></li>
           </ul>
 
           <ul id="nav-mobile" class="sidenav">
