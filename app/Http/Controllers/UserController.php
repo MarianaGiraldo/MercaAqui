@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('users.index', ['users'=>User::all(), 'fondo'=>'fondo1.jpg']);
+        return view('usuarios.index', ['users'=>User::all(), 'fondo'=>'fondo1.jpg']);
     }
 
     /**
@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create', ['users'=>User::all(), 'fondo'=>'fondo1.jpg']);
+        return view('usuarios.create', ['users'=>User::all(), 'fondo'=>'fondo1.jpg']);
     }
 
     /**

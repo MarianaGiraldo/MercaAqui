@@ -20,9 +20,9 @@ Route::get('/', function () {
     return view('index',['fondo'=>'fondo1.jpg']);
 });
 
-Route::get('/usuarios', function () {
-    return view('usuarios.index');
-});
+Route::resource('/usuarios',UserController::class );
+Route::resource('/productos',ProductoController::class );
+Route::resource('/ventas',VentaController::class );
 
 
 Auth::routes();
