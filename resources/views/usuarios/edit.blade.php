@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appLayout')
 @section('content')
 @can('verRegistro')
 <div class="row">
