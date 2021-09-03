@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -13,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('users.index', ['users'=>user::all(), 'fondo'=>'#f6ec9c']);
+        return view('users.index', ['users'=>User::all(), 'fondo'=>'fondo1.jpg']);
     }
 
     /**
@@ -23,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create', ['users'=>user::all(), 'fondo'=>'#b8e6cc']);
+        return view('users.create', ['users'=>User::all(), 'fondo'=>'fondo1.jpg']);
     }
 
     /**
@@ -38,15 +39,15 @@ class UserController extends Controller
             'nombre'=>'required',
             'apellido'=>'required',
             'correo'=>'required',
-            'contraseña'=>'required',
+            'contrasena'=>'required',
             'celular'=>'required',
             'fecha_nacimiento'=>'required',
         ]);
-        $newUser = new user();
+        $newUser = new User();
         $newUser ->nombre = $request->get('nombre');
         $newUser ->apellido = $request->get('apellido');
         $newUser ->correo = $request->get('correo');
-        $newUser ->contraseña = $request->get('contraseña');
+        $newUser ->contrasena = $request->get('contrasena');
         $newUser ->celular = $request->get('celular');
         $newUser ->fecha_nacimiento = $request->get('fecha_nacimiento');
 
@@ -62,11 +63,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $userInfo=user::findOrFail($id);
+        $userInfo=User::findOrFail($id);
         return view('usuarios.show', [
-            'user'=>User::findOrFail($id),
+            'user'=>$userInfo,
             'users'=>User::all(),
-            'fondo'=>'#91a5f5']);
+            'fondo'=>'fondo1.jpg']);
     }
 
     /**
@@ -77,8 +78,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = user::findOrFail($id);
-        return view ('usuarios.edit', ['user'=>$user, 'fondo'=>'#b8d2e6']);
+        $user = User::findOrFail($id);
+        return view ('usuarios.edit', ['user'=>$user, 'fondo'=>'fondo1.jpg']);
     }
 
     /**
@@ -94,7 +95,7 @@ class UserController extends Controller
         $userUpdt ->nombre = $request->get('nombre');
         $userUpdt ->apellido = $request->get('apellido');
         $userUpdt ->correo = $request->get('correo');
-        $userUpdt ->contraseña = $request->get('contraseña');
+        $userUpdt ->contrasena = $request->get('contrasena');
         $userUpdt ->celular = $request->get('celular');
         $userUpdt ->fecha_nacimiento = $request->get('fecha_nacimiento');
         $userUpdt -> save();
@@ -115,7 +116,7 @@ class UserController extends Controller
     }
     public function drop($id)
     {
-        $dropUser=user::find($id);
-        return view('usuarios.drop', ['dropUser'=>$dropUser, 'fondo'=>'#f3d46f']);
+        $dropUser=User::find($id);
+        return view('usuarios.drop', ['dropUser'=>$dropUser, 'fondo'=>'fondo1.jpg']);
     }
 }
