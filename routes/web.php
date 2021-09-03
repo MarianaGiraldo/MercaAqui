@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\VentaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +23,7 @@ Route::get('/', function () {
 Route::get('/usuarios', function () {
     return view('usuarios.index');
 });
+
 
 Auth::routes();
 
