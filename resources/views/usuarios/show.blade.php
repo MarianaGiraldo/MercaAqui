@@ -1,6 +1,5 @@
 @extends('layouts.appLayout')
 @section('content')
-
 <div class="row">
     <div class="col s12 m6">
       <div class="card teal lighten-3">
@@ -29,12 +28,13 @@
             <p>{{$user->fecha_nacimiento}}</p>
         </div>
         <div class="card-action">
-          <a href="#" class="waves-effect waves-light btn">Editar</a>
-          <a href="#" class="waves-effect waves-light btn right">Borrar</a>
+          <a href="/usuarios/{{$user->id}}/edit" class="waves-effect waves-light btn">Editar</a>
+          <a href="/usuarios/{{$user->id}}/drop" class="waves-effect waves-light btn right">Borrar</a>
         </div>
       </div>
     </div>
   </div>
+
   <a href="/usuarios" class="waves-effect waves-light btn right">Regresar</a>
 
 

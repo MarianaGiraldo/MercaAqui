@@ -1,5 +1,6 @@
 @extends('layouts.appLayout')
 @section('content')
+@can('verUsuarios')
 <div class="col">
     <h2 class="center-align">Usuarios</h2>
     <table class="highlight">
@@ -46,4 +47,5 @@
         </tbody>
       </table>
 </div>
+@endcan
 @endsection

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+@can(menuHome)
+
 <div class="parallax-container mt-0">
     <div class="parallax-index">
         <br>
@@ -17,10 +19,6 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab architecto doloribus nihil, sunt debitis beatae voluptas similique sint earum blanditiis ullam ad? Nobis incidunt assumenda cum, ab molestias nam?</p>
     <br><br><br><br>
 </div>
-@can('menuHome')
-<div>
-    <a href="">Ir a panel administrador</a>
-</div>
-@endcan
 
+@endcan
 @endsection
