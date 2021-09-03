@@ -21,6 +21,8 @@ Route::get('/', function () {
 });
 
 Route::resource('/usuarios',UserController::class );
+Route::resource('/productos',ProductoController::class );
+Route::resource('/ventas',VentaController::class );
 
 Auth::routes();
 
