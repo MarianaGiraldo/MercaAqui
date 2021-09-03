@@ -28,7 +28,7 @@
     <nav class="" role="navigation" style="background-color: #1d80f7">
         <div class="nav-wrapper container">
             <img src="logo/logo.png" alt="logo" style="width: 15vh">
-          <a id="logo-container" href="/" class="brand-logo" style="font-family: MarkingPen; color:#f7941d; font-size: 10vh">Merca Aqui</a>
+            <a id="logo-container" href="/" class="brand-logo" style="font-family: MarkingPen; color:#f7941d; font-size: 10vh">Merca Aqui</a>
           <ul class="right hide-on-med-and-down">
             <li><a href="/usuarios">Usuarios</a></li>
           </ul>

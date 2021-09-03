@@ -14,8 +14,13 @@ class CreateUsersColumns extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->string('correo')->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('celular')->nullable();
             $table->date('fecha_nacimiento')->nullable();
+            $table->string('contrasena');
         });
     }
 
