@@ -13,7 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view ('users.index');
+        return view('users.index', ['users'=>user::all(), 'fondo'=>'#f6ec9c']);
     }
 
     /**
@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create', ['users'=>user::all(), 'fondo'=>'#b8e6cc']);
     }
 
     /**
@@ -34,7 +34,24 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validation = $request->validate([
+            'nombre'=>'required',
+            'apellido'=>'required',
+            'correo'=>'required',
+            'contraseña'=>'required',
+            'celular'=>'required',
+            'fecha_nacimiento'=>'required',
+        ]);
+        $newUser = new user();
+        $newUser ->nombre = $request->get('nombre');
+        $newUser ->apellido = $request->get('apellido');
+        $newUser ->correo = $request->get('correo');
+        $newUser ->contraseña = $request->get('contraseña');
+        $newUser ->celular = $request->get('celular');
+        $newUser ->fecha_nacimiento = $request->get('fecha_nacimiento');
+
+        $newUser -> save();
+        return redirect('/usuarios');
     }
 
     /**
@@ -45,7 +62,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $userInfo=user::findOrFail($id);
+        return view('usuarios.show', [
+            'user'=>User::findOrFail($id),
+            'users'=>User::all(),
+            'fondo'=>'#91a5f5']);
     }
 
     /**
@@ -56,7 +77,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = user::findOrFail($id);
+        return view ('usuarios.edit', ['user'=>$user, 'fondo'=>'#b8d2e6']);
     }
 
     /**
@@ -68,7 +90,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $userUpdt = User::find($id);
+        $userUpdt ->nombre = $request->get('nombre');
+        $userUpdt ->apellido = $request->get('apellido');
+        $userUpdt ->correo = $request->get('correo');
+        $userUpdt ->contraseña = $request->get('contraseña');
+        $userUpdt ->celular = $request->get('celular');
+        $userUpdt ->fecha_nacimiento = $request->get('fecha_nacimiento');
+        $userUpdt -> save();
+
+        return redirect('/usuarios');
     }
 
     /**
@@ -79,6 +110,12 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return redirect('/usuarios');
+    }
+    public function drop($id)
+    {
+        $dropUser=user::find($id);
+        return view('usuarios.drop', ['dropUser'=>$dropUser, 'fondo'=>'#f3d46f']);
     }
 }

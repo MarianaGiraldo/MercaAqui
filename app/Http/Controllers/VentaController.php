@@ -14,7 +14,7 @@ class VentaController extends Controller
      */
     public function index()
     {
-        //
+        return view('ventas.index', ['ventas'=>ventas::all(), 'fondo'=>'#f6ec9c']);
     }
 
     /**
@@ -24,7 +24,7 @@ class VentaController extends Controller
      */
     public function create()
     {
-        //
+        return view('ventas.create', ['ventas'=>ventas::all(), 'fondo'=>'#ccb8e6']);
     }
 
     /**
@@ -35,7 +35,18 @@ class VentaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validation = $request->validate([
+            'fecha_venta'=>'required',
+            'nombre_cliente'=>'required',
+            'vendedor_id'=>'required',
+        ]);
+        $nuevaVenta = new user();
+        $nuevaVenta ->fecha_venta = $request->get('fecha_venta');
+        $nuevaVenta ->nombre_cliente = $request->get('nombre_cliente');
+        $nuevaVenta ->vendedor_id = $request->get('vendedor_id');
+
+        $nuevaVenta -> save();
+        return redirect('/ventas');
     }
 
     /**
@@ -46,7 +57,11 @@ class VentaController extends Controller
      */
     public function show(Venta $venta)
     {
-        //
+        $venta=ventas::findOrFail($id);
+        return view('ventas.show', [
+            'ventas'=>ventas::findOrFail($id),
+            'ventas'=>ventas::all(),
+            'fondo'=>'#91a5f5']);
     }
 
     /**
@@ -57,7 +72,8 @@ class VentaController extends Controller
      */
     public function edit(Venta $venta)
     {
-        //
+        $venta = ventas::findOrFail($id);
+        return view('ventas.edit', ['ventas'=>$venta, 'fondo'=>'#97d992']);
     }
 
     /**
@@ -69,7 +85,13 @@ class VentaController extends Controller
      */
     public function update(Request $request, Venta $venta)
     {
-        //
+        $ventaUpdt = ventas::find($id);
+        $ventaUpdt ->fecha_venta = $request->get('fecha_venta');
+        $ventaUpdt ->nombre_cliente = $request->get('nombre_cliente');
+        $ventaUpdt ->vendedor_id = $request->get('vendedor_id');
+        $ventaUpdt -> save();
+
+        return redirect('/ventas');
     }
 
     /**
@@ -80,6 +102,12 @@ class VentaController extends Controller
      */
     public function destroy(Venta $venta)
     {
-        //
+        ventas::destroy($id);
+        return redirect('/ventas');
+    }
+    public function drop($id)
+    {
+        $dropVenta=ventas::find($id);
+        return view('ventas.drop', ['ventas'=>$dropVenta, 'fondo'=>'#f3d46f']);
     }
 }
