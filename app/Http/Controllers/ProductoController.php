@@ -14,7 +14,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return view('productos.index', ['productos'=>productos::all(), 'fondo'=>'#add8e6']);
+        return view('productos.index', ['productos'=>Producto::all(), 'fondo'=>'fondo1.jpg']);
     }
 
     /**
@@ -24,7 +24,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('productos.create', ['productos'=>productos::all(), 'fondo'=>'#ccb8e6']);
+        return view('productos.create', ['productos'=>Producto::all(), 'fondo'=>'fondo1.jpg']);
     }
 
     /**
@@ -41,7 +41,7 @@ class ProductoController extends Controller
             'precio'=>'required',
             'cantidad_disponible'=>'required',
         ]);
-        $nuevo = new productos();
+        $nuevo = new Producto();
         $nuevo ->nombre = $request->get('nombre');
         $nuevo ->tipo = $request->get('tipo');
         $nuevo ->precio = $request->get('precio');
@@ -56,9 +56,12 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function show(productos $producto)
+    public function show($id)
     {
-        return view('productos.show', ['id'=>$id ,'productos'=>productos::findOrFail($id), 'productos'=>productos::all(), 'fondo'=>'#91a5f5']);
+        return view('productos.show', [
+            'producto'=>Producto::findOrFail($id),
+            'productos'=>Producto::all(),
+            'fondo'=>'fondo1.jpg']);
     }
 
     /**
@@ -69,8 +72,8 @@ class ProductoController extends Controller
      */
     public function edit(Producto $producto)
     {
-        $productos = productos::findOrFail($id);
-        return view('productos.edit', ['productos'=>$productos, 'fondo'=>'#97d992']);
+        $productos = Producto::findOrFail($id);
+        return view('productos.edit', ['productos'=>$productos, 'fondo'=>'fondo1.jpg']);
     }
 
     /**
@@ -82,7 +85,7 @@ class ProductoController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
-        $productoUpdt = productos::find($id);
+        $productoUpdt = Producto::find($id);
         $productoUpdt ->nombre = $request->get('nombreEdit');
         $productoUpdt ->tipo = $request->get('tipoEdit');
         $productoUpdt ->precio = $request->get('precioEdit');
@@ -97,14 +100,14 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Producto $producto)
+    public function destroy($id)
     {
-        productos::destroy($id);
+        Producto::destroy($id);
         return redirect('/productos');
     }
     public function drop($id)
     {
-        $dropProduct = productos::find($id);
-        return view('productos.drop', ['dropProduct'=>$dropProduct, 'fondo'=>'#f3d46f']);
+        $dropProduct = Producto::find($id);
+        return view('productos.drop', ['dropProduct'=>$dropProduct, 'fondo'=>'fondo1.jpg']);
     }
 }

@@ -20,19 +20,9 @@ Route::get('/', function () {
     return view('index',['fondo'=>'fondo1.jpg']);
 });
 
-Route::get('/usuarios', function () {
-    return view('usuarios.index');
-});
-
+Route::resource('/usuarios',UserController::class );
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
