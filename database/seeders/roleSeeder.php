@@ -15,11 +15,11 @@ class roleSeeder extends Seeder
      */
     public function run()
     {
-        $role1 = Role::create(['name' => 'administrador']);
-        $role2 = Role::create(['name' => 'usuario']);
+        // $role = Role::create(['name' => 'administrador']);
+        // $role2 = Role::create(['name' => 'usuario']);
 
-        $permission = Permission::create(['name' => 'menuHome'])-> syncRoles($role1, $role2);
-        $permission = Permission::create(['name' => 'verUsuarios'])-> syncRoles($role1, $role2);
-        $permission = Permission::create(['name' => 'eliminarProducto'])-> syncRoles($role1);
+        // $permission = Permission::create(['name' => 'menuHome'])-> syncRoles($role, $role2);
+        // $permission = Permission::create(['name' => 'verUsuarios'])-> syncRoles($role, $role2);
+        // $permission = Permission::create(['name' => 'eliminarProducto'])-> syncRoles($role);
     }
 }

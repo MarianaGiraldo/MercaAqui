@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-@can(menuHome)
+@can('menuHome')
 
 <div class="parallax-container mt-0">
     <div class="parallax-index">
@@ -18,6 +18,19 @@
     <h1>Home</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab architecto doloribus nihil, sunt debitis beatae voluptas similique sint earum blanditiis ullam ad? Nobis incidunt assumenda cum, ab molestias nam?</p>
     <br><br><br><br>
+</div>
+@else
+<div class="row center">
+<div class="col s12 m6">
+      <div class="card red lighten-2">
+        <div class="card-content white-text">
+          <span class="card-title">No estas autorizado para esta vista.</span>
+        </div>
+        <div class="card-action">
+          <a href="/login" class="waves-effect waves-light btn blue lighten-3">Regresar</a>
+        </div>
+      </div>
+    </div>
 </div>
 
 @endcan

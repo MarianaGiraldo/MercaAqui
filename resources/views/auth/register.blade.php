@@ -103,6 +103,18 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="tipo" class="col-md-4 col-form-label text-md-right">{{ __('Tipo de Usuario') }}</label>
+
+                            <div class="col-md-6">
+                                <select name="tipo" id="tipo" class="browser-default">
+                                    <option value="" disabled selected>Tipo de usuario</option>
+                                    <option value="administrador">Administrador</option>
+                                    <option value="vendedor">Vendedor</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

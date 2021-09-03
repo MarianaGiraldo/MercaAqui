@@ -26,6 +26,7 @@ class User extends Authenticatable
         'fecha_nacimiento',
         'correo',
         'contrasena',
+        'tipo',
     ];
 
     /**
@@ -50,5 +51,6 @@ class User extends Authenticatable
         'nombre' => 'string',
         'apellido' => 'string',
         'correo' => 'string',
+        'tipo' => 'string',
     ];
 }

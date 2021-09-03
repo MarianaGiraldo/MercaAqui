@@ -21,6 +21,7 @@ class CreateUsersColumns extends Migration
             $table->string('celular')->nullable();
             $table->date('fecha_nacimiento')->nullable();
             $table->string('contrasena');
+            $table-> set('tipo', ['usuario', 'administrador'] );
         });
     }
 
