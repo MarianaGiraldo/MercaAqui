@@ -20,11 +20,12 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'nombre',
+        'apellido',
         'celular',
         'fecha_nacimiento',
-        'email',
-        'password',
+        'correo',
+        'contrasena',
     ];
 
     /**
@@ -33,7 +34,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password',
+        'contrasena',
         'remember_token',
     ];
 
@@ -46,5 +47,8 @@ class User extends Authenticatable
         'email_verified_at'  => 'datetime',
         'fecha_nacimiento' => 'date',
         'celular' => 'string',
+        'nombre' => 'string',
+        'apellido' => 'string',
+        'correo' => 'string',
     ];
 }
