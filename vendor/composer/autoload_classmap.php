@@ -4059,6 +4059,7 @@ return array(
     'Spatie\\Permission\\Commands\\CreatePermission' => $vendorDir . '/spatie/laravel-permission/src/Commands/CreatePermission.php',
     'Spatie\\Permission\\Commands\\CreateRole' => $vendorDir . '/spatie/laravel-permission/src/Commands/CreateRole.php',
     'Spatie\\Permission\\Commands\\Show' => $vendorDir . '/spatie/laravel-permission/src/Commands/Show.php',
+    'Spatie\\Permission\\Commands\\UpgradeForTeams' => $vendorDir . '/spatie/laravel-permission/src/Commands/UpgradeForTeams.php',
     'Spatie\\Permission\\Contracts\\Permission' => $vendorDir . '/spatie/laravel-permission/src/Contracts/Permission.php',
     'Spatie\\Permission\\Contracts\\Role' => $vendorDir . '/spatie/laravel-permission/src/Contracts/Role.php',
     'Spatie\\Permission\\Exceptions\\GuardDoesNotMatch' => $vendorDir . '/spatie/laravel-permission/src/Exceptions/GuardDoesNotMatch.php',
