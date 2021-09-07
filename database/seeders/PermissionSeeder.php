@@ -10,10 +10,11 @@ class PermissionSeeder extends Seeder
     public const INDEX_HOME = 'index';
     public const USUARIOS_INDEX = 'usuarios.index';
     public const USUARIOS_SHOW = 'usuarios.show';
-    public const USUARIOS_EDIT = 'usuarios.editar';
+    public const USUARIOS_EDIT = 'usuarios.edit';
     public const USUARIOS_DROP = 'usuarios.drop';
     public const VENTAS_DROP = 'ventas.drop';
     public const VENTAS_EDIT = 'ventas.edit';
+    public const PRODUCTOS_DROP = 'productos.drop';
 
     public static function supported(): array
     {

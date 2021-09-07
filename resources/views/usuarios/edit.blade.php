@@ -1,6 +1,6 @@
-@extends('layouts.appLayout')
+@extends('layouts.app')
 @section('content')
-{{-- @can('verRegistro') --}}
+@can('usuarios.edit')
 <div class="row">
     <div class="col s2"></div>
     <form class="col s8">
@@ -39,13 +39,23 @@
                 <option value="2">Vendedor</option>
             </select>
       </div>
-      {{-- @can('eliminarProducto')<button class="btn waves-effect waves-light cyan" type="submit" name="action">Enviar</button>@endcan --}}
+      @can('productos.drop')<button class="btn waves-effect waves-light cyan" type="submit" name="action">Enviar</button>@endcan
     </form>
   </div>
   <div class="col s2"></div>
-{{-- @else
-  <div class="row">
-    <a href="/">No estas autorizado, regresar al Home</a>
-  </div>
-@endcan --}}
+@else
+<br><br>
+<div class="row center container w-50 m-auto">
+<div class="col s6 m6">
+      <div class="card red lighten-2">
+        <div class="card-content white-text">
+          <span class="card-title">No estas autorizado para esta vista.</span>
+        </div>
+        <div class="card-action">
+          <a href="/login" class="waves-effect waves-light btn blue lighten-3">Regresar</a>
+        </div>
+      </div>
+    </div>
+</div>
+@endcan
 @endsection

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-{{-- @can('menuHome') --}}
+@can('index')
 
 <div class="parallax-container mt-0">
     <div class="parallax-index">
@@ -19,7 +19,7 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab architecto doloribus nihil, sunt debitis beatae voluptas similique sint earum blanditiis ullam ad? Nobis incidunt assumenda cum, ab molestias nam?</p>
     <br><br><br><br>
 </div>
-{{-- @else
+@else
 <br><br>
 <div class="row center container w-50 m-auto">
 <div class="col s6 m6">
@@ -33,5 +33,5 @@
       </div>
     </div>
 </div>
-@endcan --}}
+@endcan
 @endsection
