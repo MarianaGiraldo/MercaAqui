@@ -50,5 +50,6 @@ class User extends Authenticatable
         'nombre' => 'string',
         'apellido' => 'string',
         'correo' => 'string',
+        'is_admin'=>'boolean',
     ];
 }
