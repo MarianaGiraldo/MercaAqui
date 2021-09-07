@@ -20,8 +20,9 @@
     <br><br><br><br>
 </div>
 @else
-<div class="row center">
-<div class="col s12 m6">
+<br><br>
+<div class="row center container w-50 m-auto">
+<div class="col s6 m6">
       <div class="card red lighten-2">
         <div class="card-content white-text">
           <span class="card-title">No estas autorizado para esta vista.</span>
@@ -32,6 +33,7 @@
       </div>
     </div>
 </div>
+
 
 @endcan
 @endsection

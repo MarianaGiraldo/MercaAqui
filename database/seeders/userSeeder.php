@@ -25,6 +25,7 @@ class userSeeder extends Seeder
             }else {
                 $user->assignRole('Vendedor');
             }
+            echo"$user";
         };
 
 
