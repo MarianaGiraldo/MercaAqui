@@ -42,7 +42,6 @@ class UserController extends Controller
             'contrasena'=>'required',
             'celular'=>'required',
             'fecha_nacimiento'=>'required',
-            'tipo'=>'required',
         ]);
         $newUser = new User();
         $newUser ->nombre = $request->get('nombre');
@@ -51,7 +50,6 @@ class UserController extends Controller
         $newUser ->contrasena = $request->get('contrasena');
         $newUser ->celular = $request->get('celular');
         $newUser ->fecha_nacimiento = $request->get('fecha_nacimiento');
-        $newUser ->tipo = $request->get('tipo');
 
         $newUser -> save();
         return redirect('/usuarios');
@@ -100,7 +98,6 @@ class UserController extends Controller
         $userUpdt ->contrasena = $request->get('contrasena');
         $userUpdt ->celular = $request->get('celular');
         $userUpdt ->fecha_nacimiento = $request->get('fecha_nacimiento');
-        $userUpdt ->tipo = $request->get('tipo');
         $userUpdt -> save();
 
         return redirect('/usuarios');
