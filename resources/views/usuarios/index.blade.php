@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-@can('indexUsuarios')
+{{-- @can('indexUsuarios') --}}
 <div class="col">
     <h2 class="center-align">Usuarios</h2>
     <table class="highlight">
@@ -47,7 +47,7 @@
         </tbody>
       </table>
 </div>
-@else
+{{-- @else
 <br><br>
 <div class="row center container w-50 m-auto">
 <div class="col s6 m6">
@@ -61,5 +61,5 @@
       </div>
     </div>
 </div>
-@endcan
+@endcan --}}
 @endsection

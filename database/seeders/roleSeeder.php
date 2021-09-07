@@ -15,17 +15,8 @@ class roleSeeder extends Seeder
      */
     public function run()
     {
-
-        $permission1 = Permission::create(['name' => 'menuHome']);
-        $permission2 = Permission::create(['name' => 'indexUsuarios']);
-        $permission3 = Permission::create(['name' => 'eliminarVenta']);
-        $permission4 = Permission::create(['name' => 'editarVenta']);
-        $permission5 = Permission::create(['name' => 'editarUsuario']);
-        $permission6 = Permission::create(['name' => 'eliminarUsuario']);
-        $permission7 = Permission::create(['name' => 'showUsuario']);
-
         $role = Role::create(['name' => 'Admin'])->syncPermissions(Permission::all());
-        $role2 = Role::create(['name' => 'Vendedor'])->syncPermissions($permission1);
+        $role2 = Role::create(['name' => 'Vendedor'])->syncPermissions(Permission::where('name', PermissionSeeder::INDEX_HOME)->first());
 
     }
 }
