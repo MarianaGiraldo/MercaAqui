@@ -14,7 +14,7 @@ class VentaController extends Controller
      */
     public function index()
     {
-        return view('ventas.index', ['ventas'=>ventas::all(), 'fondo'=>'#f6ec9c']);
+        return view('ventas.index', ['ventas'=>Venta::all(), 'fondo'=>'fondo1.jpg']);
     }
 
     /**
@@ -24,7 +24,7 @@ class VentaController extends Controller
      */
     public function create()
     {
-        return view('ventas.create', ['ventas'=>ventas::all(), 'fondo'=>'#ccb8e6']);
+        return view('ventas.create', ['ventas'=>Venta::all(), 'fondo'=>'fondo1.jpg']);
     }
 
     /**
@@ -40,7 +40,7 @@ class VentaController extends Controller
             'nombre_cliente'=>'required',
             'vendedor_id'=>'required',
         ]);
-        $nuevaVenta = new user();
+        $nuevaVenta = new Venta();
         $nuevaVenta ->fecha_venta = $request->get('fecha_venta');
         $nuevaVenta ->nombre_cliente = $request->get('nombre_cliente');
         $nuevaVenta ->vendedor_id = $request->get('vendedor_id');
@@ -55,13 +55,13 @@ class VentaController extends Controller
      * @param  \App\Models\Venta  $venta
      * @return \Illuminate\Http\Response
      */
-    public function show(Venta $venta)
+    public function show($id)
     {
-        $venta=ventas::findOrFail($id);
+        $venta=Venta::findOrFail($id);
         return view('ventas.show', [
-            'ventas'=>ventas::findOrFail($id),
-            'ventas'=>ventas::all(),
-            'fondo'=>'#91a5f5']);
+            'ventas'=>Venta::findOrFail($id),
+            'ventas'=>Venta::all(),
+            'fondo'=>'fondo1.jpg']);
     }
 
     /**
@@ -70,10 +70,10 @@ class VentaController extends Controller
      * @param  \App\Models\Venta  $venta
      * @return \Illuminate\Http\Response
      */
-    public function edit(Venta $venta)
+    public function edit($id)
     {
-        $venta = ventas::findOrFail($id);
-        return view('ventas.edit', ['ventas'=>$venta, 'fondo'=>'#97d992']);
+        $venta = Venta::findOrFail($id);
+        return view('ventas.edit', ['ventas'=>$venta, 'fondo'=>'fondo1.jpg']);
     }
 
     /**
@@ -83,9 +83,9 @@ class VentaController extends Controller
      * @param  \App\Models\Venta  $venta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Venta $venta)
+    public function update(Request $request, $id)
     {
-        $ventaUpdt = ventas::find($id);
+        $ventaUpdt = Venta::find($id);
         $ventaUpdt ->fecha_venta = $request->get('fecha_venta');
         $ventaUpdt ->nombre_cliente = $request->get('nombre_cliente');
         $ventaUpdt ->vendedor_id = $request->get('vendedor_id');
@@ -100,14 +100,14 @@ class VentaController extends Controller
      * @param  \App\Models\Venta  $venta
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Venta $venta)
+    public function destroy($id)
     {
-        ventas::destroy($id);
+        Venta::destroy($id);
         return redirect('/ventas');
     }
     public function drop($id)
     {
-        $dropVenta=ventas::find($id);
-        return view('ventas.drop', ['ventas'=>$dropVenta, 'fondo'=>'#f3d46f']);
+        $dropVenta=Venta::find($id);
+        return view('ventas.drop', ['ventas'=>$dropVenta, 'fondo'=>'fondo1.jpg']);
     }
 }
