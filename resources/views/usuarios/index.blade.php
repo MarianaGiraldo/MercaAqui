@@ -1,58 +1,39 @@
 @extends('layouts.app')
 @section('content')
-@can('usuarios.index')
+@role('Admin')
 <div class="parallax-container mt-0">
     <div class="parallax-index">
-        <br>
-        <br>
-        <br>
-        <div class="bg-light w-50 m-auto p-1 rounded">
-            <div class="col">
-                <h2 class="center-align">Usuarios</h2>
+        <br><br><br>
+        <div class="bg-light w-50 m-auto p-1 rounded h-50">
+            <div class="col overflow-auto h-100">
+                <h2 class="center-align sticky-top bg-light">Vendedores</h2>
                 <table class="highlight">
                     <thead>
                       <tr>
+                          <th>ID</th>
                           <th>Nombre</th>
                           <th>Apellido</th>
                           <th>Correo</th>
-                          <th>Contraseña</th>
-                          <th>Celular</th>
-                          <th>Fecha de Nacimiento</th>
-                          <th>Acción</th>
+                          <th>Ver más</th>
                       </tr>
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td><a href="" class="waves-effect waves-light btn">Ver Usuario</a></td>
+                        @foreach($users as $user)
+                        <tr class="table-light">
+                            <td class="table-warning" scope="row" > {{$user->id}}</td>
+                            <td >{{$user->nombre}} </td>
+                            <td >{{$user->apellido}} </td>
+                            <td >{{$user->correo}} </td>
+                            <td><a href="usuarios/{{$user->id}}" class="btn btn-success">View User</a></td>
                         </tr>
-                        <tr>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td><a href="" class="waves-effect waves-light btn">Ver Usuario</a></td>
-                        </tr>
-                        <tr>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td>Dato</td>
-                            <td><a href="" class="waves-effect waves-light btn">Ver Usuario</a></td>
-                        </tr>
+                    @endforeach
                     </tbody>
                   </table>
             </div>
+        </div>
+        <div class="container w-75 pr-5">
+            <a class="btn-floating btn-large waves-effect waves-light red right pt-2" style="width: 6vw; height: 6vw;"><i class="material-icons large" style="font-size: 6vw">add</i></a>
         </div>
     </div>
 </div>
@@ -71,5 +52,5 @@
       </div>
     </div>
 </div>
-@endcan
+@endrole
 @endsection

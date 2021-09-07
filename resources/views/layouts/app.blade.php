@@ -15,6 +15,7 @@
     <!-- Materialize -->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -28,14 +29,14 @@
     <style>
         @isset($fondo)
         .parallax-index{
-            background-image: url('imagenes/{{$fondo}}');
+            background-image: url('/imagenes/{{$fondo}}');
             width: 100%;
             height: 100vh;
             background-attachment: fixed;
             background-size: cover;
         }
         @endisset
-        @font-face { font-family: MarkingPen; src: url('font/Marking Pen.ttf'); }
+        @font-face { font-family: MarkingPen; src: url('/font/Marking Pen.ttf'); }
     </style>
 </head>
 <body>
@@ -43,7 +44,7 @@
         <nav class="navbar navbar-expand-md shadow-sm " role="navigation" style="background-color: #1d80f7; height: 12vh">
             <div class="container">
                 <div class="row mt-2 pt-1">
-                    <img src="logo/logo.png" alt="logo" style="width: 17vh" class="col">
+                    <img src="/logo/logo.png" alt="logo" style="width: 17vh" class="col">
                     <a id="logo-container" href="/" class=" navbar-brand col" style="font-family: MarkingPen; color:#f7941d; font-size: 10vh">Merca Aqui</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -73,7 +74,7 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="/usuarios">Usuarios</a>
+                                <a class="nav-link" href="/usuarios">Vendedores</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/productos">Productos</a>

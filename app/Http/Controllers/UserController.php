@@ -4,14 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('usuarios.index', ['users'=>User::all(), 'fondo'=>'fondo1.jpg']);
+        return view('usuarios.index', ['users'=>User::where('is_admin', 0)->get(), 'fondo'=>'fondo1.jpg']);
     }
 
     /**
@@ -71,7 +67,6 @@ class UserController extends Controller
         $userInfo=User::findOrFail($id);
         return view('usuarios.show', [
             'user'=>$userInfo,
-            'users'=>User::all(),
             'fondo'=>'fondo1.jpg']);
     }
 
@@ -100,9 +95,11 @@ class UserController extends Controller
         $userUpdt ->nombre = $request->get('nombre');
         $userUpdt ->apellido = $request->get('apellido');
         $userUpdt ->correo = $request->get('correo');
-        $userUpdt ->contrasena = $request->get('contrasena');
+        $userUpdt ->contrasena = Hash::make($request->get('contrasena'));
         $userUpdt ->celular = $request->get('celular');
         $userUpdt ->fecha_nacimiento = $request->get('fecha_nacimiento');
+        $is_admin = $request->is_admin === 'true' ? true: false;
+        $userUpdt ->is_admin = $is_admin;
         $userUpdt -> save();
 
         return redirect('/usuarios');
@@ -121,7 +118,7 @@ class UserController extends Controller
     }
     public function drop($id)
     {
-        $dropUser=User::find($id);
+        $dropUser=User::findOrFail($id);
         return view('usuarios.drop', ['dropUser'=>$dropUser, 'fondo'=>'fondo1.jpg']);
     }
 }

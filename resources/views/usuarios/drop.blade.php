@@ -1,22 +1,32 @@
-@extends('layouts.appLayout')
+@extends('layouts.app')
 @section('content')
-<div class="row">
-        <div class="col">
-            <h1>Borrar Usuario {{$dropUser->nombre}} </h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <form action="{{ route('usuarios.destroy', $dropUser->id) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <div class="formgroup row mb-3">
-                    <label for="delete" class="col col-form-label fs-3 ">Confirme si quiere borrar el usuario. </label>
+@role('Admin')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Eliminar usuario: {{$dropUser->nombre}} {{$dropUser->apellido}} </div>
+
+                <div class="card-body">
+                    <form action="/usuarios/{{$dropUser->id}}" method="POST">
+                        <form action="{{ route('usuarios.destroy', $dropUser->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <div class="formgroup row mb-3">
+                                <p for="delete" class="col col-form-label">Confirme si quiere borrar el usuario. </p>
+                            </div>
+                            <button type="submit" class="btn btn-danger">Borrar</button>
+                            <a href="/usuarios" class="btn btn-primary m-3" role="button">Cancelar</a>
+                        </form>
+                    </form>
                 </div>
-                <button type="submit" class="btn btn-danger">Borrar</button>
-                <a href="/usuarios" class="btn btn-primary m-3" role="button">Cancelar</a>
-            </form>
-            <br><br>
+            </div>
         </div>
     </div>
+</div>
+
+@else
+
+@endrole
+
 @endsection
