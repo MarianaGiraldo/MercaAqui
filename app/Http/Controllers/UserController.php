@@ -39,16 +39,16 @@ class UserController extends Controller
         $validation = $request->validate([
             'nombre'=>'required',
             'apellido'=>'required',
-            'correo'=>'required',
-            'contrasena'=>'required',
+            'email'=>'required',
+            'password'=>'required',
             'celular'=>'required',
             'fecha_nacimiento'=>'required',
         ]);
         $newUser = new User();
         $newUser ->nombre = $request->get('nombre');
         $newUser ->apellido = $request->get('apellido');
-        $newUser ->correo = $request->get('correo');
-        $newUser ->contrasena = $request->get('contrasena');
+        $newUser ->email = $request->get('email');
+        $newUser ->password = $request->get('password');
         $newUser ->celular = $request->get('celular');
         $newUser ->fecha_nacimiento = $request->get('fecha_nacimiento');
 
@@ -94,8 +94,8 @@ class UserController extends Controller
         $userUpdt = User::find($id);
         $userUpdt ->nombre = $request->get('nombre');
         $userUpdt ->apellido = $request->get('apellido');
-        $userUpdt ->correo = $request->get('correo');
-        $userUpdt ->contrasena = Hash::make($request->get('contrasena'));
+        $userUpdt ->email = $request->get('email');
+        $userUpdt ->password = Hash::make($request->get('password'));
         $userUpdt ->celular = $request->get('celular');
         $userUpdt ->fecha_nacimiento = $request->get('fecha_nacimiento');
         $is_admin = $request->is_admin === 'true' ? true: false;

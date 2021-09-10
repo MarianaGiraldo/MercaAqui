@@ -16,11 +16,11 @@ class CreateUsersColumns extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('nombre');
             $table->string('apellido');
-            $table->string('correo')->unique();
+            $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('celular')->nullable();
             $table->date('fecha_nacimiento')->nullable();
-            $table->string('contrasena');
+            $table->string('password');
             $table->boolean('is_admin')->default(false);
         });
     }

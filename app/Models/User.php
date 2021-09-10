@@ -24,8 +24,7 @@ class User extends Authenticatable
         'apellido',
         'celular',
         'fecha_nacimiento',
-        'correo',
-        'contrasena',
+        'email',
     ];
 
     /**
@@ -34,7 +33,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'contrasena',
+        'password',
         'remember_token',
     ];
 
@@ -49,7 +48,8 @@ class User extends Authenticatable
         'celular' => 'string',
         'nombre' => 'string',
         'apellido' => 'string',
-        'correo' => 'string',
+        'email' => 'string',
         'is_admin'=>'boolean',
     ];
+
 }

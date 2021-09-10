@@ -24,7 +24,7 @@
                             <td class="table-warning" scope="row" > {{$user->id}}</td>
                             <td >{{$user->nombre}} </td>
                             <td >{{$user->apellido}} </td>
-                            <td >{{$user->correo}} </td>
+                            <td >{{$user->email}} </td>
                             <td><a href="usuarios/{{$user->id}}" class="btn btn-success">View User</a></td>
                         </tr>
                     @endforeach

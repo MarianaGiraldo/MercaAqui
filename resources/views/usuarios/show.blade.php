@@ -16,7 +16,7 @@
                     <p class="col d-inline">{{$user->apellido}}</p>
                     <br><br>
                     <h5 class="col d-inline">Correo:</h5>
-                    <p class="col d-inline">{{$user->correo}}</p>
+                    <p class="col d-inline">{{$user->email}}</p>
                     <br><br>
                     <h5 class="col d-inline">Celular:</h5>
                     <p class="col d-inline">{{$user->celular}}</p>

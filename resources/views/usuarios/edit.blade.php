@@ -45,15 +45,15 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="correo"
-                                class="col-md-4 col-form-label text-md-right">{{ __('Correo Electrónico') }}</label>
+                            <label for="email"
+                                class="col-md-4 col-form-label text-md-right">{{ __('email Electrónico') }}</label>
 
                             <div class="col-md-6">
-                                <input id="correo" type="text"
-                                    class="form-control @error('correo') is-invalid @enderror" name="correo"
-                                    value="{{$user->correo}}" required autocomplete="correo" autofocus>
+                                <input id="email" type="text"
+                                    class="form-control @error('email') is-invalid @enderror" name="email"
+                                    value="{{$user->email}}" required autocomplete="email" autofocus>
 
-                                @error('correo')
+                                @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -119,15 +119,15 @@
                         @endrole
 
                         <div class="form-group row">
-                            <label for="contrasena"
+                            <label for="password"
                                 class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
                             <div class="col-md-6">
-                                <input id="contrasena" type="password"
-                                    class="form-control @error('contrasena') is-invalid @enderror" name="contrasena"
-                                    required autocomplete="new-contrasena">
+                                <input id="password" type="password"
+                                    class="form-control @error('password') is-invalid @enderror" name="password"
+                                    required autocomplete="new-password">
 
-                                @error('contrasena')
+                                @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -136,12 +136,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="contrasena-confirm"
+                            <label for="password-confirm"
                                 class="col-md-4 col-form-label text-md-right">{{ __('Confirmar contraseña') }}</label>
 
                             <div class="col-md-6">
-                                <input id="contrasena-confirm" type="password" class="form-control"
-                                    name="contrasena_confirmation" required autocomplete="new-contrasena">
+                                <input id="password-confirm" type="password" class="form-control"
+                                    name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 
