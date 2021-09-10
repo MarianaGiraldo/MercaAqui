@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Producto;
 use App\Models\Venta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VentaController extends Controller
 {
@@ -29,7 +31,7 @@ class VentaController extends Controller
      */
     public function create()
     {
-        return view('ventas.create', ['ventas'=>Venta::all(), 'fondo'=>'fondo1.jpg']);
+        return view('ventas.create', ['ventas'=>Venta::all(), 'productos'=>Producto::all(), 'fondo'=>'fondo1.jpg']);
     }
 
     /**
@@ -43,14 +45,15 @@ class VentaController extends Controller
         $validation = $request->validate([
             'fecha_venta'=>'required',
             'nombre_cliente'=>'required',
-            'vendedor_id'=>'required',
         ]);
         $nuevaVenta = new Venta();
         $nuevaVenta ->fecha_venta = $request->get('fecha_venta');
         $nuevaVenta ->nombre_cliente = $request->get('nombre_cliente');
-        $nuevaVenta ->vendedor_id = $request->get('vendedor_id');
-
+        $nuevaVenta ->vendedor_id = Auth::user()->id;
         $nuevaVenta -> save();
+
+        $producto = Producto::findOrFail(1);
+        $nuevaVenta->producto()->attach($producto->id);
         return redirect('/ventas');
     }
 
@@ -64,7 +67,7 @@ class VentaController extends Controller
     {
         $venta=Venta::findOrFail($id);
         return view('ventas.show', [
-            'ventas'=>Venta::findOrFail($id),
+            'venta'=>$venta,
             'ventas'=>Venta::all(),
             'fondo'=>'fondo1.jpg']);
     }

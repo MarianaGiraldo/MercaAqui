@@ -1,16 +1,61 @@
 @extends('layouts.app')
 @section('content')
+@hasanyrole('Admin|Vendedor')
 <div class="parallax-container mt-0">
     <div class="parallax-index">
         <br>
         <br>
         <br>
-        <div class="bg-light w-25 m-auto p-3 rounded">
-            <p class="text-center" style="font-family: MarkingPen; color:#f7941d; font-size: 6vh">Merca Aqui</p>
-            <p class="text-center" style="font-family: MarkingPen; color:#f7941d; font-size: 4vh">El lugar en donde encontrarás lo que necesites</p>
+        <div class="bg-light w-50 m-auto p-1 rounded h-50">
+            <div class="col overflow-auto h-100">
+                <h2 class="center-align sticky-top bg-light">Ventas</h2>
+                <table class="highlight">
+                    <thead>
+                      <tr>
+                          <th>ID</th>
+                          <th>Fecha de la venta</th>
+                          <th>ID del vendedor</th>
+                          <th>Nombre del Cliente</th>
+                      </tr>
+                    </thead>
 
+                    <tbody>
+                        @foreach($ventas as $venta)
+                        <tr class="table-light">
+                            <td class="table-warning" scope="row" > {{$venta->id}}</td>
+                            <td >{{$venta->fecha_venta}} </td>
+                            <td >{{$venta->vendedor_id}} </td>
+                            <td >{{$venta->nombre_cliente}} </td>
+                            <td><a href="usuarios/{{$venta->id}}" class="btn btn-success">View venta</a></td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                  </table>
+            <div class="col-md-6 offset-md-5">
+                <a href="/ventas/create" class="waves-effect waves-light light-blue lighten-2 btn">Crear venta</a>
+            </div>
+            </div>
+
+        </div>
+        <div class="container w-75 pr-5">
+            <a class="btn-floating btn-large waves-effect waves-light light-blue lighten-2 right pt-2" style="width: 6vw; height: 6vw;" href="ventas/create"><i class="material-icons large" style="font-size: 6vw">add</i></a>
         </div>
     </div>
 </div>
 
+@else
+<br><br>
+<div class="row center container w-50 m-auto">
+<div class="col s6 m6">
+      <div class="card red lighten-2">
+        <div class="card-content white-text">
+          <span class="card-title">No estas autorizado para esta vista.</span>
+        </div>
+        <div class="card-action">
+          <a href="/" class="waves-effect waves-light btn blue lighten-3">Regresar</a>
+        </div>
+      </div>
+    </div>
+</div>
+@endhasanyrole
 @endsection
