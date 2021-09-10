@@ -21,7 +21,7 @@
                                 Cantidad disponible: {{$producto->cantidad_disponible}}
                             </p>
                             <a href="/productos/{{$producto->id}}"
-                                class="secondary-content waves-effect waves-light light-blue lighten-2 btn">Ver</a>
+                                class="secondary-content waves-effect waves-light btn-small btn-success">Ver</a>
                         </li>
                 </div>
             </div>
