@@ -53,6 +53,7 @@ class UserController extends Controller
         $newUser ->fecha_nacimiento = $request->get('fecha_nacimiento');
 
         $newUser -> save();
+        $newUser->assignRole('Vendedor');
         return redirect('/usuarios');
     }
 
@@ -101,6 +102,12 @@ class UserController extends Controller
         $is_admin = $request->is_admin === 'true' ? true: false;
         $userUpdt ->is_admin = $is_admin;
         $userUpdt -> save();
+
+        if ($userUpdt->is_admin) {
+            $userUpdt->assignRole('Admin');
+        }else {
+            $userUpdt->assignRole('Vendedor');
+        }
 
         return redirect('/usuarios');
     }

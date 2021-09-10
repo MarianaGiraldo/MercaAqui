@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="container w-75 pr-5">
-            <a class="btn-floating btn-large waves-effect waves-light red right pt-2" style="width: 6vw; height: 6vw;"><i class="material-icons large" style="font-size: 6vw">add</i></a>
+            <a class="btn-floating btn-large waves-effect waves-light red right pt-2" style="width: 6vw; height: 6vw;" href="usuarios/create"><i class="material-icons large" style="font-size: 6vw">add</i></a>
         </div>
     </div>
 </div>
@@ -47,7 +47,7 @@
           <span class="card-title">No estas autorizado para esta vista.</span>
         </div>
         <div class="card-action">
-          <a href="/login" class="waves-effect waves-light btn blue lighten-3">Regresar</a>
+          <a href="/" class="waves-effect waves-light btn blue lighten-3">Regresar</a>
         </div>
       </div>
     </div>
