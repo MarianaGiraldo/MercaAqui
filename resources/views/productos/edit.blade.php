@@ -25,25 +25,30 @@
                         @method('put')
                         <div class="row ">
                             <div class="input-field col s6">
-                                <input placeholder="Manzana" id="nombre" type="text" class="validate">
+                                <input placeholder="Manzana" id="nombre" name="nombre" type="text" class="validate">
                                 <label for="nombre">Nombre</label>
                             </div>
                             <div class="input-field col s6">
-                                <input placeholder="5.000" id="precio" type="text" class="validate">
+                                <input placeholder="5.000" id="precio" name="precio" type="text" class="validate">
                                 <label for="precio">Precio</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
+<<<<<<< HEAD
                                 <input placeholder="500" id="cantidad_disponible" type="text" class="validate">
                                 <label for="cantidad_disponible">Cantidad disponible</label>
+=======
+                            <input placeholder="500" id="cantidad_disponible" name="cantidad_disponible" type="text" class="validate">
+                            <label for="cantidad_disponible">Cantidad disponible</label>
+>>>>>>> d00483782227b51a544abdd889f157ec6d020d6c
                             </div>
                         </div>
                         <label for="img" class="label input-field  pb-0 row mb-0 ml-2">Seleccione el tipo de
                             producto</label>
                         <div class="row">
                             <div class="input-field col s12">
-                                <select class="browser-default">
+                                <select class="browser-default" name="tipo">
                                     <option value="" disabled selected>Tipo de producto</option>
                                     <option value="Aseo">Aseo</option>
                                     <option value="Alimentos frescos">Alimentos frescos</option>
@@ -61,6 +66,7 @@
                                 <input class="form-control" type="file" id="img" name="img">
                             </div>
                         </div>
+<<<<<<< HEAD
                         <div class="col-md-6 offset-md-4">
                             <button type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
                                 {{ __('Guardar') }}
@@ -69,6 +75,16 @@
                                 {{ __('Regresar') }}
                             </button>
                         </div>
+=======
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
+                                    {{ __('Guardar') }}
+                                </button>
+                                <a href="/productos" class="waves-effect waves-light light-blue lighten-2 btn">
+                                    {{ __('Regresar') }}
+                                </a>
+                            </div>
+>>>>>>> d00483782227b51a544abdd889f157ec6d020d6c
                     </form>
                 </div>
             </div>
