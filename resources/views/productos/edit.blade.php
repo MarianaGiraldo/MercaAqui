@@ -1,10 +1,11 @@
 @extends('layouts.app')
 @section('content')
+@role('Admin')
 <div class="container">
     @if($errors->any())
-    <div class="w-75 mx-auto" >
+    <div class="w-75 mx-auto">
         <div class="alert alert-danger  my-1" role="alert"> Error! Producto no guardado </div>
-        <ul class="list-group-flush" >
+        <ul class="list-group-flush">
             @foreach( $errors->all() as $error)
             <li class="list-group-item list-group-item-danger">{{$error}} </li>
             @endforeach
@@ -18,7 +19,8 @@
                     <h2 class="center-align">Editar producto: {{$productos->nombre}}</h2>
                 </div>
                 <div class="card-body">
-                    <form action="/productos/{{$productos->id}}" method="POST" enctype="multipart/form-data" class="w-100">
+                    <form action="/productos/{{$productos->id}}" method="POST" enctype="multipart/form-data"
+                        class="w-100">
                         @csrf
                         @method('put')
                         <div class="row ">
@@ -33,11 +35,17 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
+<<<<<<< HEAD
+                                <input placeholder="500" id="cantidad_disponible" type="text" class="validate">
+                                <label for="cantidad_disponible">Cantidad disponible</label>
+=======
                             <input placeholder="500" id="cantidad_disponible" name="cantidad_disponible" type="text" class="validate">
                             <label for="cantidad_disponible">Cantidad disponible</label>
+>>>>>>> d00483782227b51a544abdd889f157ec6d020d6c
                             </div>
                         </div>
-                        <label for="img" class="label input-field  pb-0 row mb-0 ml-2">Seleccione el tipo de producto</label>
+                        <label for="img" class="label input-field  pb-0 row mb-0 ml-2">Seleccione el tipo de
+                            producto</label>
                         <div class="row">
                             <div class="input-field col s12">
                                 <select class="browser-default" name="tipo">
@@ -58,6 +66,16 @@
                                 <input class="form-control" type="file" id="img" name="img">
                             </div>
                         </div>
+<<<<<<< HEAD
+                        <div class="col-md-6 offset-md-4">
+                            <button type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
+                                {{ __('Guardar') }}
+                            </button>
+                            <button href="/productos" class="waves-effect waves-light orange lighten-2 btn">
+                                {{ __('Regresar') }}
+                            </button>
+                        </div>
+=======
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
                                     {{ __('Guardar') }}
@@ -66,10 +84,27 @@
                                     {{ __('Regresar') }}
                                 </a>
                             </div>
+>>>>>>> d00483782227b51a544abdd889f157ec6d020d6c
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+@else
+<br><br>
+<div class="row center container w-50 m-auto">
+<div class="col s6 m6">
+      <div class="card red lighten-2">
+        <div class="card-content white-text">
+          <span class="card-title">No estas autorizado para esta vista.</span>
+        </div>
+        <div class="card-action">
+          <a href="/" class="waves-effect waves-light btn blue lighten-3">Regresar</a>
+        </div>
+      </div>
+    </div>
+</div>
+@endrole
 @endsection
