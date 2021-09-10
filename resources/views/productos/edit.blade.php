@@ -35,13 +35,8 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-<<<<<<< HEAD
                                 <input placeholder="500" id="cantidad_disponible" type="text" class="validate">
                                 <label for="cantidad_disponible">Cantidad disponible</label>
-=======
-                            <input placeholder="500" id="cantidad_disponible" name="cantidad_disponible" type="text" class="validate">
-                            <label for="cantidad_disponible">Cantidad disponible</label>
->>>>>>> d00483782227b51a544abdd889f157ec6d020d6c
                             </div>
                         </div>
                         <label for="img" class="label input-field  pb-0 row mb-0 ml-2">Seleccione el tipo de
@@ -66,16 +61,6 @@
                                 <input class="form-control" type="file" id="img" name="img">
                             </div>
                         </div>
-<<<<<<< HEAD
-                        <div class="col-md-6 offset-md-4">
-                            <button type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
-                                {{ __('Guardar') }}
-                            </button>
-                            <button href="/productos" class="waves-effect waves-light orange lighten-2 btn">
-                                {{ __('Regresar') }}
-                            </button>
-                        </div>
-=======
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
                                     {{ __('Guardar') }}
@@ -84,7 +69,6 @@
                                     {{ __('Regresar') }}
                                 </a>
                             </div>
->>>>>>> d00483782227b51a544abdd889f157ec6d020d6c
                     </form>
                 </div>
             </div>
