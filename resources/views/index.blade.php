@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-@can('index')
+@hasanyrole('Admin|Vendedor')
 
 <div class="parallax-container mt-0">
     <div class="parallax-index">
@@ -33,5 +33,6 @@
       </div>
     </div>
 </div>
-@endcan
+
+@endhasanyrole
 @endsection

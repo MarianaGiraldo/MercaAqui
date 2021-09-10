@@ -50,6 +50,11 @@ class ProductoController extends Controller
         $nuevo ->nombre = $request->get('nombre');
         $nuevo ->tipo = $request->get('tipo');
         $nuevo ->precio = $request->get('precio');
+        $photo = $request->file('img');
+        $filename = time() . '.' . $photo->getClientOriginalExtension();
+        $destino=public_path('imagenes/productos/');
+        $request->img->move($destino, $filename);
+        $nuevo ->img = $filename;
         $nuevo ->cantidad_disponible = $request->get('cantidad_disponible');
         $nuevo -> save();
         return redirect('/productos');
@@ -75,7 +80,7 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
+    public function edit($id)
     {
         $productos = Producto::findOrFail($id);
         return view('productos.edit', ['productos'=>$productos, 'fondo'=>'fondo1.jpg']);
@@ -88,13 +93,18 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Producto $producto)
+    public function update(Request $request, $id)
     {
         $productoUpdt = Producto::find($id);
         $productoUpdt ->nombre = $request->get('nombreEdit');
         $productoUpdt ->tipo = $request->get('tipoEdit');
         $productoUpdt ->precio = $request->get('precioEdit');
         $productoUpdt ->cantidad_disponible = $request->get('cantidadEdit');
+        $photo = $request->file('img');
+        $filename = time() . '.' . $photo->getClientOriginalExtension();
+        $destino=public_path('imagenes/productos/');
+        $request->img->move($destino, $filename);
+        $productoUpdt ->img = $filename;
         $productoUpdt -> save();
         return redirect('/productos');
     }
