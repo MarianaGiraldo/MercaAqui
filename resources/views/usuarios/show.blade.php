@@ -44,7 +44,7 @@
                 <span class="card-title">No estas autorizado para esta vista.</span>
             </div>
             <div class="card-action">
-                <a href="/login" class="waves-effect waves-light btn blue lighten-3">Regresar</a>
+                <a href="/" class="waves-effect waves-light btn blue lighten-3">Regresar</a>
             </div>
         </div>
     </div>
