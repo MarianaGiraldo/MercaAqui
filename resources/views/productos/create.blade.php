@@ -53,7 +53,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input class="form-control" type="file" id="img_producto" name="img_producto">
+                                <input class="form-control" type="file" id="img_producto" name="img" id="img">
                             </div>
                         </div>
                             <div class="col-md-6 offset-md-5">

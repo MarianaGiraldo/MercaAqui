@@ -17,7 +17,7 @@
     <div class="col align-content-center">
       <ul class="collection">
         <li class="collection-item avatar">
-        <img src="images/productos/{{$producto->img}}" alt="" class="circle">
+        <img src="imagenes/productos/{{$producto->img}}" alt="{{$producto->nombre}}" class="circle">
       <span class="title">{{$producto->nombre}} </span>
       <p>Precio: $ {{$producto->precio}} <br>
          Cantidad disponible: {{$producto->cantidad_disponible}}

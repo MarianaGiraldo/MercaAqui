@@ -18,7 +18,7 @@
                     <h2 class="center-align">Editar producto: {{$productos->nombre}}</h2>
                 </div>
                 <div class="card-body">
-                    <form class="w-100" action="/productos/{{$productos->id}}" method="POST" enctype="multipart/form-data"> 
+                    <form action="/productos/{{$productos->id}}" method="POST" enctype="multipart/form-data" class="w-100"> 
                         @csrf
                         @method('put')           
                         <div class="row ">
@@ -57,12 +57,12 @@
                             </div>
                         </div>
                             <div class="col-md-6 offset-md-4">
-                                <a type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
+                                <button type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
                                     {{ __('Guardar') }}
-                                </a>
-                                <a href="/productos" class="waves-effect waves-light light-blue lighten-2 btn">
+                                </button>
+                                <button href="/productos" class="waves-effect waves-light light-blue lighten-2 btn">
                                     {{ __('Regresar') }}
-                                </a>
+                                </button>
                             </div>
                     </form>
                 </div>
