@@ -100,7 +100,7 @@ class ProductoController extends Controller
         $productoUpdt ->nombre = $request->get('nombre');
         $productoUpdt ->tipo = $request->get('tipo');
         $productoUpdt ->precio = $request->get('precio');
-        $productoUpdt ->cantidad_disponible = $request->get('cantidad');
+        $productoUpdt ->cantidad_disponible = $request->get('cantidad_disponible');
         $photo = $request->file('img');
         $filename = time() . '.' . $photo->getClientOriginalExtension();
         $destino=public_path('imagenes/productos/');
