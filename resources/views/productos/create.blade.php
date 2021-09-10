@@ -19,7 +19,7 @@
                     <h2 class="center-align">Crear un producto</h2>
                 </div>
                 <div class="card-body">
-                    <form class="w-100">            
+                    <form class="w-100">
                         <div class="row ">
                             <div class="input-field col s6">
                                 <input placeholder="Manzana" id="nombre" type="text" class="validate">
@@ -29,36 +29,38 @@
                                 <input placeholder="5.000" id="precio" type="text" class="validate">
                                 <label for="precio">Precio</label>
                             </div>
-                        </div>                        
+                        </div>
                         <div class="row">
                             <div class="input-field col s12">
                             <input placeholder="500" id="cantidad_disponible" type="text" class="validate">
                             <label for="cantidad_disponible">Cantidad disponible</label>
                             </div>
                         </div>
+                        <label for="img" class="label input-field  pb-0 row mb-0 ml-2">Seleccione el tipo de producto</label>
                         <div class="row">
-                            <div class="input-field col s12">
-                                <select class="browser-default">
-                                    <option value="" disabled selected>Tipo de producto</option>
-                                    <option value="Aseo">Aseo</option>
-                                    <option value="Alimentos frescos">Alimentos frescos</option>
-                                    <option value="Alimentos congelados">Alimentos congelados</option>
-                                    <option value="Bebidas">Bebidas</option>
-                                    <option value="Alimentos Empacados">Alimentos Empacados</option>
-                                    <option value="Basicos del hogar">Basicos del hogar</option>
-                                    <option value="Cuidado Personal">Cuidado Personal</option>
-                                </select>
+                            <div class="input-field col s12 formgroup row mb-3">
+                                    <select class="browser-default" name="tipo" id="tipo">
+                                        <option value="" disabled selected>Tipo de producto</option>
+                                        <option value="Aseo">Aseo</option>
+                                        <option value="Alimentos frescos">Alimentos frescos</option>
+                                        <option value="Alimentos congelados">Alimentos congelados</option>
+                                        <option value="Bebidas">Bebidas</option>
+                                        <option value="Alimentos Empacados">Alimentos Empacados</option>
+                                        <option value="Basicos del hogar">Basicos del hogar</option>
+                                        <option value="Cuidado Personal">Cuidado Personal</option>
+                                    </select>
                             </div>
                         </div>
-                        <div class="row">
+                        <label for="img" class="label input-field  pb-0 row mb-0 ml-2">Imagen del Producto</label>
+                        <div class="row mt-0 py-0">
                             <div class="input-field col s12">
-                                <input class="form-control" type="file" id="img_producto" name="img_producto">
+                                <input class="form-control" type="file" id="img" name="img">
                             </div>
                         </div>
                             <div class="col-md-6 offset-md-5">
-                                <a type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
+                                <button type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
                                     {{ __('Registrar') }}
-                                </a>
+                                </button>
                             </div>
                     </form>
                 </div>
@@ -67,5 +69,5 @@
     </div>
 </div>
 
-  
+
 @endsection

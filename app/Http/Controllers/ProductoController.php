@@ -41,20 +41,21 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         $validation = $request->validate([
-            'nombre'=>'required',
+            'nombre'=>['required', 'string', 'max:255'],
             'tipo'=>'required',
-            'precio'=>'required',
+            'precio'=>['required', 'integer'],
             'cantidad_disponible'=>'required',
+            'img'=>'required',
         ]);
         $nuevo = new Producto();
         $nuevo ->nombre = $request->get('nombre');
-        $nuevo ->tipo = $request->get('tipo');
+        $nuevo ->tipo = $request->tipo;
         $nuevo ->precio = $request->get('precio');
         $photo = $request->file('img');
         $filename = time() . '.' . $photo->getClientOriginalExtension();
         $destino=public_path('imagenes/productos/');
         $request->img->move($destino, $filename);
-        $nuevo ->img = $filename;
+        $nuevo ->imagen = $filename;
         $nuevo ->cantidad_disponible = $request->get('cantidad_disponible');
         $nuevo -> save();
         return redirect('/productos');
@@ -104,7 +105,7 @@ class ProductoController extends Controller
         $filename = time() . '.' . $photo->getClientOriginalExtension();
         $destino=public_path('imagenes/productos/');
         $request->img->move($destino, $filename);
-        $productoUpdt ->img = $filename;
+        $productoUpdt ->imagen = $filename;
         $productoUpdt -> save();
         return redirect('/productos');
     }
