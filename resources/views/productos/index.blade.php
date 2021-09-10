@@ -12,43 +12,23 @@
         </div>
     </div>
 </div>
+@foreach($productos as $producto)
 <div class="row center container w-50 m-auto">
     <div class="col align-content-center">
-    <ul class="collection">
-    <li class="collection-item avatar">
-    
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
+      <ul class="collection">
+        <li class="collection-item avatar">
+        <img src="images/productos/{{$producto->img}}" alt="" class="circle">
+      <span class="title">{{$producto->nombre}} </span>
+      <p>Precio: $ {{$producto->precio}} <br>
+         Cantidad disponible: {{$producto->cantidad_disponible}}
       </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle">folder</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle green">insert_chart</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle red">play_arrow</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-  </ul>
-
+      <a href="/productos/{{$producto->id}}/edit" class="secondary-content waves-effect waves-light cyan accent-2 btn">Editar</a>
+    </li> 
     </div>
 </div>
+@endforeach
+<div class="col-md-6 offset-md-5">
+  <a href="/productos/create" class="waves-effect waves-light light-blue lighten-2 btn">Crear producto</a>
+</div>
+
 @endsection

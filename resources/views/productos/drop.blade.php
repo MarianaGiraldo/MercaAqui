@@ -5,19 +5,21 @@
             <h1>Borrar producto {{$dropProduct->nombre}} </h1>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <form action="{{ route('books.destroy', $dropBook->id) }}" method="POST" class="w-50 mx-auto confirmDrop p-4 rounded" >
+    <div class="row center container w-50 m-auto">
+        <div class="col s6 m6">
+            <div class="card red lighten-2">
+                <form action="{{ route('productos.destroy', $dropProduct->id) }}" method="POST" >
                 @csrf
                 @method('DELETE')
-                <div class="formgroup row mb-3">
-                    <label for="delete" class="col col-form-label fs-3 ">Confirme si quiere eliminar el producto. </label>
-                </div>
-                <button type="submit" class="btn btn-primary">Eliminar</button>
-                <a href="/books" class="btn btn-primary m-3" role="button">Cancel</a>
-
-            </form>
-            <br><br>
+                    <div class="card-content white-text">
+                        <span for="delete" class="card-title">¿Estas seguro que deseas eliminar este producto?</span>
+                    </div>
+                    <div class="card-action">
+                        <a typ="submit" class="waves-effect waves-light btn red lighten-2">Eliminar</a>
+                        <a href="/productos" class="waves-effect waves-light btn blue lighten-3">Regresar</a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 @endsection

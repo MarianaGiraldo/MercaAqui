@@ -1,11 +1,6 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <div class="row m-4 ">
-        <div class="col">
-            <h1>Editar producto: {{$producto->nombre}}</h1>
-        </div>
-    </div>
     @if($errors->any())
     <div class="w-75 mx-auto" >
         <div class="alert alert-danger  my-1" role="alert"> Error! Producto no guardado </div>
@@ -20,10 +15,12 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h2 class="center-align">Crear un producto</h2>
+                    <h2 class="center-align">Editar producto: {{$productos->nombre}}</h2>
                 </div>
                 <div class="card-body">
-                    <form class="w-100">            
+                    <form class="w-100" action="/productos/{{$productos->id}}" method="POST" enctype="multipart/form-data"> 
+                        @csrf
+                        @method('put')           
                         <div class="row ">
                             <div class="input-field col s6">
                                 <input placeholder="Manzana" id="nombre" type="text" class="validate">
@@ -59,9 +56,12 @@
                                 <input class="form-control" type="file" id="img" name="img">
                             </div>
                         </div>
-                            <div class="col-md-6 offset-md-5">
+                            <div class="col-md-6 offset-md-4">
                                 <a type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
                                     {{ __('Guardar') }}
+                                </a>
+                                <a href="/productos" class="waves-effect waves-light light-blue lighten-2 btn">
+                                    {{ __('Regresar') }}
                                 </a>
                             </div>
                     </form>
