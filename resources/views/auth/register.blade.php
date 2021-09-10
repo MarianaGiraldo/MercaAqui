@@ -105,9 +105,9 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <a type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
+                                <button type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
                                     {{ __('Registrar') }}
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </form>

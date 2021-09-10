@@ -25,7 +25,7 @@
                             <td >{{$user->nombre}} </td>
                             <td >{{$user->apellido}} </td>
                             <td >{{$user->email}} </td>
-                            <td><a href="usuarios/{{$user->id}}" class="btn btn-success">View User</a></td>
+                            <td><a href="usuarios/{{$user->id}}" class="btn-small btn-success">View User</a></td>
                         </tr>
                     @endforeach
                     </tbody>

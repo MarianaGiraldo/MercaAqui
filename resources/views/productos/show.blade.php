@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <div class="">
+    <div class="col s12">
         <h2 class="header center-align"> {{$producto->nombre}} </h2>
-        <div class="card horizontal">
-            <div class="card-image">
-                <img src="/imagenes/productos/{{$producto->img}}" width="100" height="190">
+        <div class="row card w-50 mx-auto">
+            <div class="card-image col s6">
+                <img src="/imagenes/productos/{{$producto->img}}" width="90" height="150">
             </div>
             <div class="card-stacked">
                 <div class="card-content">
@@ -21,6 +21,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="col-md-6 offset-md-5">
         <a href="/productos" class="waves-effect waves-light light-blue lighten-2 btn">{{ __('Regresar') }}</a>
     </div>
 </div>
