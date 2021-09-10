@@ -97,10 +97,10 @@ class ProductoController extends Controller
     public function update(Request $request, $id)
     {
         $productoUpdt = Producto::find($id);
-        $productoUpdt ->nombre = $request->get('nombreEdit');
-        $productoUpdt ->tipo = $request->get('tipoEdit');
-        $productoUpdt ->precio = $request->get('precioEdit');
-        $productoUpdt ->cantidad_disponible = $request->get('cantidadEdit');
+        $productoUpdt ->nombre = $request->get('nombre');
+        $productoUpdt ->tipo = $request->get('tipo');
+        $productoUpdt ->precio = $request->get('precio');
+        $productoUpdt ->cantidad_disponible = $request->get('cantidad');
         $photo = $request->file('img');
         $filename = time() . '.' . $photo->getClientOriginalExtension();
         $destino=public_path('imagenes/productos/');

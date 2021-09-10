@@ -18,9 +18,9 @@
                     <h2 class="center-align">Editar producto: {{$productos->nombre}}</h2>
                 </div>
                 <div class="card-body">
-                    <form action="/productos/{{$productos->id}}" method="POST" enctype="multipart/form-data" class="w-100"> 
+                    <form action="/productos/{{$productos->id}}" method="POST" enctype="multipart/form-data" class="w-100">
                         @csrf
-                        @method('put')           
+                        @method('put')
                         <div class="row ">
                             <div class="input-field col s6">
                                 <input placeholder="Manzana" id="nombre" name="nombre" type="text" class="validate">
@@ -30,13 +30,14 @@
                                 <input placeholder="5.000" id="precio" name="precio" type="text" class="validate">
                                 <label for="precio">Precio</label>
                             </div>
-                        </div>                        
+                        </div>
                         <div class="row">
                             <div class="input-field col s12">
                             <input placeholder="500" id="cantidad_disponible" name="cantidad_disponible" type="text" class="validate">
                             <label for="cantidad_disponible">Cantidad disponible</label>
                             </div>
                         </div>
+                        <label for="img" class="label input-field  pb-0 row mb-0 ml-2">Seleccione el tipo de producto</label>
                         <div class="row">
                             <div class="input-field col s12">
                                 <select class="browser-default" name="tipo">
@@ -51,6 +52,7 @@
                                 </select>
                             </div>
                         </div>
+                        <label for="img" class="label input-field  pb-0 row mb-0 ml-2">Imagen del Producto</label>
                         <div class="row">
                             <div class="input-field col s12">
                                 <input class="form-control" type="file" id="img" name="img">
