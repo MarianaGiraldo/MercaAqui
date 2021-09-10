@@ -15,7 +15,7 @@ class CreateProductosTable extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
-            $table->string('imagen')->nullable();
+            $table->string('img')->nullable();
             $table->string('nombre');
             $table->set('tipo', ['Aseo', 'Alimentos frescos', 'Alimentos congelados', 'Bebidas', 'Alimentos Empacados', 'Basicos del hogar', 'Cuidado Personal'] );
             $table->integer('precio');
