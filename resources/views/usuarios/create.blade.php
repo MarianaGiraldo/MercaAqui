@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Crear nuevo vendedor') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="/users">
+                    <form method="POST" action="/usuarios">
                         @csrf
 
                         <div class="form-group row">

@@ -19,8 +19,12 @@
                     <h2 class="center-align">Crear un producto</h2>
                 </div>
                 <div class="card-body">
+<<<<<<< HEAD
+                    <form class="w-100">
+=======
                     <form action="/productos" method="POST" enctype="multipart/form-data" class="w-100" >  
                         @csrf          
+>>>>>>> 74cd0ed6760fd5523e77f399ba0d2788e516d4bf
                         <div class="row ">
                             <div class="input-field col s6">
                                 <input placeholder="Manzana" id="nombre" name="nombre" type="text" class="validate">
@@ -30,14 +34,28 @@
                                 <input placeholder="5.000" id="precio" name="precio" type="text" class="validate">
                                 <label for="precio">Precio</label>
                             </div>
-                        </div>                        
+                        </div>
                         <div class="row">
                             <div class="input-field col s12">
                             <input placeholder="500" id="cantidad_disponible" name="cantidad_disponible" type="text" class="validate">
                             <label for="cantidad_disponible">Cantidad disponible</label>
                             </div>
                         </div>
+                        <label for="img" class="label input-field  pb-0 row mb-0 ml-2">Seleccione el tipo de producto</label>
                         <div class="row">
+<<<<<<< HEAD
+                            <div class="input-field col s12 formgroup row mb-3">
+                                    <select class="browser-default" name="tipo" id="tipo">
+                                        <option value="" disabled selected>Tipo de producto</option>
+                                        <option value="Aseo">Aseo</option>
+                                        <option value="Alimentos frescos">Alimentos frescos</option>
+                                        <option value="Alimentos congelados">Alimentos congelados</option>
+                                        <option value="Bebidas">Bebidas</option>
+                                        <option value="Alimentos Empacados">Alimentos Empacados</option>
+                                        <option value="Basicos del hogar">Basicos del hogar</option>
+                                        <option value="Cuidado Personal">Cuidado Personal</option>
+                                    </select>
+=======
                             <div class="input-field col s12">
                                 <select class="browser-default" id="tipo" name="tipo">
                                     <option value="" disabled selected>Tipo de producto</option>
@@ -49,11 +67,17 @@
                                     <option value="Basicos del hogar">Basicos del hogar</option>
                                     <option value="Cuidado Personal">Cuidado Personal</option>
                                 </select>
+>>>>>>> 74cd0ed6760fd5523e77f399ba0d2788e516d4bf
                             </div>
                         </div>
-                        <div class="row">
+                        <label for="img" class="label input-field  pb-0 row mb-0 ml-2">Imagen del Producto</label>
+                        <div class="row mt-0 py-0">
                             <div class="input-field col s12">
+<<<<<<< HEAD
+                                <input class="form-control" type="file" id="img" name="img">
+=======
                                 <input class="form-control" type="file" id="img_producto" name="img" id="img">
+>>>>>>> 74cd0ed6760fd5523e77f399ba0d2788e516d4bf
                             </div>
                         </div>
                             <div class="col-md-6 offset-md-5">
@@ -68,5 +92,5 @@
     </div>
 </div>
 
-  
+
 @endsection
