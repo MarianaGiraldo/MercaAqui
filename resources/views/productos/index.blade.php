@@ -22,7 +22,7 @@
       <p>Precio: $ {{$producto->precio}} <br>
          Cantidad disponible: {{$producto->cantidad_disponible}}
       </p>
-      <a href="/productos/{{$producto->id}}/edit" class="secondary-content waves-effect waves-light cyan accent-2 btn">Editar</a>
+      <a href="/productos/{{$producto->id}}" class="secondary-content waves-effect waves-light cyan accent-2 btn">Ver</a>
     </li> 
     </div>
 </div>
