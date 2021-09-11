@@ -32,14 +32,20 @@
                             </div>
                         </div>
                         <div class="formgroup w-50 m-auto">
-                            <label for="productos">Seleccione los productos vendidos</label>
+                            <label for="productos">Seleccione los productos vendidos y la cantidad</label>
                             @foreach ($productos as $producto)
-                            <p>
-                                <label>
-                                    <input type="checkbox" class="filled-in" name="{{$producto->id}}" />
-                                    <span>{{$producto->nombre}}</span>
-                                </label>
-                            </p>
+                            <div class="row">
+                                <p class="col">
+                                    <label>
+                                        <input type="checkbox" class="filled-in" value="{{$producto->id}}" name="productos[]" />
+                                        <span>{{$producto->nombre}}</span>
+                                    </label>
+                                </p>
+                                <div class="col">
+                                    <input type="number" name="{{$producto->id}}" id="{{$producto->id}}" value="1" max="{{$producto->cantidad_disponible}}" min="1">
+                                    <p class="text-muted mb-0 py-0">Máximo: {{$producto->cantidad_disponible}}</p>
+                                </div>
+                            </div>
                             @endforeach
 
                         </div>

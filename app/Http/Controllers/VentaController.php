@@ -6,6 +6,8 @@ use App\Models\Producto;
 use App\Models\Venta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class VentaController extends Controller
 {
@@ -42,9 +44,10 @@ class VentaController extends Controller
      */
     public function store(Request $request)
     {
-        $validation = $request->validate([
+        $validator = Validator::make($request->all(), [
             'fecha_venta'=>'required',
             'nombre_cliente'=>'required',
+            'productos' =>'required | min:1'
         ]);
         $nuevaVenta = new Venta();
         $nuevaVenta ->fecha_venta = $request->get('fecha_venta');
@@ -52,8 +55,22 @@ class VentaController extends Controller
         $nuevaVenta ->vendedor_id = Auth::user()->id;
         $nuevaVenta -> save();
 
-        $producto = Producto::findOrFail(1);
-        $nuevaVenta->producto()->attach($producto->id);
+        $productosChecked = $request->productos;
+
+        foreach ($productosChecked as $productoId) {
+            $producto = Producto::findOrFail($productoId);
+            $cantidad = $request->get($productoId);
+            $producto->cantidad_disponible = $producto->cantidad_disponible - $cantidad;
+            $producto-> save();
+
+            $nuevaVenta->producto()->attach($producto->id);
+            DB::table('producto_venta')
+              ->orderBy('id', 'desc')
+              ->limit(1)
+              ->update(['cantidad' => $cantidad]);
+            
+        }
+
         return redirect('/ventas');
     }
 
