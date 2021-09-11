@@ -83,8 +83,8 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        $productos = Producto::findOrFail($id);
-        return view('productos.edit', ['productos'=>$productos, 'fondo'=>'fondo1.jpg']);
+        $producto = Producto::findOrFail($id);
+        return view('productos.edit', ['producto'=>$producto, 'fondo'=>'fondo1.jpg']);
     }
 
     /**

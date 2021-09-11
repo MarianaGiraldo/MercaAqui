@@ -5,7 +5,7 @@
         <h2 class="header center-align"> {{$producto->nombre}} </h2>
         <div class="row card w-50 mx-auto">
             <div class="card-image col s6">
-                <img src="/imagenes/productos/{{$producto->img}}" width="90" height="150">
+                <img src="/imagenes/productos/{{$producto->imagen}}" width="90" height="150">
             </div>
             <div class="card-stacked">
                 <div class="card-content">

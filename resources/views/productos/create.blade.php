@@ -33,7 +33,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                            <input placeholder="500" id="cantidad_disponible" name="cantidad_disponible" type="text" class="validate">
+                            <input placeholder="500" id="cantidad_disponible" name="cantidad_disponible" type="number" class="validate">
                             <label for="cantidad_disponible">Cantidad disponible</label>
                             </div>
                         </div>
