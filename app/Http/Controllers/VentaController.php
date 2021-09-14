@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use App\Models\Venta;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -83,10 +84,29 @@ class VentaController extends Controller
     public function show($id)
     {
         $venta=Venta::findOrFail($id);
+        $vendedor = User::findOrFail($venta->vendedor_id);
+        $producto_ventas=DB::table('producto_venta')
+            ->where('venta_id', $venta->id)->get();
+
+        $productos=array();
+        $total = 0;
+
+        foreach ($producto_ventas as $producto_ventas) {
+            $producto = Producto::findOrFail($producto_ventas->producto_id);
+            $producto_array = (array)$producto;
+            $producto_array['cantidad'] = $producto_ventas->cantidad;
+            $producto_array['nombre'] = $producto->nombre;
+            $producto_array['precio'] = $producto->precio;
+            array_push($productos, $producto_array);
+            $total = $total + $producto_array['precio'] * $producto_array['cantidad'];
+        }
+
         return view('ventas.show', [
             'venta'=>$venta,
-            'ventas'=>Venta::all(),
-            'fondo'=>'fondo1.jpg']);
+            'productos'=>$productos,
+            'total'=>$total,
+            'vendedor'=>$vendedor,
+            'fondo'=>'fondo1.jpg']);            
     }
 
     /**

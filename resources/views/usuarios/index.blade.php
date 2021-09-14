@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="container w-75 pr-5">
-            <a class="btn-floating btn-large waves-effect waves-light red right pt-2" style="width: 6vw; height: 6vw;" href="usuarios/create"><i class="material-icons large" style="font-size: 6vw">add</i></a>
+            <a class="btn-floating btn-large waves-effect waves-light light-blue lighten-2 right pt-2" style="width: 6vw; height: 6vw;" href="usuarios/create"><i class="material-icons large" style="font-size: 6vw">add</i></a>
         </div>
     </div>
 </div>

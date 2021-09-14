@@ -26,7 +26,7 @@
                             <td >{{$venta->fecha_venta}} </td>
                             <td >{{$venta->vendedor_id}} </td>
                             <td >{{$venta->nombre_cliente}} </td>
-                            <td><a href="usuarios/{{$venta->id}}" class="btn btn-success">View venta</a></td>
+                            <td><a href="ventas/{{$venta->id}}" class="btn btn-success">View venta</a></td>
                         </tr>
                     @endforeach
                     </tbody>
