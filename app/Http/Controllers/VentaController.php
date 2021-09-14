@@ -118,7 +118,13 @@ class VentaController extends Controller
     public function edit($id)
     {
         $venta = Venta::findOrFail($id);
-        return view('ventas.edit', ['ventas'=>$venta, 'fondo'=>'fondo1.jpg']);
+        $productos = Producto::all();
+        $producto_ventas = DB::table('producto_venta');
+        return view('ventas.edit', [
+            'venta'=>$venta, 
+            'producto_ventas'=>$producto_ventas, 
+            'productos'=>$productos, 
+            'fondo'=>'fondo1.jpg']);
     }
 
     /**
@@ -130,12 +136,33 @@ class VentaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $ventaUpdt = Venta::find($id);
-        $ventaUpdt ->fecha_venta = $request->get('fecha_venta');
-        $ventaUpdt ->nombre_cliente = $request->get('nombre_cliente');
-        $ventaUpdt ->vendedor_id = $request->get('vendedor_id');
-        $ventaUpdt -> save();
+        $validator = Validator::make($request->all(), [
+            'fecha_venta'=>'required',
+            'nombre_cliente'=>'required',
+            'productos' =>'required | min:1'
+        ]);
+        $ventaUpd = Venta::findOrFail($id);
+        $ventaUpd ->fecha_venta = $request->get('fecha_venta');
+        $ventaUpd ->nombre_cliente = $request->get('nombre_cliente');
+        $ventaUpd -> save();
 
+        $productosChecked = $request->productos;
+
+        foreach ($productosChecked as $productoId) {
+            $producto = Producto::findOrFail($productoId);
+            $cantidad = $request->get($productoId);
+            $producto->cantidad_disponible = $producto->cantidad_disponible + ( 
+                DB::table('producto_venta')
+                ->where('producto_id', $productoId) 
+                ->where('venta_id', $ventaUpd->id)->value('cantidad') - $cantidad);
+                
+            $producto-> save();
+
+            DB::table('producto_venta')
+              ->where('producto_id', $productoId) 
+              ->where('venta_id', $ventaUpd->id)
+              ->update(['cantidad' => $cantidad]);
+        }
         return redirect('/ventas');
     }
 
