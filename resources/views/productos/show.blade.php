@@ -14,11 +14,10 @@
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
-                            <p>Nombre: {{$producto->nombre}} </p>
-                            <p>Tipo: {{$producto->tipo}} </p>
-                            <p>Precio: {{$producto->precio}} </p>
-                            <p>Tipo: {{$producto->tipo}} </p>
-                            <p>Cantidad Disponible: {{$producto->cantidad_disponible}} </p>
+                            <p class="m-2">Nombre: {{$producto->nombre}} </p>
+                            <p class="m-2">Tipo: {{$producto->tipo}} </p>
+                            <p class="m-2">Precio: {{$producto->precio}} </p>
+                            <p class="m-2">Cantidad Disponible: {{$producto->cantidad_disponible}} </p>
                         </div>
                         <div class="card-action">
                             <a href="/productos/{{$producto->id}}/edit" class="btn blue lighten-3">Editar</a>

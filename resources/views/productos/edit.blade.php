@@ -65,9 +65,9 @@
                             <button type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
                                 {{ __('Guardar') }}
                             </button>
-                            <button href="/productos" class="waves-effect waves-light orange lighten-2 btn">
+                            <a href="/productos/{{$producto->id}}" class="waves-effect waves-light orange lighten-2 btn">
                                 {{ __('Regresar') }}
-                            </button>
+                            </a>
                         </div>
                     </form>
                 </div>
