@@ -151,13 +151,19 @@ class VentaController extends Controller
         foreach ($productosChecked as $productoId) {
             $producto = Producto::findOrFail($productoId);
             $cantidad = $request->get($productoId);
-            $producto->cantidad_disponible = $producto->cantidad_disponible + ( 
-                DB::table('producto_venta')
-                ->where('producto_id', $productoId) 
-                ->where('venta_id', $ventaUpd->id)->value('cantidad') - $cantidad);
-                
-            $producto-> save();
-
+            $producto_venta = DB::table('producto_venta')
+                            ->where('producto_id', $productoId) 
+                            ->where('venta_id', $ventaUpd->id);
+            if($producto_venta->doesntExist()){
+                $cantidad = $request->get($productoId);
+                $producto->cantidad_disponible = $producto->cantidad_disponible - $cantidad;
+                $producto-> save();
+                $ventaUpd->producto()->attach($producto->id);
+            }else{
+                $producto->cantidad_disponible = $producto->cantidad_disponible + 
+                                                ($producto_venta->value('cantidad') - $cantidad);
+                $producto-> save();
+            }
             DB::table('producto_venta')
               ->where('producto_id', $productoId) 
               ->where('venta_id', $ventaUpd->id)
