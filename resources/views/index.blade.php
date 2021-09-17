@@ -15,10 +15,46 @@
     </div>
 </div>
 <div class="section container">
-    <h1>Home</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab architecto doloribus nihil, sunt debitis beatae voluptas similique sint earum blanditiis ullam ad? Nobis incidunt assumenda cum, ab molestias nam?</p>
-    <br><br><br><br>
+  <br><br>
+  <div class="row">
+    <div class="col s6">
+      <h1>Productos frescos</h1>
+      <br>
+      <p>
+        Nuestros productos siempre son tratados y transportados de la mejor manera mas inocua posible
+        garantizando asi que siempre obtenga un producto fresco directamente traido del campo.
+      </p>
+      <br><br><br><br>
+
+    </div>
+    <div class="col s6 ">
+      <img src="imagenes/fresh.jpg" alt="Fresh_img">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="col s6">
+        <img src="imagenes/quality.png" alt="Quality_img" height="350px" width="500px">
+      </div>     
+    <div class="col s6 ">
+      <h1>Productos de calidad</h1>
+      <br>
+      <p>
+        Tu alimentacion importa, y por eso nos preocupamos por ofrecer la mejor calidad y variedad en productos
+        seleccionados para que siempre tengas lo mejor al alcance de tu mano.
+      </p>
+
+    </div>
+  </div>
 </div>
+<div class="parallax-container mt-0">
+    <div class="parallax-index">
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
+
 @else
 <br><br>
 <div class="row center container w-50 m-auto">
