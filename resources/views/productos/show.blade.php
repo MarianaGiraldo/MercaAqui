@@ -6,7 +6,7 @@
         <br>
         <br>
         <br>
-        <div class="card-panel orange lighten-3 w-50 m-auto p-1 rounded h-50">
+        <div class="card-panel orange lighten-3 w-50 m-auto p-1 rounded h-auto">
             <div class="col s12">
                 <h2 class="header center-align"> {{$producto->nombre}} </h2>
                 <div class="row card w-100 mx-auto">
@@ -21,8 +21,8 @@
                             <p class="m-2">Cantidad Disponible: {{$producto->cantidad_disponible}} </p>
                         </div>
                         <div class="card-action">
-                            <a href="/productos/{{$producto->id}}/edit" class="btn blue lighten-3">Editar</a>
-                            <a href="/productos/{{$producto->id}}/drop" class="btn amber lighten-3">Eliminar</a>
+                            <a href="/productos/{{$producto->id}}/edit" class="waves-effect waves-light btn blue lighten-3">Editar</a>
+                            <a href="/productos/{{$producto->id}}/drop" class="waves-effect waves-light btn amber lighten-3">Eliminar</a>
                         </div>
                     </div>
                 </div>
