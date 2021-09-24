@@ -4,10 +4,10 @@
 <div class="parallax-container mt-0">
     <div class="parallax-index">
         <br><br><br>
-        <div class="card-panel orange lighten-3 w-50 m-auto  rounded h-auto">
+        <div class="card-panel bg-light w-50 m-auto  rounded h-auto">
             <h2 class="header center-align">Borrar producto {{$dropProduct->nombre}} </h2>
             <div class="row center container m-auto">
-                <div class="card red lighten-2">
+                <div class="card orange accent-2">
                     <form action="{{ route('productos.destroy', $dropProduct->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
