@@ -116,6 +116,7 @@
         </nav>
 
         <main class="mt-0">
+            <br><br><br>
             @yield('content')
         </main>
         <footer class="page-footer" style="background-color: #1d80f7">
