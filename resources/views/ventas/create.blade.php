@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-@role('Admin')
+@hasanyrole('Admin|Vendedor')
 <div class="container">
     @if($errors->any())
     <div class="w-75 mx-auto">
