@@ -1,10 +1,9 @@
 @extends('layouts.app')
 @section('content')
 @role('Admin')
-<br><br><br>
 <div class="parallax-container mt-0">
     <div class="parallax-index">
-        <br>
+        <br><br><br>
         <div class="w-50 m-auto p-1 rounded">
             <div class="card teal lighten-3">
                 <div class="card-content white-text">

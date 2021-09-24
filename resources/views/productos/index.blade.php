@@ -1,12 +1,9 @@
 @extends('layouts.app')
 @section('content')
 @role('Admin')
-<br><br><br>
 <div class="parallax-container mt-0">
     <div class="parallax-index">
-        <br>
-        <br>
-        <br>
+        <br><br><br>
         <div class="bg-light w-50 m-auto p-1 rounded h-50">
             <div class="col overflow-auto h-100">
                 <h2 class="center-align sticky-top bg-light">Productos</h2>

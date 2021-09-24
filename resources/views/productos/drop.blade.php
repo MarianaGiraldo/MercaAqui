@@ -3,9 +3,7 @@
 @role('Admin')
 <div class="parallax-container mt-0">
     <div class="parallax-index">
-        <br>
-        <br>
-        <br>
+        <br><br><br>
         <div class="card-panel orange lighten-3 w-50 m-auto  rounded h-auto">
             <h2 class="header center-align">Borrar producto {{$dropProduct->nombre}} </h2>
             <div class="row center container m-auto">
@@ -17,7 +15,7 @@
                             <span for="delete" class="card-title">¿Estas seguro que deseas eliminar este producto?</span>
                         </div>
                         <div class="card-action">
-                            <a typ="submit" class="waves-effect waves-light btn orange lighten-3">Eliminar</a>
+                            <button typ="submit" class="waves-effect waves-light btn orange lighten-3">Eliminar</button>
                             <a href="/productos/{{$dropProduct->id}} "
                                 class="waves-effect waves-light btn blue lighten-3">Regresar</a>
                         </div>

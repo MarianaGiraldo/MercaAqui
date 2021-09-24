@@ -1,11 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<br><br><br>
 <div class="parallax-container mt-0">
     <div class="parallax-index">
-        <br>
-        <br>
-        <br>
+        <br><br><br>
         <div class="card-panel orange lighten-3 w-50 m-auto p-1 rounded h-auto">
             <div class="col s12">
                 <h2 class="header center-align"> {{$producto->nombre}} </h2>
