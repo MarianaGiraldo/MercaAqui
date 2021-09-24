@@ -1,14 +1,17 @@
 @extends('layouts.app')
 @section('content')
-@role('Admin')
-<br><br><br>
+@hasanyrole('Admin|Vendedor')
 <div class="parallax-container mt-0">
     <div class="parallax-index">
         <br>
         <div class="w-50 m-auto p-1 rounded">
             <div class="card teal lighten-3">
                 <div class="card-content white-text">
+                    @role('Vendedor')
                     <h1 class="card-title fw-bold">Información del vendedor {{$user->id}}</h1>
+                    @else
+                    <h1 class="card-title fw-bold">Información del Administrador {{$user->id}}</h1>
+                    @endrole
                     <br>
                     <h5 class="col d-inline">Nombre:</h5>
                     <p class="col d-inline">{{$user->nombre}}</p>
@@ -25,11 +28,13 @@
                     <h5 class="col d-inline">Fecha de nacimiento:</h5>
                     <p class="col d-inline">{{$user->fecha_nacimiento}}</p>
                 </div>
+                @role('Admin')
                 <div class="card-action">
                     <a href="/usuarios/{{$user->id}}/edit" class="waves-effect waves-light btn-success btn">Editar</a>
                     <a href="/usuarios/{{$user->id}}/drop"
                         class="waves-effect waves-light btn right btn-danger">Borrar</a>
                 </div>
+                @endrole
                 <a href="/usuarios" class="waves-effect waves-light btn btn-warning">Regresar</a>
             </div>
 
@@ -50,5 +55,5 @@
         </div>
     </div>
 </div>
-@endrole
+@endhasanyrole
 @endsection

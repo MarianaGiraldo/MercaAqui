@@ -98,6 +98,7 @@
                                     style="font-family: MarkingPen; color:#f7941d; font-size: 5vh">
                                     {{ Auth::user()->nombre }}
                                 </a>
+
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
@@ -107,7 +108,9 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+                                    <a class="dropdown-item" href="/usuarios/{{Auth::user()->id}}">Mi perfil </a>
                                 </div>
+                                    
                             </li>
                         @endguest
                     </ul>
