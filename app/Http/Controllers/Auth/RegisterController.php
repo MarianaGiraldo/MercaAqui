@@ -75,11 +75,8 @@ class RegisterController extends Controller
             'fecha_nacimiento' => $data['fecha_nacimiento'],
             'password' => Hash::make($data['password']),
         ]);
-        if ($user->is_admin) {
-            $user->assignRole('Admin');
-        }else {
            $user->assignRole('Vendedor');
-        }
+
         return $user;
     }
 }

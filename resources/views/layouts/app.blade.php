@@ -47,7 +47,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md shadow-sm " role="navigation"
+        <nav class="navbar navbar-expand-md shadow-sm fixed-top" role="navigation"
             style="background-color: #1d80f7; height: 12vh">
             <div class="container">
                 <div class="row mt-2 pt-1">

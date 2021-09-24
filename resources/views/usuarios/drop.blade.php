@@ -1,9 +1,11 @@
 @extends('layouts.app')
 @section('content')
 @role('Admin')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<br><br><br>
+<div class="parallax-container mt-0">
+    <div class="parallax-index">
+        <br><br><br>
+        <div class="w-50 m-auto">
             <div class="card">
                 <div class="card-header">Eliminar usuario: {{$dropUser->nombre}} {{$dropUser->apellido}} </div>
 
@@ -40,3 +42,4 @@
     </div>
 </div>
 @endsection
+@endrole
