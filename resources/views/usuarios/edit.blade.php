@@ -78,24 +78,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="fecha_nacimiento"
-                                class="col-md-4 col-form-label text-md-right">{{ __('Fecha de nacimiento') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="fecha_nacimiento" type="date"
-                                    class="form-control @error('fecha_nacimiento') is-invalid @enderror"
-                                    name="fecha_nacimiento" value="{{$user->fecha_nacimiento}}" required
-                                    autocomplete="fecha_nacimiento">
-
-                                @error('fecha_nacimiento')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
                         @role('Admin')
+                        @if (Auth::user()->id != $user->id)
                         <div class="form-group row">
                             <label for="is_admin"
                                 class="col-md-4 col-form-label text-md-right">{{ __('¿Es administrador?') }}</label>
@@ -116,6 +100,7 @@
                                 @enderror
                             </div>
                         </div>
+                        @endif
                         @endrole
 
                         <div class="form-group row">
@@ -144,7 +129,6 @@
                                     name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

@@ -98,9 +98,10 @@ class UserController extends Controller
         $userUpdt ->email = $request->get('email');
         $userUpdt ->password = Hash::make($request->get('password'));
         $userUpdt ->celular = $request->get('celular');
-        $userUpdt ->fecha_nacimiento = $request->get('fecha_nacimiento');
-        $is_admin = $request->is_admin === 'true' ? true: false;
-        $userUpdt ->is_admin = $is_admin;
+        if ($request->is_admin != null) {
+            $is_admin = $request->is_admin === 'true' ? true: false;
+            $userUpdt ->is_admin = $is_admin;
+        };        
         $userUpdt -> save();
 
         if ($userUpdt->is_admin) {

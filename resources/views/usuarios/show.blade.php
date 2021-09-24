@@ -7,11 +7,11 @@
         <div class="w-50 m-auto p-1 rounded">
             <div class="card teal lighten-3">
                 <div class="card-content white-text">
-                    @role('Vendedor')
-                    <h1 class="card-title fw-bold">Información del vendedor {{$user->id}}</h1>
-                    @else
+                    @if($user->is_admin)
                     <h1 class="card-title fw-bold">Información del Administrador {{$user->id}}</h1>
-                    @endrole
+                    @else
+                    <h1 class="card-title fw-bold">Información del Vendedor {{$user->id}}</h1>
+                    @endif
                     <br>
                     <h5 class="col d-inline">Nombre:</h5>
                     <p class="col d-inline">{{$user->nombre}}</p>
@@ -28,13 +28,16 @@
                     <h5 class="col d-inline">Fecha de nacimiento:</h5>
                     <p class="col d-inline">{{$user->fecha_nacimiento}}</p>
                 </div>
-                @role('Admin')
+                
                 <div class="card-action">
                     <a href="/usuarios/{{$user->id}}/edit" class="waves-effect waves-light btn-success btn">Editar</a>
-                    <a href="/usuarios/{{$user->id}}/drop"
-                        class="waves-effect waves-light btn right btn-danger">Borrar</a>
+                    @role('Admin')
+                    @if (Auth::user()->id != $user->id)
+                        <a href="/usuarios/{{$user->id}}/drop"
+                            class="waves-effect waves-light btn right btn-danger">Borrar</a>
+                    @endif
+                    @endrole
                 </div>
-                @endrole
                 <a href="/usuarios" class="waves-effect waves-light btn btn-warning">Regresar</a>
             </div>
 
