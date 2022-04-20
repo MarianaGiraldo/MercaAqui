@@ -126,11 +126,10 @@
             </div>
         </nav>
 
-        <main class="mt-0">
-            <br><br><br>
+        <main class="mt-0 h-100 d-block">
             @yield('content')
         </main>
-        <footer class="page-footer" style="background-color: #2B4162">
+        <footer class="page-footer fixed-bottom" style="background-color: #2B4162">
             <div class="container">
                 <div class="row">
                     <div class="col-6">

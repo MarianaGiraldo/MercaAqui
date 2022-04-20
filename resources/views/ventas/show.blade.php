@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@hasanyrole('Admin|Vendedor')
 <div class="parallax-container mt-0">
     <div class="parallax-index">
         <br><br><br>
@@ -52,4 +53,7 @@
         </div>
     </div>
 </div>
+@else
+@include('components.authAlert')
+@endhasanyrole
 @endsection
