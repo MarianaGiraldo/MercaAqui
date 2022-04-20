@@ -21,6 +21,9 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/4ed93febb8.js" crossorigin="anonymous"></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -35,15 +38,15 @@
         @import url('/font/Akshar/Akshar-Regular.ttf');
 
         @isset($fondo) .parallax-index {
-            background-image: url('/imagenes/{{$fondo}}');
-            width: 100%;
-            height: 100vh;
-            background-attachment: fixed;
-            background-size: cover;
-        }
+                background-image: url('/imagenes/{{ $fondo }}');
+                width: 100%;
+                height: 100vh;
+                background-attachment: fixed;
+                background-size: cover;
+            }
 
         @endisset @font-face {
-            font-family: 'Akshar', sans-serif;;
+            font-family: 'Akshar', sans-serif;
             src: url('/font/Akshar/Akshar-Regular.ttf');
         }
 
@@ -55,9 +58,9 @@
         <nav class="navbar navbar-expand-lg justify-content-between fixed-top w-100 d-inline" role="navigation"
             style="background-color: #2B4162; height: 80px">
             <div class="mx-5 d-flex mt-0 h-100">
-                    <img src="/logo/logo.png" alt="logo" style="width:120px; height:100%" class="col mx-0 my-auto">
-                    <a id="logo-container" href="/" class=" navbar-brand col"
-                        style="font-family: Akshar; color:#ff9b42; font-size: 60px">Merca Aqui</a>
+                <img src="/logo/logo.png" alt="logo" style="width:120px; height:100%" class="col mx-0 my-auto">
+                <a id="logo-container" href="/" class=" navbar-brand col"
+                    style="font-family: Akshar; color:#ff9b42; font-size: 60px">Merca Aqui</a>
 
                 <button class="col navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -105,14 +108,15 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
+                                                                        document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
                                         @csrf
                                     </form>
-                                    <a class="dropdown-item" href="/usuarios/{{Auth::user()->id}}">Mi perfil </a>
+                                    <a class="dropdown-item" href="/usuarios/{{ Auth::user()->id }}">Mi perfil </a>
                                 </div>
 
                             </li>
@@ -129,39 +133,70 @@
         <footer class="page-footer" style="background-color: #2B4162">
             <div class="container">
                 <div class="row">
-                    <div class="col l6 s12">
+                    <div class="col-6">
                         <h5 style="font-family: Akshar; color:#ff9b42; font-size: 30px">Merca aqui</h5>
                         <ul>
-                            <li><a class="grey-text text-lighten-4" href="/productos"><i
-                                        class="tiny material-icons" style="color:#ff9b42">check</i> Productos</a></li>
-                            <li><a class="grey-text text-lighten-4" href="/usuarios"><i
-                                        class="tiny material-icons" style="color:#ff9b42">check</i> Vendedores</a></li>
-                            <li><a class="grey-text text-lighten-4" href="/ventas"><i
-                                        class="tiny material-icons" style="color:#ff9b42">check</i> Ventas</a></li>
+                            <li><a class="grey-text text-lighten-4" href="/productos"><i class="tiny material-icons"
+                                        style="color:#ff9b42">check</i> Productos</a></li>
+                            <li><a class="grey-text text-lighten-4" href="/usuarios"><i class="tiny material-icons"
+                                        style="color:#ff9b42">check</i> Vendedores</a></li>
+                            <li><a class="grey-text text-lighten-4" href="/ventas"><i class="tiny material-icons"
+                                        style="color:#ff9b42">check</i> Ventas</a></li>
                         </ul>
                     </div>
-                    <div class="col l4 offset-l2 s12">
+                    <div class="col-6 align-right text-right">
                         <h5 style="font-family: Akshar; color:#ff9b42; font-size: 30px">Contáctenos</h5>
                         <ul>
-                            <li>
-                                <a class="grey-text text-lighten-3" href="#!"><i
-                                        class="tiny material-icons" style="color:#ff9b42">home</i>Cra 9 # 11-26 </a>
-                            </li>
-                            <li><a class="grey-text text-lighten-3" href="#!"><i
-                                        class="tiny material-icons" style="color:#ff9b42">settings_cell</i> 319587458</a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!"><i
-                                        class="tiny material-icons" style="color:#ff9b42">local_phone</i> 8258745</a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!"><i
-                                        class="tiny material-icons" style="color:#ff9b42">email</i>infomercaaqui@gmail.com</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Cra 9 # 11-26 <i
+                                        class="mx-1 fa-solid fa-house" style="color:#ff9b42"></i></a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">319587458<i
+                                        class="mx-1 fa-solid fa-mobile" style="color:#ff9b42"></i></a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">8258745</a><i
+                                    class="mx-1 fa-solid fa-phone-flip" style="color:#ff9b42"></i></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">infomercaaqui@gmail.com<i
+                                        class="mx-1 fa-solid fa-envelope" style="color:#ff9b42"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="footer-copyright" style="background-color: #2B4162">
-                <div class="container">
-                    © 2021 Todos los derechos reservados
-                </div>
+            <!-- Grid container -->
+            <div class="container p-2 pb-0 text-center text-white">
+                <!-- Section: Social media -->
+                <section class="mb-1">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating mx-3 p-0 rounded-circle" href="#!" role="button"><i
+                            class="fab fa-facebook-f" style="font-size: 15px"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-light btn-floating mx-3 p-0 rounded-circle" href="#!" role="button"><i
+                            class="fab fa-twitter" style="font-size: 15px"></i></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-outline-light btn-floating mx-3 p-0 rounded-circle" href="#!" role="button"><i
+                            class="fab fa-google" style="font-size: 15px"></i></a>
+
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating mx-3 p-0 rounded-circle" href="#!" role="button"><i
+                            class="fab fa-instagram" style="font-size: 15px"></i></a>
+
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-light btn-floating mx-3 p-0 rounded-circle" href="#!" role="button"><i
+                            class="fab fa-linkedin-in" style="font-size: 15px"></i></a>
+
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating mx-3 p-0 rounded-circle" href="#!" role="button"><i
+                            class="fab fa-github" style="font-size: 15px"></i></a>
+                </section>
+                <!-- Section: Social media -->
             </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2022 Copyright:
+                <a class="text-white" href="https://github.com/MarianaGiraldo/MercaAqui">MercaAqui</a>
+            </div>
+            <!-- Copyright -->
         </footer>
     </div>
 </body>
