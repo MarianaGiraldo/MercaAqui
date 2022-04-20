@@ -47,28 +47,27 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md shadow-sm fixed-top" role="navigation"
-            style="background-color: #1d80f7; height: 12vh">
-            <div class="container">
-                <div class="row mt-2 pt-1">
-                    <img src="/logo/logo.png" alt="logo" style="width: 17vh" class="col">
+        <nav class="navbar navbar-expand-lg justify-content-between fixed-top w-100 d-inline" role="navigation"
+            style="background-color: #1d80f7; height: 80px">
+            <div class="mx-5 d-flex mt-0 h-100">
+                    <img src="/logo/logo.png" alt="logo" style="width:120px; height:100%" class="col mx-0 my-auto">
                     <a id="logo-container" href="/" class=" navbar-brand col"
-                        style="font-family: MarkingPen; color:#f7941d; font-size: 10vh">Merca Aqui</a>
-                </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        style="font-family: MarkingPen; color:#f7941d; font-size: 70px">Merca Aqui</a>
+
+                <button class="col navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="col collapse navbar-collapse float-right" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto float-right">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -95,7 +94,7 @@
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre
-                                    style="font-family: MarkingPen; color:#f7941d; font-size: 5vh">
+                                    style="font-family: MarkingPen; color:#f7941d; font-size: 40px">
                                     {{ Auth::user()->nombre }}
                                 </a>
 
@@ -110,7 +109,7 @@
                                     </form>
                                     <a class="dropdown-item" href="/usuarios/{{Auth::user()->id}}">Mi perfil </a>
                                 </div>
-                                    
+
                             </li>
                         @endguest
                     </ul>
@@ -140,14 +139,14 @@
                         <h5 style="font-family: MarkingPen; color:#f7941d; font-size: 5vh">Contáctenos</h5>
                         <ul>
                             <li>
-                                <a class="grey-text text-lighten-3" href="#!"><i 
+                                <a class="grey-text text-lighten-3" href="#!"><i
                                         class="tiny material-icons" style="color:#f7941d">home</i>Cra 9 # 11-26 </a>
                             </li>
                             <li><a class="grey-text text-lighten-3" href="#!"><i
                                         class="tiny material-icons" style="color:#f7941d">settings_cell</i> 319587458</a></li>
                             <li><a class="grey-text text-lighten-3" href="#!"><i
                                         class="tiny material-icons" style="color:#f7941d">local_phone</i> 8258745</a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!"><i 
+                            <li><a class="grey-text text-lighten-3" href="#!"><i
                                         class="tiny material-icons" style="color:#f7941d">email</i>infomercaaqui@gmail.com</a></li>
                         </ul>
                     </div>
