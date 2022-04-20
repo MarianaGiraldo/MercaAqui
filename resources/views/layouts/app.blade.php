@@ -122,7 +122,7 @@
             <br><br><br>
             @yield('content')
         </main>
-        <footer class="page-footer" style="background-color: #1d80f7">
+        <footer class="page-footer fixed-bottom" style="background-color: #1d80f7">
             <div class="container">
                 <div class="row">
                     <div class="col l6 s12">
