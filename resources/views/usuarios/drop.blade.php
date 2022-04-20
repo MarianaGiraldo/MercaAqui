@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
 @role('Admin')
-<div class="parallax-container mt-0">
+<div>
     <div class="parallax-index">
         <br><br><br><br><br><br>
-        <div class="card-panel bg-light w-50 m-auto  rounded h-auto">
+        <div class="card-panel orange lighten-3 bg-light w-50 m-auto  rounded h-auto">
             <h2 class="header center-align">Eliminar usuario: {{$dropUser->nombre}} {{$dropUser->apellido}} </h2>
             <div class="row center container m-auto">
                 <div class="card orange accent-2">

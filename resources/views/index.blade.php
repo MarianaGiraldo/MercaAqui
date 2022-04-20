@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @hasanyrole('Admin|Vendedor')
-<div class="parallax-container mt-0">
+<div>
     <div class="parallax-index">
       <br><br><br>
         <div class="bg-light w-25 m-auto p-3 rounded">
@@ -45,7 +45,7 @@
   </div>
 </div>
 <br><br><br>
-<div class="parallax-container mt-0">
+<div>
     <div class="parallax-index">
         <br>
         <br>

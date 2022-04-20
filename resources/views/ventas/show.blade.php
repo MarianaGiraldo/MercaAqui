@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
 @hasanyrole('Admin|Vendedor')
-<div class="parallax-container mt-0">
+<div>
     <div class="parallax-index">
         <br><br><br>
-        <div class="card-panel orange lighten-3 w-50 m-auto p-1 rounded h-50">
+        <div class="card-panel orange lighten-3 orange lighten-3 w-50 m-auto p-1 rounded h-50">
             <div class="col overflow-auto h-100">
                 <div class="col s12">
                     <h2 class="header center-align"> {{$venta->nombre}} </h2>
@@ -26,18 +26,18 @@
                                         </tr>
                                     </thead>
                                     @foreach($productos as $producto)
-                                    <tr>                        
+                                    <tr>
                                         <td>{{$producto['cantidad']}}</td>
                                         <td>{{$producto['nombre']}}</td>
                                         <td>{{$producto['precio']}}</td>
                                         <td>{{$producto['precio'] * $producto['cantidad']}}</td>
-                                    </tr>                       
-                                    @endforeach   
-                                                        
+                                    </tr>
+                                    @endforeach
+
                                 </table>
                                 <div class="right mt-4">
                                     <h3 class="d-inline m-3">Total</h3>
-                                    <p class="d-inline m-5">{{$total}}</p> 
+                                    <p class="d-inline m-5">{{$total}}</p>
                                 </div>
                             </div>
                             <div class="card-action">
@@ -49,7 +49,7 @@
                 <div class="col-md-6 offset-md-5">
                     <a href="/ventas" class="waves-effect waves-light light-blue lighten-2 btn">{{ __('Regresar') }}</a>
                 </div>
-            </div>         
+            </div>
         </div>
     </div>
 </div>

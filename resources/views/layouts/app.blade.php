@@ -126,7 +126,7 @@
             </div>
         </nav>
 
-        <main class="mt-0 h-100 d-block">
+        <main class="mt-0 h-100 d-block" style="padding-top: 80px">
             @yield('content')
         </main>
         <footer class="page-footer fixed-bottom" style="background-color: #2B4162">

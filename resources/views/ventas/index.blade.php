@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @hasanyrole('Admin|Vendedor')
-<div class="parallax-container mt-0">
+<div>
     <div class="parallax-index">
       <br><br><br>
         <div class="bg-light w-50 m-auto p-1 rounded h-50">

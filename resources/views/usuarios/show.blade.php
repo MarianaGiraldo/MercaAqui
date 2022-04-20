@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @hasanyrole('Admin|Vendedor')
-<div class="parallax-container mt-0">
+<div>
     <div class="parallax-index">
         <br><br><br>
         <div class="w-50 m-auto p-1 rounded">
@@ -28,7 +28,7 @@
                     <h5 class="col d-inline">Fecha de nacimiento:</h5>
                     <p class="col d-inline">{{$user->fecha_nacimiento}}</p>
                 </div>
-                
+
                 <div class="card-action">
                     <a href="/usuarios/{{$user->id}}/edit" class="waves-effect waves-light btn-success btn">Editar</a>
                     @role('Admin')
