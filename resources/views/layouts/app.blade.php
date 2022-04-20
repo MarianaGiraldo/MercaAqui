@@ -24,11 +24,16 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar&display=swap" rel="stylesheet">
 
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
+        @import url('/font/Akshar/Akshar-Regular.ttf');
+
         @isset($fondo) .parallax-index {
             background-image: url('/imagenes/{{$fondo}}');
             width: 100%;
@@ -38,8 +43,8 @@
         }
 
         @endisset @font-face {
-            font-family: MarkingPen;
-            src: url('/font/Marking Pen.ttf');
+            font-family: 'Akshar', sans-serif;;
+            src: url('/font/Akshar/Akshar-Regular.ttf');
         }
 
     </style>
@@ -47,12 +52,12 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg justify-content-between fixed-top w-100 d-block" role="navigation"
-            style="background-color: #1d80f7; height: 80px">
+        <nav class="navbar navbar-expand-lg justify-content-between fixed-top w-100 d-inline" role="navigation"
+            style="background-color: #2B4162; height: 80px">
             <div class="mx-5 d-flex mt-0 h-100">
                     <img src="/logo/logo.png" alt="logo" style="width:120px; height:100%" class="col mx-0 my-auto">
                     <a id="logo-container" href="/" class=" navbar-brand col"
-                        style="font-family: MarkingPen; color:#f7941d; font-size: 70px">Merca Aqui</a>
+                        style="font-family: Akshar; color:#ff9b42; font-size: 60px">Merca Aqui</a>
 
                 <button class="col navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -94,7 +99,7 @@
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre
-                                    style="font-family: MarkingPen; color:#f7941d; font-size: 40px">
+                                    style="font-family: Akshar; color:#ff9b42; font-size: 30px">
                                     {{ Auth::user()->nombre }}
                                 </a>
 
@@ -122,38 +127,38 @@
                 @yield('content')
             </div>
         </main>
-        <footer class="page-footer fixed-bottom" style="background-color: #1d80f7">
+        <footer class="page-footer" style="background-color: #2B4162">
             <div class="container">
                 <div class="row">
                     <div class="col l6 s12">
-                        <h5 style="font-family: MarkingPen; color:#f7941d; font-size: 5vh">Merca aqui</h5>
+                        <h5 style="font-family: Akshar; color:#ff9b42; font-size: 30px">Merca aqui</h5>
                         <ul>
                             <li><a class="grey-text text-lighten-4" href="/productos"><i
-                                        class="tiny material-icons" style="color:#f7941d">check</i> Productos</a></li>
+                                        class="tiny material-icons" style="color:#ff9b42">check</i> Productos</a></li>
                             <li><a class="grey-text text-lighten-4" href="/usuarios"><i
-                                        class="tiny material-icons" style="color:#f7941d">check</i> Vendedores</a></li>
+                                        class="tiny material-icons" style="color:#ff9b42">check</i> Vendedores</a></li>
                             <li><a class="grey-text text-lighten-4" href="/ventas"><i
-                                        class="tiny material-icons" style="color:#f7941d">check</i> Ventas</a></li>
+                                        class="tiny material-icons" style="color:#ff9b42">check</i> Ventas</a></li>
                         </ul>
                     </div>
                     <div class="col l4 offset-l2 s12">
-                        <h5 style="font-family: MarkingPen; color:#f7941d; font-size: 5vh">Contáctenos</h5>
+                        <h5 style="font-family: Akshar; color:#ff9b42; font-size: 30px">Contáctenos</h5>
                         <ul>
                             <li>
                                 <a class="grey-text text-lighten-3" href="#!"><i
-                                        class="tiny material-icons" style="color:#f7941d">home</i>Cra 9 # 11-26 </a>
+                                        class="tiny material-icons" style="color:#ff9b42">home</i>Cra 9 # 11-26 </a>
                             </li>
                             <li><a class="grey-text text-lighten-3" href="#!"><i
-                                        class="tiny material-icons" style="color:#f7941d">settings_cell</i> 319587458</a></li>
+                                        class="tiny material-icons" style="color:#ff9b42">settings_cell</i> 319587458</a></li>
                             <li><a class="grey-text text-lighten-3" href="#!"><i
-                                        class="tiny material-icons" style="color:#f7941d">local_phone</i> 8258745</a></li>
+                                        class="tiny material-icons" style="color:#ff9b42">local_phone</i> 8258745</a></li>
                             <li><a class="grey-text text-lighten-3" href="#!"><i
-                                        class="tiny material-icons" style="color:#f7941d">email</i>infomercaaqui@gmail.com</a></li>
+                                        class="tiny material-icons" style="color:#ff9b42">email</i>infomercaaqui@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="footer-copyright" style="background-color: #1d80f7">
+            <div class="footer-copyright" style="background-color: #2B4162">
                 <div class="container">
                     © 2021 Todos los derechos reservados
                 </div>
