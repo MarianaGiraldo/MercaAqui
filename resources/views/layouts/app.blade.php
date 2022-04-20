@@ -47,7 +47,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg justify-content-between fixed-top w-100 d-inline" role="navigation"
+        <nav class="navbar navbar-expand-lg justify-content-between fixed-top w-100 d-block" role="navigation"
             style="background-color: #1d80f7; height: 80px">
             <div class="mx-5 d-flex mt-0 h-100">
                     <img src="/logo/logo.png" alt="logo" style="width:120px; height:100%" class="col mx-0 my-auto">
@@ -117,9 +117,10 @@
             </div>
         </nav>
 
-        <main class="mt-0">
-            <br><br><br>
-            @yield('content')
+        <main class="mt-0 h-100 d-block">
+            <div class="m-auto">
+                @yield('content')
+            </div>
         </main>
         <footer class="page-footer fixed-bottom" style="background-color: #1d80f7">
             <div class="container">
