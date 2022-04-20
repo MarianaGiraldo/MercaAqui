@@ -5,8 +5,8 @@
     <div class="parallax-index">
       <br><br><br>
         <div class="bg-light w-25 m-auto p-3 rounded">
-            <p class="text-center" style="font-family: MarkingPen; color:#f7941d; font-size: 6vh">Merca Aqui</p>
-            <p class="text-center" style="font-family: MarkingPen; color:#f7941d; font-size: 4vh">El lugar en donde encontrarás lo que necesites</p>
+            <p class="text-center" style="font-family: Akshar; color:#ff9b42; font-size: 6vh">Merca Aqui</p>
+            <p class="text-center" style="font-family: Akshar; color:#ff9b42; font-size: 4vh">El lugar en donde encontrarás lo que necesites</p>
 
         </div>
     </div>
@@ -32,7 +32,7 @@
   <div class="row">
       <div class="col s6">
         <img src="imagenes/quality.png" alt="Quality_img" height="350px" width="500px">
-      </div>     
+      </div>
     <div class="col s6 ">
       <h1>Productos de calidad</h1>
       <br>
