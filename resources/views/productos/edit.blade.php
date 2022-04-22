@@ -45,9 +45,11 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <script>
-                                        $('select.browser-default option[value="{{$producto->tipo}}"]').attr('selected', 'true')
+                                        console.log($('option[value="{{$producto->tipo}}"]').html())
+                                        console.log('option[value="{{$producto->tipo}}"]')
+                                        $('option[value="{{$producto->tipo}}"]').prop('selected', true)
                                     </script>
-                                    <select class="browser-default" name="tipo" required >
+                                    <select id="tipo" class="browser-default" name="tipo" required >
                                         <option value="" disabled selected>Tipo de producto</option>
                                         <option value="Aseo">Aseo</option>
                                         <option value="Alimentos frescos">Alimentos frescos</option>

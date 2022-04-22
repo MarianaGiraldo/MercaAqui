@@ -15,7 +15,7 @@ class ProductSeeder extends Seeder
     public function run()
     {
         Producto::create([
-            'imagen'=>'1631399799.jfif', 
+            'imagen'=>'manzana.jpg', 
             'nombre'=>'Manzana', 
             'tipo' => 'Alimentos frescos', 
             'precio' => '1500', 
@@ -44,6 +44,11 @@ class ProductSeeder extends Seeder
             'tipo' => 'Cuidado Personal', 
             'precio' => '15000', 
             'cantidad_disponible'=> 500 ]);
-            
+        Producto::create([
+            'imagen'=>'papelHigienico.png', 
+            'nombre'=>'Papel Higienico Familia', 
+            'tipo' => 'Aseo', 
+            'precio' => '8500', 
+            'cantidad_disponible'=> 500 ]);
     }
 }
