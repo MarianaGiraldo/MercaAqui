@@ -97,6 +97,7 @@ class UserController extends Controller
         $userUpdt ->apellido = $request->get('apellido');
         $userUpdt ->email = $request->get('email');
         $userUpdt ->celular = $request->get('celular');
+        $userUpdt ->fecha_nacimiento = $request->get('fecha_nacimiento');
         if ($request->password != null ) {
             $userUpdt ->password = Hash::make($request->get('password'));
         };     

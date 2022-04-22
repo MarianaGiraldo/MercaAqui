@@ -46,7 +46,7 @@
 
                         <div class="form-group row">
                             <label for="email"
-                                class="col-md-4 col-form-label text-md-right">{{ __('email Electrónico') }}</label>
+                                class="col-md-4 col-form-label text-md-right">{{ __('Correo') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="text"
@@ -71,6 +71,22 @@
                                     value="{{$user->celular}}" required autocomplete="celular" autofocus>
 
                                 @error('celular')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fecha_nacimiento"
+                                class="col-md-4 col-form-label text-md-right">{{ __('Fecha de Nacimiento') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="fecha_nacimiento" type="date"
+                                    class="form-control @error('fecha_nacimiento') is-invalid @enderror" name="fecha_nacimiento"
+                                    value="{{$user->fecha_nacimiento}}" required autocomplete="fecha_nacimiento" autofocus>
+
+                                @error('fecha_nacimiento')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -132,9 +148,10 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Editar') }}
+                                    {{ __('Guardar') }}
                                 </button>
                             </div>
+                            <a href="/usuarios" class="waves-effect waves-light btn btn-danger float-right">Regresar</a>
                         </div>
                     </form>
                 </div>
