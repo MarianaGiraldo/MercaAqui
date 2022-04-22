@@ -19,7 +19,7 @@ class CreateUsersColumns extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('celular')->nullable();
-            $table->date('fecha_nacimiento')->nullable();
+            $table->string('fecha_nacimiento')->nullable();
             $table->string('password');
             $table->boolean('is_admin')->default(false);
         });

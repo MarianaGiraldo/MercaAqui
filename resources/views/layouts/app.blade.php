@@ -34,6 +34,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/user.css') }}" rel="stylesheet">
     <style>
         @import url('/font/Akshar/Akshar-Regular.ttf');
 
@@ -129,7 +130,7 @@
         <main class="mt-0 h-100 d-block" style="padding-top: 80px">
             @yield('content')
         </main>
-        <footer class="page-footer fixed-bottom" style="background-color: #2B4162">
+        <footer class="page-footer relative-bottom" style="background-color: #2B4162">
             <div class="container">
                 <div class="row">
                     <div class="col-6">
