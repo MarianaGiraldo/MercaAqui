@@ -50,5 +50,11 @@ class ProductSeeder extends Seeder
             'tipo' => 'Aseo', 
             'precio' => '8500', 
             'cantidad_disponible'=> 500 ]);
+        Producto::create([
+            'imagen'=>'corona.png', 
+            'nombre'=>'Six Pack Corona', 
+            'tipo' => 'Bebidas', 
+            'precio' => '24500', 
+            'cantidad_disponible'=> 500 ]);
     }
 }

@@ -68,7 +68,7 @@
                                         <img src="{{ asset('imagenes/productos/'. $producto->imagen) }}"></img>
                                     @endif
                                     <!-- <input class="form-control" type="file" id="img" name="img" value="{{$producto->imagen}}" required> -->
-                                    <div class="custom-file mx-3">
+                                    <div class="custom-file mx-3 ">
                                         <input type="file" class="custom-file-input" id="img" lang="es" value="{{$producto->imagen}}">
                                         <label class="custom-file-label" for="img">Seleccionar Archivo</label>
                                     </div>
@@ -78,7 +78,6 @@
                                     {{ __('Guardar') }}
                                 </button>
                                 <a href="/productos/{{$producto->id}}" class="waves-effect waves-light btn btn-danger float-right">Regresar</a>
-
                         </form>
                     </div>
                 </div>
