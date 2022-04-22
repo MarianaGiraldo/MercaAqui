@@ -127,3 +127,21 @@ h6 {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out
 }
+
+.float{
+	position:flex;
+	width:60px;
+	height:60px;
+	float: right;
+	background-color:#71A9F7;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:15px;
+    font-size: 2rem;
+    margin: auto 15;
+}

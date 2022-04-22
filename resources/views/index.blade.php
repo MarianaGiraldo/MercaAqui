@@ -45,13 +45,6 @@
   </div>
 </div>
 <br><br><br>
-<div>
-    <div class="parallax-index">
-        <br>
-        <br>
-        <br>
-    </div>
-</div>
 
 @else
 @include('components.authAlert')
