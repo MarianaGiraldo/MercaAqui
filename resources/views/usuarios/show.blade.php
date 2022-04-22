@@ -14,7 +14,7 @@
                         <div class="col-sm-4 bg-c-lite-green user-profile">
                             <div class="card-block text-center text-white">
                                 <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div>
-                                <h6 class="f-w-600">{{$user->nombre}} {{$user->apellido}}</h6>
+                                <h4 class="f-w-600">{{$user->nombre}} {{$user->apellido}}</h4>
                                 @if($user->is_admin)
                                 <p>Administrador</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                                 @else
@@ -25,12 +25,16 @@
                         <div class="col-sm-8">
                             <div class="card-block">
                                 @if($user->is_admin)
-                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Información del Administrador No. {{$user->id}}</h6>
+                                <h5 class="m-b-20 p-b-5 b-b-default f-w-600">Información del Administrador No. {{$user->id}}</h5>
                                 @else
-                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Información del Vendedor No. {{$user->id}}</h6>
+                                <h5 class="m-b-20 p-b-5 b-b-default f-w-600">Información del Vendedor No. {{$user->id}}</h5>
                                 @endif
                                 <div class="row">
                                     <div class="col">
+                                        <p class="m-b-10 f-w-600">Nombre Completo</p>
+                                        <h6 class="text-muted f-w-400">{{$user->nombre}} {{$user->apellido}}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
                                         <p class="m-b-10 f-w-600">Correo</p>
                                         <h6 class="text-muted f-w-400">{{$user->email}}</h6>
                                     </div>

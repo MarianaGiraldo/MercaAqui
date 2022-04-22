@@ -101,11 +101,13 @@ class ProductoController extends Controller
         $productoUpdt ->tipo = $request->get('tipo');
         $productoUpdt ->precio = $request->get('precio');
         $productoUpdt ->cantidad_disponible = $request->get('cantidad_disponible');
-        $photo = $request->file('img');
-        $filename = time() . '.' . $photo->getClientOriginalExtension();
-        $destino=public_path('imagenes/productos/');
-        $request->img->move($destino, $filename);
-        $productoUpdt ->imagen = $filename;
+        if(isset($request->img)){
+            $photo = $request->file('img');
+            $filename = time() . '.' . $photo->getClientOriginalExtension();
+            $destino=public_path('imagenes/productos/');
+            $request->img->move($destino, $filename);
+            $productoUpdt->imagen = $filename;
+        };
         $productoUpdt -> save();
         return redirect('/productos');
     }
