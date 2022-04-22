@@ -24,7 +24,7 @@ class VentaController extends Controller
      */
     public function index()
     {
-        return view('ventas.index', ['ventas'=>Venta::all(), 'fondo'=>'fondo1.jpg']);
+        return view('ventas.index', ['ventas'=>Venta::all(), 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -34,7 +34,7 @@ class VentaController extends Controller
      */
     public function create()
     {
-        return view('ventas.create', ['ventas'=>Venta::all(), 'productos'=>Producto::all(), 'fondo'=>'fondo1.jpg']);
+        return view('ventas.create', ['ventas'=>Venta::all(), 'productos'=>Producto::all(), 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -69,7 +69,7 @@ class VentaController extends Controller
               ->orderBy('id', 'desc')
               ->limit(1)
               ->update(['cantidad' => $cantidad]);
-            
+
         }
 
         return redirect('/ventas');
@@ -106,7 +106,7 @@ class VentaController extends Controller
             'productos'=>$productos,
             'total'=>$total,
             'vendedor'=>$vendedor,
-            'fondo'=>'fondo1.jpg']);            
+            'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -121,10 +121,10 @@ class VentaController extends Controller
         $productos = Producto::all();
         $producto_ventas = DB::table('producto_venta');
         return view('ventas.edit', [
-            'venta'=>$venta, 
-            'producto_ventas'=>$producto_ventas, 
-            'productos'=>$productos, 
-            'fondo'=>'fondo1.jpg']);
+            'venta'=>$venta,
+            'producto_ventas'=>$producto_ventas,
+            'productos'=>$productos,
+            'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -152,7 +152,7 @@ class VentaController extends Controller
             $producto = Producto::findOrFail($productoId);
             $cantidad = $request->get($productoId);
             $producto_venta = DB::table('producto_venta')
-                            ->where('producto_id', $productoId) 
+                            ->where('producto_id', $productoId)
                             ->where('venta_id', $ventaUpd->id);
             if($producto_venta->doesntExist()){
                 $cantidad = $request->get($productoId);
@@ -160,12 +160,12 @@ class VentaController extends Controller
                 $producto-> save();
                 $ventaUpd->producto()->attach($producto->id);
             }else{
-                $producto->cantidad_disponible = $producto->cantidad_disponible + 
+                $producto->cantidad_disponible = $producto->cantidad_disponible +
                                                 ($producto_venta->value('cantidad') - $cantidad);
                 $producto-> save();
             }
             DB::table('producto_venta')
-              ->where('producto_id', $productoId) 
+              ->where('producto_id', $productoId)
               ->where('venta_id', $ventaUpd->id)
               ->update(['cantidad' => $cantidad]);
         }
@@ -186,6 +186,6 @@ class VentaController extends Controller
     public function drop($id)
     {
         $dropVenta=Venta::find($id);
-        return view('ventas.drop', ['ventas'=>$dropVenta, 'fondo'=>'fondo1.jpg']);
+        return view('ventas.drop', ['ventas'=>$dropVenta, 'fondo'=>'fondo2.jpg']);
     }
 }
