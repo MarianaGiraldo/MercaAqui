@@ -19,7 +19,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return view('productos.index', ['productos'=>Producto::all(), 'fondo'=>'fondo1.jpg']);
+        return view('productos.index', ['productos'=>Producto::all(), 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -29,7 +29,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('productos.create', ['productos'=>Producto::all(), 'fondo'=>'fondo1.jpg']);
+        return view('productos.create', ['productos'=>Producto::all(), 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -72,7 +72,7 @@ class ProductoController extends Controller
         return view('productos.show', [
             'producto'=>Producto::findOrFail($id),
             'productos'=>Producto::all(),
-            'fondo'=>'fondo1.jpg']);
+            'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -84,7 +84,7 @@ class ProductoController extends Controller
     public function edit($id)
     {
         $producto = Producto::findOrFail($id);
-        return view('productos.edit', ['producto'=>$producto, 'fondo'=>'fondo1.jpg']);
+        return view('productos.edit', ['producto'=>$producto, 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -124,6 +124,6 @@ class ProductoController extends Controller
     public function drop($id)
     {
         $dropProduct = Producto::find($id);
-        return view('productos.drop', ['dropProduct'=>$dropProduct, 'fondo'=>'fondo1.jpg']);
+        return view('productos.drop', ['dropProduct'=>$dropProduct, 'fondo'=>'fondo2.jpg']);
     }
 }

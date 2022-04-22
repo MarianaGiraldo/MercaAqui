@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('usuarios.index', ['users'=>User::where('is_admin', 0)->get(), 'fondo'=>'fondo1.jpg']);
+        return view('usuarios.index', ['users'=>User::where('is_admin', 0)->get(), 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -25,7 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('usuarios.create', ['users'=>User::all(), 'fondo'=>'fondo1.jpg']);
+        return view('usuarios.create', ['users'=>User::all(), 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -68,7 +68,7 @@ class UserController extends Controller
         $userInfo=User::findOrFail($id);
         return view('usuarios.show', [
             'user'=>$userInfo,
-            'fondo'=>'fondo1.jpg']);
+            'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -80,7 +80,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view ('usuarios.edit', ['user'=>$user, 'fondo'=>'fondo1.jpg']);
+        return view ('usuarios.edit', ['user'=>$user, 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -100,11 +100,11 @@ class UserController extends Controller
         $userUpdt ->fecha_nacimiento = $request->get('fecha_nacimiento');
         if ($request->password != null ) {
             $userUpdt ->password = Hash::make($request->get('password'));
-        };     
+        };
         if ($request->is_admin != null ) {
             $is_admin = $request->is_admin === 'true' ? true: false;
             $userUpdt ->is_admin = $is_admin;
-        };        
+        };
         $userUpdt -> save();
 
         if ($userUpdt->is_admin) {
@@ -130,6 +130,6 @@ class UserController extends Controller
     public function drop($id)
     {
         $dropUser=User::findOrFail($id);
-        return view('usuarios.drop', ['dropUser'=>$dropUser, 'fondo'=>'fondo1.jpg']);
+        return view('usuarios.drop', ['dropUser'=>$dropUser, 'fondo'=>'fondo2.jpg']);
     }
 }
