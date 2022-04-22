@@ -54,7 +54,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" style="min-height: 100vh">
         <nav class="navbar navbar-expand-lg justify-content-between fixed-top w-100 d-inline" role="navigation"
             style="background-color: #2B4162; height: 80px">
             <div class="mx-5 d-flex mt-0 h-100">
@@ -126,10 +126,10 @@
             </div>
         </nav>
 
-        <main class="mt-0 h-100 d-block" style="padding-top: 80px">
+        <main class="h-100 d-block" style="padding-top: 80px; min-height: 93vh">
             @yield('content')
         </main>
-        <footer class="page-footer fixed-bottom" style="background-color: #2B4162">
+        <footer class="page-footer relative" style="background-color: #2B4162">
             <div class="container">
                 <div class="row">
                     <div class="col-6">
