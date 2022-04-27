@@ -24,8 +24,8 @@
                                             
                                         </div>
                                         <a href="/productos/{{ $producto->id }}"
-                                                class="secondary-content text-white btn btn-small"
-                                                style="background-color: #71A9F7">Ver</a>
+                                            class="text-white btn btn-small w-50 mx-auto mb-3"
+                                            style="background-color: #71A9F7">Ver</a>
                                     </div>
                                 </div>
                             @endforeach
