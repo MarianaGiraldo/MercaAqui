@@ -55,9 +55,11 @@
                             </div>
                             <label for="img" class="label input-field  pb-0 row mb-0 ml-2">Imagen del Producto</label>
                             <div class="row mt-0 py-0">
-                                <div class="custom-file mx-3">
-                                    <input type="file" class="custom-file-input" id="customFileLang" lang="es">
-                                    <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                                <div id="inputfile" class="inputfile input-field col s12">
+                                    <div class="custom-file d-block w-100">
+                                        <input type="file" class="custom-file-input" id="img" lang="es" name="img">
+                                        <label class="custom-file-label" for="img">Seleccionar Imagen</label>
+                                    </div>
                                 </div>
                             </div>
                             <button type="submit" class="waves-effect waves-light light-blue lighten-2 btn">

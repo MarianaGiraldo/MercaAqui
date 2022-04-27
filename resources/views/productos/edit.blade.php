@@ -65,7 +65,7 @@
                                     </div>
                                     <label for="img" class="label input-field  pb-0 row mb-0 ml-2">Imagen del Producto</label>
                                     <div class="row">
-                                        <div id="inputfile" class="input-field col s12">
+                                        <div id="inputfile" class="inputfile input-field col s12">
                                             @if (isset($producto->imagen))
                                                 <img class="w-50 d-block"
                                                     src="{{ asset('imagenes/productos/' . $producto->imagen) }}"></img>
@@ -77,14 +77,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <script>
-                                        $('#img').on('change', function() {
-                                            //get the file name
-                                            var fileName = $(this).val().replace('C:\\fakepath\\', " ");
-                                            //replace the "Choose a file" label
-                                            $(this).next('.custom-file-label').html(fileName);
-                                        })
-                                    </script>
                                     <a href="/productos/{{ $producto->id }}"
                                         class="waves-effect waves-light btn text-white" style="background-color: #FF9B42">Regresar</a>
                                     <button type="submit" class="waves-effect waves-light btn float-right text-white" style="background-color: #71A9F7">

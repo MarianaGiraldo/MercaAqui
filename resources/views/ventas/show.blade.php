@@ -5,8 +5,8 @@
 <div class="parallax-index">
     <br><br><br>
     <!-- ---------New table---------- -->
-    <div class="bg-light m-auto p-1  rounded" style="width:60%;">
-        <div class="page-content container ">
+    <div class="bg-light m-auto p-4 rounded col-md-6 col-sm-8">
+        <div class="page-content container">
             <div class="container px-0">
                 <div class="row mt-4">
                     <div class="col-12 col-lg-12">
