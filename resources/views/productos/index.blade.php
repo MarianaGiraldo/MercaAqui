@@ -21,10 +21,11 @@
                                             <h5 class="card-title">{{ $producto->nombre }}</h5>
                                             <p class="card-text">Precio: $ {{ $producto->precio }} <br>
                                                 Cantidad disponible: {{ $producto->cantidad_disponible }}</p>
-                                            <a href="/productos/{{ $producto->id }}"
+                                            
+                                        </div>
+                                        <a href="/productos/{{ $producto->id }}"
                                                 class="secondary-content text-white btn btn-small"
                                                 style="background-color: #71A9F7">Ver</a>
-                                        </div>
                                     </div>
                                 </div>
                             @endforeach
