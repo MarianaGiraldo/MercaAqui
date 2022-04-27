@@ -15,8 +15,15 @@
                             <span for="delete" class="card-title">¿Estas seguro de que quieres eliminar este usuario? </span>
                         </div>
                         <div class="card-action">
-                            <button type="submit" class="waves-effect waves-light btn red lighten-2">Eliminar</button>
-                            <a href="/usuarios" class="waves-effect waves-light btn blue lighten-3" role="button">Regresar</a>
+                            <div class="form-group row mx-3 my-0">
+                                <div class="col-sm-12">
+                                    <button type="submit" class="waves-effect waves-light btn text-white float-right mx-2" style="background-color: #71A9F7">
+                                        {{ __('Guardar') }}
+                                    </button>
+                                    <a href="/productos" class="waves-effect waves-light btn text-white float-right mx-2"
+                                        style="background-color: #FF9B42">Regresar</a>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>

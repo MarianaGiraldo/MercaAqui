@@ -20,8 +20,8 @@
                         <h2 class="center-align">Crear un producto</h2>
                     </div>
                     <div class="card-body">
-                        <form action="/productos" method="POST" enctype="multipart/form-data" class="w-100" >  
-                            @csrf          
+                        <form action="/productos" method="POST" enctype="multipart/form-data" class="w-100 p-2" >
+                            @csrf
                             <div class="row ">
                                 <div class="input-field col s6">
                                     <input placeholder="Manzana" id="nombre" name="nombre" type="text" class="validate">
@@ -62,10 +62,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
-                                {{ __('Registrar') }}
-                            </button>
-                            <a href="/productos" class="waves-effect waves-light btn btn-danger float-right">Regresar</a>
+                            <div class="form-group row mx-3 my-0">
+                                <div class="col-sm-12">
+                                    <button type="submit" class="waves-effect waves-light btn text-white float-right mx-2" style="background-color: #71A9F7">
+                                        {{ __('Guardar') }}
+                                    </button>
+                                    <a href="/productos" class="waves-effect waves-light btn text-white float-right mx-2"
+                                        style="background-color: #FF9B42">Regresar</a>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
