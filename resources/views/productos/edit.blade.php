@@ -65,7 +65,7 @@
                                     </div>
                                     <label for="img" class="label input-field  pb-0 row mb-0 ml-2">Imagen del Producto</label>
                                     <div class="row">
-                                        <div class="input-field col s12">
+                                        <div id="inputfile" class="input-field col s12">
                                             @if (isset($producto->imagen))
                                                 <img class="w-50 d-block"
                                                     src="{{ asset('imagenes/productos/' . $producto->imagen) }}"></img>
@@ -73,10 +73,18 @@
                                             <div class="custom-file d-block w-100">
                                                 <input type="file" class="custom-file-input" id="img" lang="es" name="img"
                                                     value="{{ $producto->imagen }}">
-                                                <label class="custom-file-label" for="img">Seleccionar Archivo</label>
+                                                <label class="custom-file-label" for="img">Seleccionar Imagen</label>
                                             </div>
                                         </div>
                                     </div>
+                                    <script>
+                                            $('#img').on('change',function(){
+                                            //get the file name
+                                            var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+                                            //replace the "Choose a file" label
+                                            $(this).next('.custom-file-label').html(fileName);
+                                        })
+                                    </script>
                                     <button type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
                                         {{ __('Guardar') }}
                                     </button>
