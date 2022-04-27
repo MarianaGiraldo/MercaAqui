@@ -46,7 +46,7 @@
                                     <span class="text-600 text-110 align-middle"><i class="fa fa-phone fa-flip-horizontal text-secondary"></i> <b class="text-600">{{$vendedor->celular}}</b> </span>
                                 </div>
                             </div>
-                            <div class="text-95 col-sm-6 align-self-start d-sm-flex justify-content-end">
+                            <div class="text-95 col-sm-6 align-self-start d-sm-flex ">
                                 <hr class="d-sm-none" />
                                 <div class="text-grey-m2">
                                     <div class="mt-1 mb-2 text-secondary-m1 text-600 text-125">
