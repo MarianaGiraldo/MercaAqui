@@ -77,11 +77,15 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="/productos/{{ $producto->id }}"
-                                        class="waves-effect waves-light btn text-white" style="background-color: #FF9B42">Regresar</a>
-                                    <button type="submit" class="waves-effect waves-light btn float-right text-white" style="background-color: #71A9F7">
-                                        {{ __('Guardar') }}
-                                    </button>
+                                    <div class="form-group row mx-3 my-0">
+                                        <div class="col-sm-12">
+                                            <button type="submit" class="waves-effect waves-light btn text-white float-right mx-2" style="background-color: #71A9F7">
+                                                {{ __('Guardar') }}
+                                            </button>
+                                            <a href="/productos" class="waves-effect waves-light btn text-white float-right mx-2"
+                                                style="background-color: #FF9B42">Regresar</a>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
