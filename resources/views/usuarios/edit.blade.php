@@ -154,13 +154,13 @@
                                         </div>
                                     </div>
                                     <div class="form-group row mb-0">
+                                        <a href="/usuarios"
+                                            class="waves-effect waves-light btn text-white" style="background-color: #FF9B42">Regresar</a>
                                         <div class="col-md-6 offset-md-4">
-                                            <button type="submit" class="btn btn-primary">
+                                            <button type="submit" class="btn btn-primary float-right">
                                                 {{ __('Guardar') }}
                                             </button>
                                         </div>
-                                        <a href="/usuarios"
-                                            class="waves-effect waves-light btn btn-danger float-right">Regresar</a>
                                     </div>
                                 </form>
                             </div>

@@ -78,18 +78,18 @@
                                         </div>
                                     </div>
                                     <script>
-                                            $('#img').on('change',function(){
+                                        $('#img').on('change', function() {
                                             //get the file name
                                             var fileName = $(this).val().replace('C:\\fakepath\\', " ");
                                             //replace the "Choose a file" label
                                             $(this).next('.custom-file-label').html(fileName);
                                         })
                                     </script>
-                                    <button type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
+                                    <a href="/productos/{{ $producto->id }}"
+                                        class="waves-effect waves-light btn text-white" style="background-color: #FF9B42">Regresar</a>
+                                    <button type="submit" class="waves-effect waves-light btn float-right text-white" style="background-color: #71A9F7">
                                         {{ __('Guardar') }}
                                     </button>
-                                    <a href="/productos/{{ $producto->id }}"
-                                        class="waves-effect waves-light btn btn-danger float-right">Regresar</a>
                                 </form>
                             </div>
                         </div>
