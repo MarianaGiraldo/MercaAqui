@@ -50,25 +50,24 @@
                                     </div>
                                 </div>
                                 <br>
-                                <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Acción</h6>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <a href="/usuarios/{{$user->id}}/edit" class="waves-effect waves-light btn-success btn">Editar</a>
-                                        @role('Admin')
-                                        @if (Auth::user()->id != $user->id)
-                                            <a href="/usuarios/{{$user->id}}/drop" class="waves-effect waves-light btn right btn-danger">Borrar</a>
-                                        @endif
-                                        @endrole
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a href="/usuarios" class="waves-effect waves-light btn btn-warning float-right">Regresar</a>
+                                <div class="float-bottom w-100 pr-5">
+                                    <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Acción</h6>
+                                    <div class="row py-2">
+                                        <div class="col-sm-4">
+                                            <a href="/usuarios/{{ $user->id }}/edit"
+                                                class="d-block waves-effect waves-light btn-success btn">Editar</a>
+                                        </div>
+                                        <div class="col-sm-4 px-3">
+                                            <a href="/usuarios/{{ $user->id }}/drop"
+                                                class="d-block waves-effect waves-light btn btn-danger">Borrar</a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a href="/usuarios"
+                                                class="d-block waves-effect waves-light btn text-white"
+                                                style="background-color: #ff9b42">Regresar</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <ul class="social-link list-unstyled m-t-40 m-b-10">
-                                    <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="facebook" data-abc="true"><i class="mdi mdi-facebook feather icon-facebook facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="twitter" data-abc="true"><i class="mdi mdi-twitter feather icon-twitter twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="instagram" data-abc="true"><i class="mdi mdi-instagram feather icon-instagram instagram" aria-hidden="true"></i></a></li>
-                                </ul>
                             </div>
                         </div>
                     </div>

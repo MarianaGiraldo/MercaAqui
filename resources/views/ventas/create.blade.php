@@ -24,11 +24,11 @@
                             @csrf
                             <div class="row ">
                                 <div class="input-field col s6">
-                                    <input id="fecha_venta" name="fecha_venta" type="date" class="validate">
+                                    <input id="fecha_venta" name="fecha_venta" type="date" class="validate" required>
                                     <label for="fecha_venta">Fecha Venta</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="nombre_cliente" name="nombre_cliente" type="text" class="validate">
+                                    <input id="nombre_cliente" name="nombre_cliente" type="text" class="validate" required>
                                     <label for="nombre_cliente">Nombre Cliente</label>
                                 </div>
                             </div>
