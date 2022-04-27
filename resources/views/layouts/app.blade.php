@@ -12,8 +12,12 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Jquery Format Number -->
+    <script src="{{ asset('js/formatNumber.js') }}" ></script>
 
     <!-- Materialize -->
     <!-- Compiled and minified CSS -->
@@ -209,6 +213,13 @@
             //replace the "Choose a file" label
             $(this).next('.custom-file-label').html(fileName);
         })
+
+        //produces 29,323,894.23 (e.g. US standard)
+        $('.number').formatNumber({
+        cents: ',',
+        decimal: '.'
+        });
+
     </script>
 </body>
 

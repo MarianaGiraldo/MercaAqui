@@ -44,7 +44,7 @@
                                             <div class="row py-2">
                                                 <div class="col-sm-4">
                                                     <a href="/productos/{{ $producto->id }}/edit"
-                                                        class="d-block waves-effect waves-light btn-success btn">Editar</a>
+                                                        class="d-block waves-effect waves-light btn btn-success">Editar</a>
                                                 </div>
                                                 <div class="col-sm-4 px-3">
                                                     <a href="/productos/{{ $producto->id }}/drop"

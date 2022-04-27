@@ -73,10 +73,10 @@
                             @foreach($productos as $producto)
                             <div class="text-95 text-secondary-d3">
                                 <div class="row mb-2 mb-sm-0 py-25">
-                                    <div class="d-none d-sm-block col-1">{{$producto['cantidad']}}</div>
+                                    <div class="number d-none d-sm-block col-1">{{$producto['cantidad']}}</div>
                                     <div class="col-9 col-sm-6">{{$producto['nombre']}}</div>
-                                    <div class="d-none d-sm-block col-2">${{$producto['precio']}}</div>
-                                    <div class="d-none d-sm-block col-1 text-95">${{$producto['precio'] * $producto['cantidad']}}</div>
+                                    <div class="number d-none d-sm-block col-2">${{$producto['precio']}}</div>
+                                    <div class="number d-none d-sm-block col-1 text-95">${{$producto['precio'] * $producto['cantidad']}}</div>
                                 </div>
                             @endforeach
                             <hr/>
@@ -90,7 +90,7 @@
                                             Total
                                         </div>
                                         <div class="col-7">
-                                            <span class="text-150 text-success-d3 opacity-2">${{$total}}</span>
+                                            <span class="number text-150 text-success-d3 opacity-2">${{$total}}</span>
                                         </div>
                                     </div>
                                 </div>
