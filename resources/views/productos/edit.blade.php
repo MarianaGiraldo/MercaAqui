@@ -44,11 +44,6 @@
                                 producto</label>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <script>
-                                        console.log($('option[value="{{$producto->tipo}}"]').html())
-                                        console.log('option[value="{{$producto->tipo}}"]')
-                                        $('option[value="{{$producto->tipo}}"]').prop('selected', true)
-                                    </script>
                                     <select id="tipo" class="browser-default" name="tipo" required >
                                         <option value="" disabled selected>Tipo de producto</option>
                                         <option value="Aseo">Aseo</option>
@@ -59,16 +54,18 @@
                                         <option value="Basicos del hogar">Basicos del hogar</option>
                                         <option value="Cuidado Personal">Cuidado Personal</option>
                                     </select>
+                                    <script>
+                                        $('option[value="{{$producto->tipo}}"]').attr('selected', 'true')
+                                    </script>
                                 </div>
                             </div>
                             <label for="img" class="label input-field  pb-0 row mb-0 ml-2">Imagen del Producto</label>
                             <div class="row">
                                 <div class="input-field col s12">
                                     @if(isset($producto->imagen))
-                                        <img src="{{ asset('imagenes/productos/'. $producto->imagen) }}"></img>
+                                        <img class="w-50 d-block" src="{{ asset('imagenes/productos/'. $producto->imagen) }}"></img>
                                     @endif
-                                    <!-- <input class="form-control" type="file" id="img" name="img" value="{{$producto->imagen}}" required> -->
-                                    <div class="custom-file mx-3 ">
+                                    <div class="custom-file d-block w-100">
                                         <input type="file" class="custom-file-input" id="img" lang="es" value="{{$producto->imagen}}">
                                         <label class="custom-file-label" for="img">Seleccionar Archivo</label>
                                     </div>

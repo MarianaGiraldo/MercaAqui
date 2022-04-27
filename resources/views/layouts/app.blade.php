@@ -131,7 +131,7 @@
         <main class="h-100 d-block" style="padding-top: 80px; min-height: 93vh">
             @yield('content')
         </main>
-        <footer class="page-footer relative" style="background-color: #2B4162">
+        <footer class="page-footer float-bottom" style="background-color: #2B4162">
             <div class="container">
                 <div class="row">
                     <div class="col-6">

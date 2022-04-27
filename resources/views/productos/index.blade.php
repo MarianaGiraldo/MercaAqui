@@ -12,8 +12,8 @@
                             @foreach ($productos as $producto)
                                 <div class="col-sm-3 mt-4 d-block-inline" >
                                     <div class="card profile-card-5" style="height:400px ">
-                                        <div class="card-img-block" style="max-height: 222px">
-                                            <img class="card-img-top" src="imagenes/productos/{{ $producto->imagen }}"
+                                        <div class="card-img-block d-block" style="">
+                                            <img class="card-img-top w-100"  src="{{ asset('imagenes/productos/'. $producto->imagen) }}"
                                                 alt="{{ $producto->nombre }}">
                                         </div>
                                         <div class="card-body pt-0" style="height:180px">
