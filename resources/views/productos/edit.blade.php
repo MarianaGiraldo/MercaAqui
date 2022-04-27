@@ -71,7 +71,7 @@
                                                     src="{{ asset('imagenes/productos/' . $producto->imagen) }}"></img>
                                             @endif
                                             <div class="custom-file d-block w-100">
-                                                <input type="file" class="custom-file-input" id="img" lang="es"
+                                                <input type="file" class="custom-file-input" id="img" lang="es" name="img"
                                                     value="{{ $producto->imagen }}">
                                                 <label class="custom-file-label" for="img">Seleccionar Archivo</label>
                                             </div>

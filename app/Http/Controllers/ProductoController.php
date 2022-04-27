@@ -101,7 +101,7 @@ class ProductoController extends Controller
         $productoUpdt ->tipo = $request->get('tipo');
         $productoUpdt ->precio = $request->get('precio');
         $productoUpdt ->cantidad_disponible = $request->get('cantidad_disponible');
-        if(isset($request->img)){
+        if($request->file('img') !== null) {
             $photo = $request->file('img');
             $filename = time() . '.' . $photo->getClientOriginalExtension();
             $destino=public_path('imagenes/productos/');
