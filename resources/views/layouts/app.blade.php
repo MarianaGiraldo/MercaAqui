@@ -57,7 +57,7 @@
     </style>
 </head>
 
-<body>
+<body style="margin: 0">
     <div id="app" style="min-height: 100vh">
         <nav class="navbar navbar-expand-lg justify-content-between fixed-top w-100 d-inline" role="navigation"
             style="background-color: #2B4162; height: 80px">
@@ -75,9 +75,7 @@
                 <div class="col collapse navbar-collapse float-right" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
                     </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto float-right">
                         <!-- Authentication Links -->
