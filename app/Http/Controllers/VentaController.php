@@ -45,7 +45,7 @@ class VentaController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $validator = $request->validate([
             'fecha_venta'=>'required',
             'nombre_cliente'=>'required',
             'productos' =>'required | min:1'
