@@ -10,10 +10,11 @@
 
                         <div class="row center container m-auto">
                             @foreach ($productos as $producto)
-                                <div class="col-sm-3 mt-4 d-block-inline" >
+                                <div class="col-sm-3 mt-4 d-block-inline">
                                     <div class="card profile-card-5" style="height:400px ">
                                         <div class="card-img-block d-block" style="">
-                                            <img class="card-img-top w-100"  src="{{ asset('imagenes/productos/'. $producto->imagen) }}"
+                                            <img class="card-img-top w-100"
+                                                src="{{ asset('imagenes/productos/' . $producto->imagen) }}"
                                                 alt="{{ $producto->nombre }}">
                                         </div>
                                         <div class="card-body pt-0" style="height:180px">
@@ -31,7 +32,7 @@
                     </div>
                 </div>
                 <div class="container w-100 pr-5">
-                    <a href="usuarios/create" class="float">
+                    <a href="productos/create" class="float">
                         <i class="fa fa-plus my-float"></i>
                     </a>
                 </div>

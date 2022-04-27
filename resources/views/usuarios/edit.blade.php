@@ -153,11 +153,13 @@
                                                 name="password_confirmation" autocomplete="new-password">
                                         </div>
                                     </div>
-                                    <div class="form-group row mb-0">
-                                        <a href="/usuarios"
-                                            class="waves-effect waves-light btn text-white" style="background-color: #FF9B42">Regresar</a>
-                                        <div class="col-md-6 offset-md-4">
-                                            <button type="submit" class="btn btn-primary float-right">
+                                    <div class="form-group row p-2">
+                                        <div class="col-sm-6">
+                                            <a href="/usuarios" class="waves-effect waves-light btn text-white"
+                                                style="background-color: #FF9B42">Regresar</a>
+                                        </div>
+                                        <div class="col-sm-6 float-right">
+                                            <button type="submit" class="btn btn-primary">
                                                 {{ __('Guardar') }}
                                             </button>
                                         </div>
