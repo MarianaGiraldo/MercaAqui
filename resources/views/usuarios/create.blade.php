@@ -17,7 +17,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-8 pt-4">
-                            <h5 class="m-b-20 p-b-5 b-b-default f-w-600">Crear Vendedor</h5>
+                            <h4 class="m-b-20 p-b-5 b-b-default f-w-600">Crear Vendedor</h4>
                                 <form method="POST" action="/usuarios">
                                     @csrf
                                     <div class="form-group row">
