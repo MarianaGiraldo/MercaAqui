@@ -9,7 +9,7 @@
                             <div class="card user-card-full">
                                 <div class="row m-l-0 m-r-0 mb-0">
                                     <div class="col-sm-4 user-profile pb-0">
-                                        <div class="card-block text-center text-white position-relative m-auto">
+                                        <div class="card-block text-center text-white m-auto position-absolute" style="top:50%; transform: translateY(-50%);">
                                             <img class="w-100"
                                                 src="{{ asset('imagenes/productos/' . $producto->imagen) }}"
                                                 alt="{{ $producto->nombre }}" />
@@ -70,7 +70,6 @@
                                                     Producto</label>
                                                 <div class="row">
                                                     <div id="inputfile" class="inputfile input-field col s12 bg-c-lite-green">
-
                                                         <div class="file d-block w-100">
                                                             <input type="file" class="file-input bg-gradient validate" id="img"
                                                                 lang="es" name="img" value="{{ $producto->imagen }}">
@@ -88,8 +87,6 @@
                                                     {{ __('Guardar') }}
                                                 </button>
                                             </form>
-
-
                                         </div>
                                     </div>
                                 </div>
