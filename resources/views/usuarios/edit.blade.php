@@ -1,14 +1,30 @@
 @extends('layouts.app')
 @section('content')
     @hasanyrole('Admin|Vendedor')
-        <div class="parallax-index">
-            <div class="container py-5">
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-header">Editar usuario: {{ $user->nombre }} {{ $user->apellido }} </div>
-
-                            <div class="card-body">
+<div class="parallax-index">
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row  d-flex justify-content-center">
+                <div class="col-xl-6 col-md-12">
+                    <div class="card user-card-full">
+                        <div class="row m-l-0 m-r-0 mb-0">
+                            <div class="col-sm-4 bg-c-lite-green user-profile">
+                                <div class="card-block text-center text-white m-auto position-absolute" style="top:25%; transform: translateY(-25%);">
+                                    <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div>
+                                    <h4 class="f-w-600">{{$user->nombre}} {{$user->apellido}}</h4>
+                                    @if($user->is_admin)
+                                    <p>Administrador</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                    @else
+                                    <p>Vendedor</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="col-sm-8 pt-4">
+                                @if($user->is_admin)
+                                <h5 class="m-b-20 p-b-5 b-b-default f-w-600">Información del Administrador No. {{$user->id}}</h5>
+                                @else
+                                <h5 class="m-b-20 p-b-5 b-b-default f-w-600">Información del Vendedor No. {{$user->id}}</h5>
+                                @endif
                                 <form action="/usuarios/{{ $user->id }}" method="POST">
                                     @csrf
                                     @method('put')
@@ -153,14 +169,12 @@
                                                 name="password_confirmation" autocomplete="new-password">
                                         </div>
                                     </div>
-                                    <div class="form-group row p-2 mx-3">
-                                        <div class="col-sm-12">
-                                            <button type="submit" class="waves-effect waves-light btn text-white float-right mx-2" style="background-color: #71A9F7">
-                                                {{ __('Guardar') }}
-                                            </button>
-                                            <a href="/usuarios" class="waves-effect waves-light btn text-white float-right mx-2"
-                                                style="background-color: #FF9B42">Regresar</a>
-                                        </div>
+                                    <div class="py-4">
+                                        <a href="/usuarios/{{ $user->id }}"
+                                            class="waves-effect waves-light btn text-white" style="background-color: #FF9B42">Regresar</a>
+                                        <button type="submit" class="waves-effect waves-light btn float-right text-white" style="background-color: #71A9F7">
+                                            {{ __('Guardar') }}
+                                        </button>
                                     </div>
                                 </form>
                             </div>
@@ -169,6 +183,8 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
     @else
         @include('components.authAlert')
     @endcan
