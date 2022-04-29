@@ -5,9 +5,10 @@
             <div class="parallax-index">
                 <br><br><br>
                 <div class="card-panel w-50 m-auto  rounded h-auto py-4" style="background-color: #71A9F7">
-                    <h1 class="header center-align white-text display-4">Borrar usuario {{ $dropUser->nombre }} </h1>
+                    <h1 class="header center-align white-text display-4">Borrar vendedor {{ $dropUser->nombre }} </h1>
                     <div class="row container m-auto w-100">
-                        <form action="{{ route('usuarios.destroy', $dropUser->id) }}" method="POST" class="w-100 text-center">
+                        <form action="{{ route('usuarios.destroy', $dropUser->id) }}" method="POST"
+                            class="w-100 text-center">
                             @csrf
                             @method('DELETE')
                             <div class="card-content  white-text py-3">
@@ -33,5 +34,5 @@
         </div>
     @else
         @include('components.authAlert')
-    @endsection
-@endrole
+    @endrole
+@endsection
