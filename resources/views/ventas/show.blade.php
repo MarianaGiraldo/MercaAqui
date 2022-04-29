@@ -59,19 +59,21 @@
                                             </div>
 
                                             <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i>
-                                                <span class="text-600 text-90">ID: </span> {{ $venta->id }} </div>
+                                                <span class="text-600 text-90">ID: </span> {{ $venta->id }}
+                                            </div>
 
                                             <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i>
                                                 <span class="text-600 text-90">Fecha de Factura:</span>
-                                                {{ $venta->fecha_venta }} </div>
+                                                {{ $venta->fecha_venta }}
+                                            </div>
 
                                             <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i>
                                                 <span class="text-600 text-90">Estado:</span> <span
-                                                    class="badge badge-success badge-pill px-25">Pagada</span></div>
+                                                    class="badge badge-success badge-pill px-25">Pagada</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="mt-4">
                                     <div class="row text-600 text-white bgc-default-tp1 py-25">
                                         <div class="d-none d-sm-block col-1">Cantidad</div>
@@ -88,6 +90,7 @@
                                                 <div class="number d-none d-sm-block col-1 text-95">
                                                     ${{ $producto['precio'] * $producto['cantidad'] }}</div>
                                             </div>
+                                        </div>
                                     @endforeach
                                     <hr />
                                     <div class="row mt-3">
@@ -121,7 +124,8 @@
                     </div>
                 </div>
             </div>
-        @else
-            @include('components.authAlert')
-        @endhasanyrole
-    @endsection
+        </div>
+    @else
+        @include('components.authAlert')
+    @endhasanyrole
+@endsection
