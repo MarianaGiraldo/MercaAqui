@@ -12,12 +12,12 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
+
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Jquery Format Number -->
-    <script src="{{ asset('js/formatNumber.js') }}" ></script>
+    <script src="{{ asset('js/formatNumber.js') }}"></script>
 
     <!-- Materialize -->
     <!-- Compiled and minified CSS -->
@@ -75,7 +75,6 @@
                     aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="col collapse navbar-collapse float-right" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
@@ -115,7 +114,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                                                document.getElementById('logout-form').submit();">
+                                                                                        document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -205,21 +204,20 @@
             <!-- Copyright -->
         </footer>
     </div>
-    
+
     <script>
         $('#img').on('change', function() {
             //get the file name
             var fileName = $(this).val().replace('C:\\fakepath\\', " ");
             //replace the "Choose a file" label
-            $(this).next('.custom-file-label').html(fileName);
+            $(this).next('.file-label').html(fileName);
         })
 
         //produces 29,323,894.23 (e.g. US standard)
         $('.number').formatNumber({
-        cents: ',',
-        decimal: '.'
+            cents: ',',
+            decimal: '.'
         });
-
     </script>
 </body>
 
