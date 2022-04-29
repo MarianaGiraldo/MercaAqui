@@ -66,7 +66,7 @@
         <nav class="navbar navbar-expand-lg justify-content-between fixed-top w-100 d-inline" role="navigation"
             style="background-color: #2B4162; height: 80px">
             <div class="mx-5 d-flex mt-0 h-100">
-                <img src="/logo/logo.png" alt="logo" style="width:120px; height:100%" class="col mx-0 my-auto">
+                <img src="/logo/logo.png" alt="logo" style="width:120px; height:100%" class="mx-0 my-auto">
                 <a id="logo-container" href="/" class=" navbar-brand col"
                     style="font-family: Akshar; color:#ff9b42; font-size: 60px">Merca Aqui</a>
 
