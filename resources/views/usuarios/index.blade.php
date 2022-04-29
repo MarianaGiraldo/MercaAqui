@@ -25,7 +25,7 @@
                                         <td>{{ $user->apellido }} </td>
                                         <td>{{ $user->email }} </td>
                                         <td><a href="usuarios/{{ $user->id }}" class="text-white btn btn-small"
-                                                style="background-color: #71A9F7">View User</a>
+                                                style="background-color: #FF9B42">View User</a>
                                         </td>
                                     </tr>
                                 @endforeach
