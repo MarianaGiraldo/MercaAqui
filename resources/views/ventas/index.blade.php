@@ -14,6 +14,7 @@
                                     <th>Fecha de la venta</th>
                                     <th>ID del vendedor</th>
                                     <th>Nombre del Cliente</th>
+                                    <th style="width: 15%">Acción</th>
                                 </tr>
                             </thead>
 
@@ -24,13 +25,15 @@
                                         <td>{{ $venta->fecha_venta }} </td>
                                         <td>{{ $venta->vendedor_id }} </td>
                                         <td>{{ $venta->nombre_cliente }} </td>
-                                        <td><a href="ventas/{{ $venta->id }}" class="btn btn-success">View venta</a></td>
+                                        <td><a href="ventas/{{ $venta->id }}"
+                                                class="waves-effect waves-light btn text-white"
+                                                style="background-color: #FF9B42">View venta</a></td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
                         <div class="col-md-6 offset-md-5 mt-3">
-                            <a href="/ventas/create" class="waves-effect waves-light light-blue lighten-2 btn">Crear venta</a>
+                            <a href="/ventas/create" class="waves-effect waves-light btn text-white" style="background-color: #71A9F7">Crear venta</a>
                         </div>
                     </div>
 
