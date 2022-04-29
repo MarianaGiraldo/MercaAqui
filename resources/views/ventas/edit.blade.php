@@ -40,7 +40,7 @@
                                 @foreach ($productos as $producto)
                                 <div class="row">
                                     @if(($producto_ventas
-                                        ->where(['venta_id' => $venta->id, 'producto_id' => $producto->id ])                           
+                                        ->where(['venta_id' => $venta->id, 'producto_id' => $producto->id ])
                                         )->exists())
                                         <p class="col">
                                             <label>
@@ -58,9 +58,9 @@
                                                 max="{{$producto->cantidad_disponible}}" min="1">
                                             <p class="text-muted mb-0 py-0">Máximo: {{$producto->cantidad_disponible}}</p>
                                         </div>
-                                        
+
                                         @elseif(($producto_ventas
-                                        ->where(['venta_id' => $venta->id, 'producto_id' => $producto->id ])                           
+                                        ->where(['venta_id' => $venta->id, 'producto_id' => $producto->id ])
                                         )->doesntExist())
 
                                         <p class="col">
@@ -76,12 +76,14 @@
                                             <p class="text-muted mb-0 py-0">Máximo: {{$producto->cantidad_disponible}}</p>
                                         </div>
                                     @endif
-                                </div>                            
+                                </div>
                                 @endforeach
                             </div>
-                            <div class="col-md-6 offset-md-5">
-                                <button type="submit" class="waves-effect waves-light light-blue lighten-2 btn">
-                                    {{ __('Registrar') }}
+                            <div class="p-4 mx-5 text-center">
+                                <a href="/ventas/{{ $producto->id }}"
+                                    class="waves-effect waves-light btn text-white m-auto" style="background-color: #FF9B42">Regresar</a>
+                                <button type="submit" class="waves-effect waves-light btn text-white m-uto" style="background-color: #71A9F7">
+                                    {{ __('Guardar') }}
                                 </button>
                             </div>
                         </form>
