@@ -213,6 +213,13 @@
             $(this).next('.file-label').html(fileName);
         })
 
+        $('#img').on('change', function() {
+            //get the file name
+            var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+            //replace the "Choose a file" label
+            $(this).next('.file-label-white').html(fileName);
+        })
+
         //produces 29,323,894.23 (e.g. US standard)
         $('.number').formatNumber({
             cents: ',',

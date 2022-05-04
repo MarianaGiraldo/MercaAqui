@@ -78,14 +78,16 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <a href="/productos/{{ $producto->id }}"
-                                                    class="waves-effect waves-light btn text-white"
-                                                    style="background-color: #FF9B42">Regresar</a>
-                                                <button type="submit"
-                                                    class="waves-effect waves-light btn float-right text-white"
-                                                    style="background-color: #71A9F7">
-                                                    {{ __('Guardar') }}
-                                                </button>
+                                                <div class="pt-4">
+                                                    <a href="/productos/{{ $producto->id }}"
+                                                        class="waves-effect waves-light btn text-white"
+                                                        style="background-color: #FF9B42">Regresar</a>
+                                                    <button type="submit"
+                                                        class="waves-effect waves-light btn float-right text-white"
+                                                        style="background-color: #71A9F7">
+                                                        {{ __('Guardar') }}
+                                                    </button>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>

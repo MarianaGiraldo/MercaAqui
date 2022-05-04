@@ -4,6 +4,18 @@
 <div class="parallax-index">
     <div class="page-content page-container" id="page-content">
         <div class="padding">
+            <div class="container pt-4">
+                @if ($errors->any())
+                    <div class="w-75 mx-auto">
+                        <div class="alert alert-danger  my-1" role="alert"> Error! Producto no guardado </div>
+                        <ul class="list-group-flush">
+                            @foreach ($errors->all() as $error)
+                                <li class="list-group-item list-group-item-danger">{{ $error }} </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
             <div class="row  d-flex justify-content-center">
                 <div class="col-xl-6 col-md-12">
                     <div class="card user-card-full">
@@ -17,7 +29,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-8 pt-4">
-                            <h5 class="m-b-20 p-b-5 b-b-default f-w-600">Crear Vendedor</h5>
+                            <h4 class="m-b-20 p-b-5 b-b-default f-w-600">Crear Vendedor</h4>
                                 <form method="POST" action="/usuarios">
                                     @csrf
                                     <div class="form-group row">

@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
     @hasanyrole('Admin|Vendedor')
-        <div class="parallax-index">
+<div class="parallax-index">
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
             <div class="container pt-4">
                 @if ($errors->any())
                     <div class="w-75 mx-auto">
@@ -13,14 +15,22 @@
                         </ul>
                     </div>
                 @endif
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-header">
-                                <h2 class="center-align">Crear una Venta</h2>
+            </div>
+            <div class="row  d-flex justify-content-center">
+                <div class="col-xl-6 col-md-12">
+                    <div class="card user-card-full">
+                        <div class="row m-l-0 m-r-0 mb-0">
+                            <div class="col-sm-4 bg-c-lite-green user-profile">
+                                <div class="card-block text-center text-white m-auto position-absolute" style="top:30%; right:50%; left:25%; transform: translateY(-25%);">
+                                    <i class="fa-solid fa-file-circle-plus text-center" alt="Venta-Image" style="font-size:7rem;"></i>   
+                                </div>
+                                <div class="card-block text-center text-white m-auto position-absolute" style="top:45%; left:22%;">
+                                    <h4 class="f-w-600 text-center">Nueva Venta</h4>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <form action="/ventas" method="POST" enctype="multipart/form-data" class="w-100">
+                            <div class="col-sm-8 pt-4">
+                            <h4 class="m-b-20 p-b-5 b-b-default f-w-600">Crear Venta</h4>
+                            <form action="/ventas" method="POST" enctype="multipart/form-data" class="w-100">
                                     @csrf
                                     <div class="row ">
                                         <div class="input-field col s6">
@@ -54,16 +64,12 @@
                                             </div>
                                         @endforeach
                                     </div>
-                                    <div class="form-group row mx-3 my-0">
-                                        <div class="col-sm-12">
-                                            <button type="submit"
-                                                class="waves-effect waves-light btn text-white float-right mx-2"
-                                                style="background-color: #71A9F7">
-                                                {{ __('Guardar') }}
-                                            </button>
-                                            <a href="/ventas" class="waves-effect waves-light btn text-white float-right mx-2"
-                                                style="background-color: #FF9B42">Regresar</a>
-                                        </div>
+                                    <div class="py-4">
+                                        <a href="/ventas"
+                                            class="waves-effect waves-light btn text-white" style="background-color: #FF9B42">Regresar</a>
+                                        <button type="submit" class="waves-effect waves-light btn float-right text-white" style="background-color: #71A9F7">
+                                            {{ __('Crear') }}
+                                        </button>
                                     </div>
                                 </form>
                             </div>
@@ -72,6 +78,8 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
     @else
         @include('components.authAlert')
     @endhasanyrole

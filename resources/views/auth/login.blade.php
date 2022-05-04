@@ -2,6 +2,7 @@
 
 @section('content')
     <br><br>
+<div class="parallax-index">    
     <div class="container">
         <br>
         <div class="row justify-content-center">
@@ -78,4 +79,5 @@
             </div>
         </div>
     </div>
+</div>  
 @endsection
