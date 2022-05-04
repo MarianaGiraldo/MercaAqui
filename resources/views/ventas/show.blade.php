@@ -111,10 +111,18 @@
                                     <div>
                                         <span class="text-secondary-d1 text-105">Gracias por tu compra</span>
                                         <div class="form-group row mx-3 my-0">
-                                            <div class="col-sm-12">
-                                                <a href="/ventas"
+                                            <div class="row w-100">
+                                                <div class="col-sm-8">
+                                                    <a href="/ventas/{{ $venta->id }}/edit"
+                                                        class="waves-effect waves-light btn text-white"
+                                                        style="background-color: #71A9F7">Editar</a>
+                                                </div>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <a href="/ventas"
                                                     class="waves-effect waves-light btn text-white float-right mx-2"
                                                     style="background-color: #FF9B42">Regresar</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
