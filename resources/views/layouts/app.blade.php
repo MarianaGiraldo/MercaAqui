@@ -13,6 +13,12 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Jquery Format Number -->
+    <script src="{{ asset('js/formatNumber.js') }}"></script>
+
     <!-- Materialize -->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -34,6 +40,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/user.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/invoicer.css') }}" rel="stylesheet">
     <style>
         @import url('/font/Akshar/Akshar-Regular.ttf');
 
@@ -53,12 +61,12 @@
     </style>
 </head>
 
-<body>
-    <div id="app">
+<body style="margin: 0">
+    <div id="app" style="min-height: 100vh">
         <nav class="navbar navbar-expand-lg justify-content-between fixed-top w-100 d-inline" role="navigation"
             style="background-color: #2B4162; height: 80px">
             <div class="mx-5 d-flex mt-0 h-100">
-                <img src="/logo/logo.png" alt="logo" style="width:120px; height:100%" class="col mx-0 my-auto">
+                <img src="/logo/logo.png" alt="logo" style="width:120px; height:100%" class="mx-0 my-auto">
                 <a id="logo-container" href="/" class=" navbar-brand col"
                     style="font-family: Akshar; color:#ff9b42; font-size: 60px">Merca Aqui</a>
 
@@ -67,13 +75,10 @@
                     aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="col collapse navbar-collapse float-right" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
                     </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto float-right">
                         <!-- Authentication Links -->
@@ -107,8 +112,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                        document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                                                        document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -126,10 +132,10 @@
             </div>
         </nav>
 
-        <main class="mt-0 h-100 d-block" style="padding-top: 80px">
+        <main class="h-100 d-block" style="padding-top: 80px; min-height: 93vh">
             @yield('content')
         </main>
-        <footer class="page-footer fixed-bottom" style="background-color: #2B4162">
+        <footer class="page-footer float-bottom" style="background-color: #2B4162; position: relative;">
             <div class="container">
                 <div class="row">
                     <div class="col-6">
@@ -198,6 +204,28 @@
             <!-- Copyright -->
         </footer>
     </div>
+
+    <script>
+        $('#img').on('change', function() {
+            //get the file name
+            var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+            //replace the "Choose a file" label
+            $(this).next('.file-label').html(fileName);
+        })
+
+        $('#img').on('change', function() {
+            //get the file name
+            var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+            //replace the "Choose a file" label
+            $(this).next('.file-label-white').html(fileName);
+        })
+
+        //produces 29,323,894.23 (e.g. US standard)
+        $('.number').formatNumber({
+            cents: ',',
+            decimal: '.'
+        });
+    </script>
 </body>
 
 </html>

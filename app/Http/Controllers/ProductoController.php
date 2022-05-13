@@ -19,7 +19,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return view('productos.index', ['productos'=>Producto::all(), 'fondo'=>'fondo1.jpg']);
+        return view('productos.index', ['productos'=>Producto::all(), 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -29,7 +29,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('productos.create', ['productos'=>Producto::all(), 'fondo'=>'fondo1.jpg']);
+        return view('productos.create', ['productos'=>Producto::all(), 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -72,7 +72,7 @@ class ProductoController extends Controller
         return view('productos.show', [
             'producto'=>Producto::findOrFail($id),
             'productos'=>Producto::all(),
-            'fondo'=>'fondo1.jpg']);
+            'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -84,7 +84,7 @@ class ProductoController extends Controller
     public function edit($id)
     {
         $producto = Producto::findOrFail($id);
-        return view('productos.edit', ['producto'=>$producto, 'fondo'=>'fondo1.jpg']);
+        return view('productos.edit', ['producto'=>$producto, 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -101,11 +101,13 @@ class ProductoController extends Controller
         $productoUpdt ->tipo = $request->get('tipo');
         $productoUpdt ->precio = $request->get('precio');
         $productoUpdt ->cantidad_disponible = $request->get('cantidad_disponible');
-        $photo = $request->file('img');
-        $filename = time() . '.' . $photo->getClientOriginalExtension();
-        $destino=public_path('imagenes/productos/');
-        $request->img->move($destino, $filename);
-        $productoUpdt ->imagen = $filename;
+        if($request->file('img') !== null) {
+            $photo = $request->file('img');
+            $filename = time() . '.' . $photo->getClientOriginalExtension();
+            $destino=public_path('imagenes/productos/');
+            $request->img->move($destino, $filename);
+            $productoUpdt->imagen = $filename;
+        };
         $productoUpdt -> save();
         return redirect('/productos');
     }
@@ -124,6 +126,6 @@ class ProductoController extends Controller
     public function drop($id)
     {
         $dropProduct = Producto::find($id);
-        return view('productos.drop', ['dropProduct'=>$dropProduct, 'fondo'=>'fondo1.jpg']);
+        return view('productos.drop', ['dropProduct'=>$dropProduct, 'fondo'=>'fondo2.jpg']);
     }
 }
