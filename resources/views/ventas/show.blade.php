@@ -110,13 +110,13 @@
                                     </div>
                                     <div>
                                         <span class="text-secondary-d1 text-105">Gracias por tu compra</span>
-                                        <div class="pt-4 row">
-                                            <div class="col-sm-10">
+                                        <div class="pt-4 row col-sm-6 mx-auto">
+                                            <div class="col-xs-6 mx-1 mb-2">
                                                 <a href="/ventas"
                                                 class="waves-effect waves-light btn text-white"
                                                 style="background-color: #FF9B42">Regresar</a>
                                             </div>
-                                            <div class="col-2">
+                                            <div class="col-xs-6 mx-1">
                                                 <a href="/ventas/{{ $venta->id }}/edit"
                                                 class="waves-effect waves-light btn text-white"
                                                 style="background-color: #71A9F7">Editar</a>
