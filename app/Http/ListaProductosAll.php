@@ -1,4 +1,4 @@
-<?php 
+<?php
     include('functions.php');
     $array = array();
     if($resulset = getSQLResultSet("select * from productos")){
@@ -12,7 +12,7 @@
             $e['cantidad_disponible'] = $row[5];
             array_push($array, $e);
         }
-        echo json_encode($array);
+        print_r(json_encode($array));
     }
 
 ?>
