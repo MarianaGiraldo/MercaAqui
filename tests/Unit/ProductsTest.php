@@ -5,11 +5,9 @@ namespace Tests\Unit;
 use PHPUnit\Framework\TestCase;
 use App\Http\Controllers\ProductoController;
 use App\Models\Producto;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ProductsTest extends TestCase
 {
-    use RefreshDatabase;
 
     /**
      * A test to index products
@@ -57,6 +55,11 @@ class ProductsTest extends TestCase
         $this->assertSame($product->id,  $data->id);
     }
 
+    /**
+     * Test for update Product function
+     *
+     * @return void
+     */
     public function test_update_product_by_id()
     {
         $product = (new ProductoController)->createNewProduct(null, true);
@@ -65,6 +68,11 @@ class ProductsTest extends TestCase
         $this->assertSame($product->nombre,  $data->nombre);
     }
 
+    /**
+     * Test for destroy Product function
+     *
+     * @return void
+     */
     public function test_destroy_product_by_id()
     {
         $id = 1;
