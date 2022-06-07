@@ -65,5 +65,10 @@ class ProductsTest extends TestCase
         $this->assertSame($product->nombre,  $data->nombre);
     }
 
-
+    public function test_destroy_product_by_id()
+    {
+        $id = 1;
+        $product = (new ProductoController)->destroy($id, true);
+        $this->assertSame($product,  $id);
+    }
 }

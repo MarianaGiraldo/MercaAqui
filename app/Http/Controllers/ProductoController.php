@@ -88,18 +88,7 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $productoUpdt = $this->getProductById($id);
-        $productoUpdt->nombre = $request->get('nombre');
-        $productoUpdt->tipo = $request->get('tipo');
-        $productoUpdt->precio = $request->get('precio');
-        $productoUpdt->cantidad_disponible = $request->get('cantidad_disponible');
-        if($request->file('img') !== null) {
-            $photo = $request->file('img');
-            $filename = time() . '.' . $photo->getClientOriginalExtension();
-            $destino=public_path('imagenes/productos/');
-            $request->img->move($destino, $filename);
-            $productoUpdt->imagen = $filename;
-        };
+        $productoUpdt = $this->updateProductById($request, $id);
         $productoUpdt-> save();
         return redirect('/productos');
     }
@@ -110,15 +99,18 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, $flag_test = false)
     {
-        Producto::destroy($id);
-        return redirect('/productos');
+        if (!$flag_test) {
+            Producto::destroy($id);
+            return redirect('/productos');
+        }
+        return $id;
     }
 
     public function drop($id)
     {
-        $dropProduct = Producto::find($id);
+        $dropProduct = $this->getProductById($id);
         return view('productos.drop', ['dropProduct'=>$dropProduct, 'fondo'=>'fondo2.jpg']);
     }
 
