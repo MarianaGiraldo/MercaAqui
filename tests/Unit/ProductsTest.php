@@ -7,7 +7,7 @@ use App\Http\Controllers\ProductoController;
 use App\Models\Producto;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ProductosTest extends TestCase
+class ProductsTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -50,10 +50,20 @@ class ProductosTest extends TestCase
      *
      * @return void
      */
-    public function test_getById()
+    public function test_get_product_by_id()
     {
         $product = (new ProductoController)->createNewProduct(null, true);
         $data = (new ProductoController)->getProductById(null, true);
         $this->assertSame($product->id,  $data->id);
     }
+
+    public function test_update_product_by_id()
+    {
+        $product = (new ProductoController)->createNewProduct(null, true);
+        $product->nombre = 'Manzana';
+        $data = (new ProductoController)->updateProductById(null, 1, true);
+        $this->assertSame($product->nombre,  $data->nombre);
+    }
+
+
 }

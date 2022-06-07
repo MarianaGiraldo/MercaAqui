@@ -49,7 +49,7 @@ class ProductoController extends Controller
             'img'=>'required',
         ]);
         $nuevo = $this->createNewProduct($request);
-        $nuevo -> save();
+        $nuevo-> save();
         return redirect('/productos');
     }
 
@@ -62,7 +62,7 @@ class ProductoController extends Controller
     public function show($id)
     {
         return view('productos.show', [
-            'producto'=>Producto::findOrFail($id),
+            'producto'=>$this->getProductById($id),
             'productos'=>$this->getProductsList(),
             'fondo'=>'fondo2.jpg']);
     }
@@ -75,7 +75,7 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        $producto = Producto::findOrFail($id);
+        $producto =$this->getProductById($id);
         return view('productos.edit', ['producto'=>$producto, 'fondo'=>'fondo2.jpg']);
     }
 
@@ -88,11 +88,11 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $productoUpdt = Producto::find($id);
-        $productoUpdt ->nombre = $request->get('nombre');
-        $productoUpdt ->tipo = $request->get('tipo');
-        $productoUpdt ->precio = $request->get('precio');
-        $productoUpdt ->cantidad_disponible = $request->get('cantidad_disponible');
+        $productoUpdt = $this->getProductById($id);
+        $productoUpdt->nombre = $request->get('nombre');
+        $productoUpdt->tipo = $request->get('tipo');
+        $productoUpdt->precio = $request->get('precio');
+        $productoUpdt->cantidad_disponible = $request->get('cantidad_disponible');
         if($request->file('img') !== null) {
             $photo = $request->file('img');
             $filename = time() . '.' . $photo->getClientOriginalExtension();
@@ -100,7 +100,7 @@ class ProductoController extends Controller
             $request->img->move($destino, $filename);
             $productoUpdt->imagen = $filename;
         };
-        $productoUpdt -> save();
+        $productoUpdt-> save();
         return redirect('/productos');
     }
 
@@ -127,7 +127,7 @@ class ProductoController extends Controller
         return $lista ?? Producto::all();
     }
 
-    public function createNewProduct($request = null, $flag_product = false)
+    public function createNewProduct($request = null, $flag_test = false)
     {
         $producto = new Producto();
         if (isset($request)) {
@@ -138,9 +138,9 @@ class ProductoController extends Controller
             $filename = time() . '.' . $photo->getClientOriginalExtension();
             $destino=public_path('imagenes/productos/');
             $request->img->move($destino, $filename);
-            $producto ->imagen = $filename;
-            $producto ->cantidad_disponible = $request->get('cantidad_disponible');
-        } elseif ($flag_product) {
+            $producto->imagen = $filename;
+            $producto->cantidad_disponible = $request->get('cantidad_disponible');
+        } elseif ($flag_test) {
             $producto->id = 1;
             $producto->nombre = 'Papel higienico';
             $producto->tipo = 'Basicos del hogar';
@@ -150,12 +150,37 @@ class ProductoController extends Controller
         return $producto;
     }
 
-    public function getProductById($id = null, $flag_product = false)
+    public function getProductById($id = null, $flag_test = false)
     {
         if (isset($id)) {
             return Producto::findOrFail($id);
-        } elseif ($flag_product) {
-           return $this->createNewProduct(null, true);
+        } elseif ($flag_test) {
+           return $this->createNewProduct(null, $flag_test);
         }
+    }
+
+    public function updateProductById($request, $id, $flag_test = false)
+    {
+        if ($request !== null) {
+            $productoUpdt = $this->getProductById($id);
+            $productoUpdt->nombre = $request->get('nombre');
+            $productoUpdt->tipo = $request->get('tipo');
+            $productoUpdt->precio = $request->get('precio');
+            $productoUpdt->cantidad_disponible = $request->get('cantidad_disponible');
+            if($request->file('img') !== null) {
+                $photo = $request->file('img');
+                $filename = time() . '.' . $photo->getClientOriginalExtension();
+                $destino=public_path('imagenes/productos/');
+                $request->img->move($destino, $filename);
+                $productoUpdt->imagen = $filename;
+            };
+        } elseif ($flag_test) {
+            $productoUpdt = $this->getProductById(null, $flag_test);
+            $productoUpdt->nombre = 'Manzana';
+            $productoUpdt->tipo = 'Alimentos frescos';
+            $productoUpdt->precio = '2000';
+            $productoUpdt->cantidad_disponible = '100';
+        }
+        return $productoUpdt;
     }
 }
