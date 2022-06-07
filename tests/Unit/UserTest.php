@@ -33,7 +33,7 @@ class UserTest extends TestCase
     }
 
     /**
-     * A test to index products
+     * A test to store users
      *
      * @return void
      */
@@ -46,4 +46,30 @@ class UserTest extends TestCase
         $data = (new UserController)->createNewUser(null, true);
         $this->assertSame($user->nombre,  $data->nombre);
     }
+
+     /**
+     * A test to get user by its id
+     *
+     * @return void
+     */
+    public function test_get_user_by_id()
+    {
+        $user = (new UserController)->createNewUser(null, true);
+        $data = (new UserController)->getUserById(null, true);
+        $this->assertSame($user->id,  $data->id);
+    }
+
+    /**
+     * A test to update user by its id
+     *
+     * @return void
+     */
+    public function test_get_update_user_by_id()
+    {
+        $user = (new UserController)->createNewUser(null, true);
+        $user->nombre = 'David Felipe';
+        $data = (new UserController)->updateUserById(null, 1, true);
+        $this->assertSame($user->nombre,  $data->nombre);
+    }
+
 }
