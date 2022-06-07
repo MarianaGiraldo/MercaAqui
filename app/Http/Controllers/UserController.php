@@ -15,7 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('usuarios.index', ['users'=>User::where('is_admin', 0)->get(), 'fondo'=>'fondo2.jpg']);
+        $lista = $this->getUserList();
+        return view('usuarios.index', ['users'=> $lista, 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -132,4 +133,11 @@ class UserController extends Controller
         $dropUser=User::findOrFail($id);
         return view('usuarios.drop', ['dropUser'=>$dropUser, 'fondo'=>'fondo2.jpg']);
     }
+
+    public function getUserList($lista = null)
+    {
+        return $lista ?? User::all();
+    }
 }
+
+
