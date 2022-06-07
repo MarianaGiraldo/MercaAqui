@@ -19,8 +19,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $lista = $this->getProductsList();
-        return view('productos.index', ['productos'=> $lista, 'fondo'=>'fondo2.jpg']);
+        $list = $this->getProductsList();
+        return view('productos.index', ['productos'=> $list, 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -108,17 +108,33 @@ class ProductoController extends Controller
         return $id;
     }
 
+    /**
+     * Return view of confirmation to delete a Product
+     * @param $id of the product to delete
+     * @return \Illuminate\Http\Response
+     */
     public function drop($id)
     {
         $dropProduct = $this->getProductById($id);
         return view('productos.drop', ['dropProduct'=>$dropProduct, 'fondo'=>'fondo2.jpg']);
     }
 
-    public function getProductsList($lista = null)
+    /**
+     * Return the list of the products
+     * @param $list custom list of the products
+     * @return $list
+     */
+    public function getProductsList($list = null)
     {
-        return $lista ?? Producto::all();
+        return $list ?? Producto::all();
     }
 
+    /**
+     * Creates an new product from request if not generates one
+     * @param \Illuminate\Http\Request  $request
+     * @param $flag_test
+     * @return Product $product
+     */
     public function createNewProduct($request = null, $flag_test = false)
     {
         $producto = new Producto();
@@ -142,6 +158,12 @@ class ProductoController extends Controller
         return $producto;
     }
 
+    /**
+     * Return the product from its id or generates one
+     * @param $id of the Product
+     * @param $flag_test
+     * @return Product $product
+     */
     public function getProductById($id = null, $flag_test = false)
     {
         if (isset($id)) {
@@ -151,6 +173,13 @@ class ProductoController extends Controller
         }
     }
 
+    /**
+     * Updates the product from the request or generates one
+     * @param \Illuminate\Http\Request  $request
+     * @param $id of the Product
+     * @param $flag_test
+     * @return Product $product
+     */
     public function updateProductById($request, $id, $flag_test = false)
     {
         if ($request !== null) {
