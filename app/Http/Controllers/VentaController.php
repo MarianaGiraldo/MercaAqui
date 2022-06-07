@@ -24,7 +24,7 @@ class VentaController extends Controller
      */
     public function index()
     {
-        return view('ventas.index', ['ventas'=>Venta::all(), 'fondo'=>'fondo2.jpg']);
+        return view('ventas.index', ['ventas'=>$this->getVentasList(), 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -34,7 +34,7 @@ class VentaController extends Controller
      */
     public function create()
     {
-        return view('ventas.create', ['ventas'=>Venta::all(), 'productos'=>Producto::all(), 'fondo'=>'fondo2.jpg']);
+        return view('ventas.create', ['ventas'=>$this->getVentasList(), 'productos'=>Producto::all(), 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -50,11 +50,8 @@ class VentaController extends Controller
             'nombre_cliente'=>'required',
             'productos' =>'required | min:1'
         ]);
-        $nuevaVenta = new Venta();
-        $nuevaVenta ->fecha_venta = $request->get('fecha_venta');
-        $nuevaVenta ->nombre_cliente = $request->get('nombre_cliente');
-        $nuevaVenta ->vendedor_id = Auth::user()->id;
-        $nuevaVenta -> save();
+        $nuevaVenta = $this->createNewVenta($request);
+        $nuevaVenta->save();
 
         $productosChecked = $request->productos;
 
@@ -66,9 +63,9 @@ class VentaController extends Controller
 
             $nuevaVenta->producto()->attach($producto->id);
             DB::table('producto_venta')
-              ->orderBy('id', 'desc')
-              ->limit(1)
-              ->update(['cantidad' => $cantidad]);
+             ->orderBy('id', 'desc')
+             ->limit(1)
+             ->update(['cantidad' => $cantidad]);
 
         }
 
@@ -86,7 +83,7 @@ class VentaController extends Controller
         $venta=Venta::findOrFail($id);
         $vendedor = User::findOrFail($venta->vendedor_id);
         $producto_ventas=DB::table('producto_venta')
-            ->where('venta_id', $venta->id)->get();
+           ->where('venta_id', $venta->id)->get();
 
         $productos=array();
         $total = 0;
@@ -187,5 +184,37 @@ class VentaController extends Controller
     {
         $dropVenta=Venta::find($id);
         return view('ventas.drop', ['ventas'=>$dropVenta, 'fondo'=>'fondo2.jpg']);
+    }
+
+    /**
+     * Return the list of the ventas
+     * @param $list custom list of the ventas
+     * @return $list
+     */
+    public function getVentasList($list = null)
+    {
+        return $list ?? Venta::all();
+    }
+
+    /**
+     * Creates an new venta from request if not generates one
+     * @param \Illuminate\Http\Request  $request
+     * @param $flag_test
+     * @return Venta $venta
+     */
+    public function createNewVenta($request = null, $flag_test = false)
+    {
+        $venta = new Venta();
+        if (isset($request)) {
+            $venta->fecha_venta = $request->get('fecha_venta');
+            $venta->nombre_cliente = $request->get('nombre_cliente');
+            $venta->vendedor_id = Auth::user()->id;
+        } elseif ($flag_test) {
+            $venta->id = 1;
+            $venta->fecha_venta = '2022-04-27';
+            $venta->nombre_cliente = 'Mariana Giraldo';
+            $venta->vendedor_id = 1;
+        }
+        return $venta;
     }
 }
