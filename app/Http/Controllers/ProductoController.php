@@ -19,7 +19,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return view('productos.index', ['productos'=>Producto::all(), 'fondo'=>'fondo2.jpg']);
+        $lista = $this->getProductsList();
+        return view('productos.index', ['productos'=> $lista, 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -29,7 +30,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('productos.create', ['productos'=>Producto::all(), 'fondo'=>'fondo2.jpg']);
+        return view('productos.create', ['productos'=>$this->getProductsList(), 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -47,16 +48,7 @@ class ProductoController extends Controller
             'cantidad_disponible'=>'required',
             'img'=>'required',
         ]);
-        $nuevo = new Producto();
-        $nuevo ->nombre = $request->get('nombre');
-        $nuevo ->tipo = $request->tipo;
-        $nuevo ->precio = $request->get('precio');
-        $photo = $request->file('img');
-        $filename = time() . '.' . $photo->getClientOriginalExtension();
-        $destino=public_path('imagenes/productos/');
-        $request->img->move($destino, $filename);
-        $nuevo ->imagen = $filename;
-        $nuevo ->cantidad_disponible = $request->get('cantidad_disponible');
+        $nuevo = $this->createNewProduct($request);
         $nuevo -> save();
         return redirect('/productos');
     }
@@ -123,9 +115,39 @@ class ProductoController extends Controller
         Producto::destroy($id);
         return redirect('/productos');
     }
+
     public function drop($id)
     {
         $dropProduct = Producto::find($id);
         return view('productos.drop', ['dropProduct'=>$dropProduct, 'fondo'=>'fondo2.jpg']);
     }
+
+    public function getProductsList($lista = null)
+    {
+        return $lista ?? Producto::all();
+    }
+
+    public function createNewProduct($request = null, $flag_product = false)
+    {
+        $producto = new Producto();
+        if (isset($request)) {
+            $producto->nombre = $request->get('nombre');
+            $producto->tipo = $request->tipo;
+            $producto->precio = $request->get('precio');
+            $photo = $request->file('img');
+            $filename = time() . '.' . $photo->getClientOriginalExtension();
+            $destino=public_path('imagenes/productos/');
+            $request->img->move($destino, $filename);
+            $producto ->imagen = $filename;
+            $producto ->cantidad_disponible = $request->get('cantidad_disponible');
+        } elseif ($flag_product) {
+            $producto->id = 1;
+            $producto->nombre = 'Papel higienico';
+            $producto->tipo = 'Basicos del hogar';
+            $producto->precio = '2000';
+            $producto->cantidad_disponible = 50;
+        }
+        return $producto;
+    }
+
 }
