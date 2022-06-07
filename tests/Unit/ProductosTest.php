@@ -16,7 +16,7 @@ class ProductosTest extends TestCase
      *
      * @return void
      */
-    public function test_index()
+    public function test_index_products()
     {
         $producto = new Producto();
         $producto->id = 1;
@@ -31,11 +31,11 @@ class ProductosTest extends TestCase
     }
 
     /**
-     * A test to index products
+     * A test to saving products
      *
      * @return void
      */
-    public function test_store()
+    public function test_store_products()
     {
         $producto = new Producto();
         $producto->id = 1;
@@ -43,5 +43,17 @@ class ProductosTest extends TestCase
 
         $data = (new ProductoController)->createNewProduct(null, true);
         $this->assertSame($producto->nombre,  $data->nombre);
+    }
+
+    /**
+     * A test to getproduct by its id
+     *
+     * @return void
+     */
+    public function test_getById()
+    {
+        $product = (new ProductoController)->createNewProduct(null, true);
+        $data = (new ProductoController)->getProductById(null, true);
+        $this->assertSame($product->id,  $data->id);
     }
 }

@@ -63,7 +63,7 @@ class ProductoController extends Controller
     {
         return view('productos.show', [
             'producto'=>Producto::findOrFail($id),
-            'productos'=>Producto::all(),
+            'productos'=>$this->getProductsList(),
             'fondo'=>'fondo2.jpg']);
     }
 
@@ -150,4 +150,12 @@ class ProductoController extends Controller
         return $producto;
     }
 
+    public function getProductById($id = null, $flag_product = false)
+    {
+        if (isset($id)) {
+            return Producto::findOrFail($id);
+        } elseif ($flag_product) {
+           return $this->createNewProduct(null, true);
+        }
+    }
 }
