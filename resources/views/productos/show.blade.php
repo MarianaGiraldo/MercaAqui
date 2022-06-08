@@ -10,7 +10,7 @@
                             <div class="col-sm-4 user-profile pb-0">
                                 <div class="card-block text-center text-white">
                                     <img class="w-100"
-                                        src="{{ asset('imagenes/productos/' . $producto->imagen) }}"
+                                        src="{{ $producto->imagen }}"
                                         alt="{{ $producto->nombre }}" />
                                 </div>
                             </div>

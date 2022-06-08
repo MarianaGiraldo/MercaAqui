@@ -11,7 +11,7 @@
                                     <div class="col-sm-4 user-profile pb-0">
                                         <div class="card-block text-center text-white m-auto position-absolute" style="top:50%; transform: translateY(-50%);">
                                             <img class="w-100"
-                                                src="{{ asset('imagenes/productos/' . $producto->imagen) }}"
+                                                src="{{ $producto->imagen }}"
                                                 alt="{{ $producto->nombre }}" />
                                         </div>
                                     </div>
@@ -66,16 +66,10 @@
                                                         </script>
                                                     </div>
                                                 </div>
-                                                <label for="img" class="label input-field  pb-0 row mb-0 ml-2">Imagen del
-                                                    Producto</label>
-                                                <div class="row">
-                                                    <div id="inputfile" class="inputfile input-field col s12 bg-c-lite-green">
-                                                        <div class="file d-block w-100">
-                                                            <input type="file" class="file-input bg-gradient validate" id="img"
-                                                                lang="es" name="img" value="{{ $producto->imagen }}">
-                                                            <label class="file-label label" for="img">Seleccionar
-                                                                Imagen</label>
-                                                        </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s12">
+                                                        <input value=" {{ $producto->imagen }} " id="img" name="img" type="text" class="validate">
+                                                        <label for="img">Link de imagen</label>
                                                     </div>
                                                 </div>
                                                 <div class="pt-4">
