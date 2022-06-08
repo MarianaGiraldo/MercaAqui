@@ -45,14 +45,9 @@ class UserController extends Controller
             'celular'=>'required',
             'fecha_nacimiento'=>'required',
         ]);
-        $newUser = new User();
-        $newUser ->nombre = $request->get('nombre');
-        $newUser ->apellido = $request->get('apellido');
-        $newUser ->email = $request->get('email');
-        $newUser ->password = $request->get('password');
-        $newUser ->celular = $request->get('celular');
-        $newUser ->fecha_nacimiento = $request->get('fecha_nacimiento');
+       
 
+        $newUser -> $this->createNewUser($request);
         $newUser -> save();
         $newUser->assignRole('Vendedor');
         return redirect('/usuarios');
@@ -137,6 +132,75 @@ class UserController extends Controller
     public function getUserList($lista = null)
     {
         return $lista ?? User::all();
+    }
+
+    public function createNewUser($request = null, $flag_test = false)
+    {
+        $user = new User();
+        if (isset($request)) {
+            $newUser = new User();
+            $newUser ->nombre = $request->get('nombre');
+            $newUser ->apellido = $request->get('apellido');
+            $newUser ->email = $request->get('email');
+            $newUser ->password = $request->get('password');
+            $newUser ->celular = $request->get('celular');
+            $newUser ->fecha_nacimiento = $request->get('fecha_nacimiento');
+        } elseif ($flag_test) {
+            $user->id = 1;
+            $user->nombre = 'David Felipe ';
+            $user->apellido = 'Castro Herrera';
+            $user->celular = '3192154875';
+            $user->fecha_nacimiento = '1997-12-11';
+            $user->correo = 'castroherreradavid@gmail.com';
+            $user->password = 'changeme';
+        }
+        return $user;
+    }
+    /**
+     * A test to get user by its id
+     *
+     * @return void
+     */
+    public function getUserById($id = null, $flag_test = false)
+    {
+        if (isset($id)) {
+            return User::findOrFail($id);
+        } elseif ($flag_test) {
+           return $this->createNewUser(null, $flag_test);
+        }
+    }
+    /**
+     * A test to get update user 
+     *
+     * @return void
+     */
+    public function updateUserById($request, $id, $flag_test = false)
+    {
+        if ($request !== null) {
+            $userUpdt = $this->getUserById($id);
+            $userUpdt ->nombre = $request->get('nombre');
+            $userUpdt ->apellido = $request->get('apellido');
+            $userUpdt ->email = $request->get('email');
+            $userUpdt ->celular = $request->get('celular');
+            $userUpdt ->fecha_nacimiento = $request->get('fecha_nacimiento');
+            if ($request->password != null ) {
+                $userUpdt ->password = Hash::make($request->get('password'));
+            };
+            if ($request->is_admin != null ) {
+                $is_admin = $request->is_admin === 'true' ? true: false;
+                $userUpdt ->is_admin = $is_admin;
+            };
+        }elseif ($flag_test) {
+            $userUpdt = $this->getUserById(null, $flag_test);
+            $userUpdt->id = 1;
+            $userUpdt->nombre = 'David Felipe';
+            $userUpdt->apellido = 'Castro Herrera';
+            $userUpdt->celular = '3192154875';
+            $userUpdt->fecha_nacimiento = '1997-12-11';
+            $userUpdt->correo = 'castroherreradavid@gmail.com';
+            $userUpdt->password = 'changeme';
+        }
+        return $userUpdt;
     }
 }
 
