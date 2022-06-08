@@ -51,14 +51,17 @@ class VentaController extends Controller
             'productos' =>'required | min:1'
         ]);
         $nuevaVenta = $this->createNewVenta($request);
+        $nuevaVenta->total = 0;
         $nuevaVenta->save();
 
         $productosChecked = $request->productos;
+        $total = 0;
 
         foreach ($productosChecked as $productoId) {
             $producto = Producto::findOrFail($productoId);
             $cantidad = $request->get($productoId);
             $producto->cantidad_disponible = $producto->cantidad_disponible - $cantidad;
+            $total = $total + $producto->precio * $cantidad;
             $producto-> save();
 
             $nuevaVenta->producto()->attach($producto->id);
@@ -68,6 +71,8 @@ class VentaController extends Controller
              ->update(['cantidad' => $cantidad]);
 
         }
+        $nuevaVenta->total = $total;
+        $nuevaVenta-> save();
 
         return redirect('/ventas');
     }
@@ -95,7 +100,7 @@ class VentaController extends Controller
             $producto_array['nombre'] = $producto->nombre;
             $producto_array['precio'] = $producto->precio;
             array_push($productos, $producto_array);
-            $total = $total + $producto_array['precio'] * $producto_array['cantidad'];
+            
         }
 
         return view('ventas.show', [

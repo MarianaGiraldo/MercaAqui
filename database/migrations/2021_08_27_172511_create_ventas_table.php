@@ -18,6 +18,7 @@ class CreateVentasTable extends Migration
             $table->date('fecha_venta');
             $table->foreignId('vendedor_id')->constrained('users');
             $table->string('nombre_cliente');
+            $table->integer('total')->default(0);
             $table->timestamps();
         });
     }

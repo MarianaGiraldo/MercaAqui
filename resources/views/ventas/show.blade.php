@@ -103,7 +103,7 @@
                                                 </div>
                                                 <div class="col-7">
                                                     <span
-                                                        class="number text-150 text-success-d3 opacity-2">${{ $total }}</span>
+                                                        class="number text-150 text-success-d3 opacity-2">${{ $venta->total }}</span>
                                                 </div>
                                             </div>
                                         </div>
