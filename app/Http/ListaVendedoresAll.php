@@ -5,11 +5,11 @@
         while ($row = $resulset->fetch_array(MYSQLI_NUM)) {
             $e = array();
             $e['id'] = $row[0];
-            $e['nombre'] = $row[1];
-            $e['apellido'] = $row[2];
-            $e['email'] = $row[3];
-            $e['celular'] = $row[4];
-            $e['fecha_nacimiento'] = $row[5];
+            $e['nombre'] = $row[4];
+            $e['apellido'] = $row[5];
+            $e['email'] = $row[6];
+            $e['celular'] = $row[8];
+            $e['fecha_nacimiento'] = $row[9];
             array_push($array, $e);
         }
         print_r(json_encode($array));
