@@ -142,11 +142,11 @@ class ProductoController extends Controller
             $producto->nombre = $request->get('nombre');
             $producto->tipo = $request->tipo;
             $producto->precio = $request->get('precio');
-            $photo = $request->file('img');
-            $filename = time() . '.' . $photo->getClientOriginalExtension();
-            $destino=public_path('imagenes/productos/');
-            $request->img->move($destino, $filename);
-            $producto->imagen = $filename;
+            //$photo = $request->file('img');
+            //$filename = time() . '.' . $photo->getClientOriginalExtension();
+            //$destino=public_path('imagenes/productos/');
+            //$request->img->move($destino, $filename);
+            $producto->imagen = $request->get('img');
             $producto->cantidad_disponible = $request->get('cantidad_disponible');
         } elseif ($flag_test) {
             $producto->id = 1;
@@ -188,13 +188,14 @@ class ProductoController extends Controller
             $productoUpdt->tipo = $request->get('tipo');
             $productoUpdt->precio = $request->get('precio');
             $productoUpdt->cantidad_disponible = $request->get('cantidad_disponible');
-            if($request->file('img') !== null) {
-                $photo = $request->file('img');
-                $filename = time() . '.' . $photo->getClientOriginalExtension();
-                $destino=public_path('imagenes/productos/');
-                $request->img->move($destino, $filename);
-                $productoUpdt->imagen = $filename;
-            };
+            $productoUpdt->imagen = $request->get('img');
+            // if($request->file('img') !== null) {
+            //     $photo = $request->file('img');
+            //     $filename = time() . '.' . $photo->getClientOriginalExtension();
+            //     $destino=public_path('imagenes/productos/');
+            //     $request->img->move($destino, $filename);
+            //     $productoUpdt->imagen = $filename;
+            // };
         } elseif ($flag_test) {
             $productoUpdt = $this->getProductById(null, $flag_test);
             $productoUpdt->nombre = 'Manzana';

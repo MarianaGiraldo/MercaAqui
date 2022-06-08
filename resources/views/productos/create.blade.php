@@ -65,8 +65,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                    <input placeholder="https://yourimage.com/41548.png" id="cantidad_disponible" name="cantidad_disponible" type="number" class="validate">
-                                    <label for="cantidad_disponible">Cantidad disponible</label>
+                                    <input placeholder="https://yourimage.com/41548.png" id="img" name="img" type="text" class="validate">
+                                    <label for="img">Link de imagen</label>
                                     </div>
                                 </div>
                                 <div class="py-4">
