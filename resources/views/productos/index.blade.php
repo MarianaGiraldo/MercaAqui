@@ -14,7 +14,7 @@
                                     <div class="card profile-card-5" style="max-height:420px ">
                                         <div class="card-img-block d-block" style="height: 260px">
                                             <img class="card-img-top" style="max-height: 230px; max-width: 100%"
-                                                src="{{ asset('imagenes/productos/' . $producto->imagen) }}"
+                                                src="{{ $producto->imagen }}"
                                                 alt="{{ $producto->nombre }}">
                                         </div>
                                         <div class="card-body pt-0" style="height:160px">
