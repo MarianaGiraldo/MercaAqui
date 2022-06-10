@@ -44,7 +44,7 @@
                                             <label for="nombre_cliente">Nombre Cliente</label>
                                         </div>
                                     </div>
-                                    <div class="formgroup w-50 m-auto">
+                                    <div class="formgroup w-75 m-auto">
                                         <label for="productos">Seleccione los productos vendidos y la cantidad</label>
                                         @foreach ($productos as $producto)
                                             <div class="row">
@@ -58,8 +58,10 @@
                                                 <div class="col">
                                                     <input type="number" name="{{ $producto->id }}" id="{{ $producto->id }}"
                                                         value="1" max="{{ $producto->cantidad_disponible }}" min="1">
-                                                    <p class="text-muted mb-0 py-0">Máximo: {{ $producto->cantidad_disponible }}
-                                                    </p>
+                                                    <p class="text-muted mb-0 py-0">Máximo: {{ $producto->cantidad_disponible }}</p>
+                                                </div>
+                                                <div class="col">
+                                                    <p class="number text-muted mb-0 py-0">Precio: ${{ $producto->precio }}</p>
                                                 </div>
                                             </div>
                                         @endforeach
