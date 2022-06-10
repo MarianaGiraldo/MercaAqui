@@ -21,7 +21,7 @@ class ProductSeeder extends Seeder
             'precio' => '1500', 
             'cantidad_disponible'=> 500 ]);
         Producto::create([
-            'imagen'=>'https://assets.stickpng.com/thumbs/580b57fbd9996e24bc43c0de.png', 
+            'imagen'=>'https://m.media-amazon.com/images/I/5156FefjlqL._SX425_.jpg', 
             'nombre'=>'Coca-Cola 1.5', 
             'tipo' => 'Bebidas', 
             'precio' => '3500', 
