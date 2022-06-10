@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@role('Admin|Vendedor')
 <div class="parallax-index">
     <div class="" id="">
         <div class="padding">
