@@ -30,7 +30,7 @@ class UserFactory extends Factory
             'password' => bcrypt('password'), // password
             'celular' => $this->faker->randomNumber(),
             'fecha_nacimiento' => $this->faker->date('Y-m-d'),
-            'is_admin' => $this->faker->boolean(),
+            'is_admin' => 0,
             'remember_token' => Str::random(10),
         ];
     }
