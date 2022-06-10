@@ -21,7 +21,7 @@ class ProductSeeder extends Seeder
             'precio' => '1500', 
             'cantidad_disponible'=> 500 ]);
         Producto::create([
-            'imagen'=>'https://m.media-amazon.com/images/I/5156FefjlqL._SX425_.jpg', 
+            'imagen'=>'https://i2.wp.com/mercaenlinea.nyc3.digitaloceanspaces.com/2020/03/coca-cola-p400.jpg?fit=720%2C720&ssl=1', 
             'nombre'=>'Coca-Cola 1.5', 
             'tipo' => 'Bebidas', 
             'precio' => '3500', 
