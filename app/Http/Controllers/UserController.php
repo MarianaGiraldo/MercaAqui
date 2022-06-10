@@ -131,7 +131,7 @@ class UserController extends Controller
 
     public function getUserList($lista = null)
     {
-        return $lista ?? User::all();
+        return $lista ?? User::where('is_admin', 0)->all();
     }
 
     public function createNewUser($request = null, $flag_test = false)
