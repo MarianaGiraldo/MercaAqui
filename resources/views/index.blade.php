@@ -25,13 +25,13 @@
 
     </div>
     <div class="col s6 ">
-      <img src="imagenes/fresh.jpg" alt="Fresh_img" height="100%" width="100%">
+      <img src="imagenes/fresh.jpg" class="my-auto" alt="Fresh_img" width="100%" height="100%" style= "object-fit:cover" >
     </div>
   </div>
   <br>
   <div class="row">
       <div class="col s6">
-        <img src="imagenes/quality.png" alt="Quality_img" height="100%" width="100%">
+        <img src="imagenes/quality.png" alt="Quality_img" width="100%" height="100%" style= "object-fit:cover">
       </div>
     <div class="col s6 ">
       <h1>Productos de calidad</h1>
