@@ -149,6 +149,7 @@ class VentaController extends Controller
         $ventaUpd -> save();
 
         $productosChecked = $request->productos;
+        $total = 0;
 
         foreach ($productosChecked as $productoId) {
             $producto = Producto::findOrFail($productoId);
@@ -156,6 +157,7 @@ class VentaController extends Controller
             $producto_venta = DB::table('producto_venta')
                             ->where('producto_id', $productoId)
                             ->where('venta_id', $ventaUpd->id);
+            $total = $total + $producto->precio * $cantidad;
             if($producto_venta->doesntExist()){
                 $cantidad = $request->get($productoId);
                 $producto->cantidad_disponible = $producto->cantidad_disponible - $cantidad;
@@ -171,6 +173,8 @@ class VentaController extends Controller
               ->where('venta_id', $ventaUpd->id)
               ->update(['cantidad' => $cantidad]);
         }
+        $ventaUpd->total = $total;
+        $ventaUpd->save();
         return redirect('/ventas');
     }
 
