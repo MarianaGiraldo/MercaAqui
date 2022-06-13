@@ -31,7 +31,7 @@
   <br>
   <div class="row">
       <div class="col s6">
-        <img src="imagenes/quality.png" alt="Quality_img" height="350px" width="500px">
+        <img src="imagenes/quality.png" alt="Quality_img" height="350px" width="100%">
       </div>
     <div class="col s6 ">
       <h1>Productos de calidad</h1>

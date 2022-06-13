@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @role('Admin')
-<div class="parallax-index">
+<div class="parallax-index" style="height: 100%;">
     <div class="page-content page-container" id="page-content">
         <div class="container pt-5">
             @if($errors->any())
@@ -22,7 +22,7 @@
                         <div class="row m-l-0 m-r-0 mb-0">
                             <div class="col-sm-4 bg-c-lite-green user-profile">
                                 <div class="card-block text-center text-white m-auto position-absolute" style="top:30%; right:50%; left:25%; transform: translateY(-25%);">
-                                    <i class="fa-solid fa-cart-plus text-center" alt="NewProduct-Image" style="font-size:7rem;"></i>   
+                                    <i class="fa-solid fa-cart-plus text-center" alt="NewProduct-Image" style="font-size:7rem;"></i>
                                 </div>
                                 <div class="card-block text-center text-white m-auto position-absolute" style="top:45%; left:22%;">
                                     <h4 class="f-w-600 text-center">Nuevo Producto</h4>
