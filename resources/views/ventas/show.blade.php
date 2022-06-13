@@ -131,6 +131,6 @@
             </div>
         </div>
     @else
-        @include('components.authAlert')
+        @include('components.authAlert',  ['url' => "/ventas"])
     @endhasanyrole
 @endsection

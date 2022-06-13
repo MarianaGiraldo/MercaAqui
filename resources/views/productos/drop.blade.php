@@ -33,6 +33,6 @@
             </div>
         </div>
     @else
-        @include('components.authAlert')
+        @include('components.authAlert', ['url' => "/productos/" . $dropProduct->id])
     @endrole
 @endsection

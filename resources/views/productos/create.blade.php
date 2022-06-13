@@ -86,6 +86,6 @@
     </div>
 </div>
 @else
-@include('components.authAlert')
+@include('components.authAlert', ['url' => "/productos"])
 @endrole
 @endsection
