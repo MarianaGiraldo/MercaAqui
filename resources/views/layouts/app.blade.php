@@ -68,6 +68,9 @@
             width:6rem;
             height:100%;
         }
+        .table-title {
+            padding-top: 1rem;
+        }
 
         @media only screen and (max-width: 600px) {
             /* For mobile phones: */

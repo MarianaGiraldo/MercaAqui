@@ -4,9 +4,9 @@
         <div>
             <div class="parallax-index">
                 <br><br><br>
-                <div class="bg-light w-75 m-auto p-1 rounded h-75">
+                <div class="bg-light w-75 m-auto px-1 pt-0 rounded h-75">
                     <div class="col overflow-auto h-100">
-                        <h2 class="center-align sticky-top bg-light mt-3">Productos</h2>
+                        <h2 class="table-title center-align sticky-top bg-light mt-3">Productos</h2>
 
                         <div class="row center container m-auto">
                             @foreach ($productos as $producto)
