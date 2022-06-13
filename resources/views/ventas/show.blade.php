@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
     @hasanyrole('Admin|Vendedor')
-        <div class="parallax-index">
+        <div class="parallax-index" style="height: 100%;">
             <br><br><br>
-            <!-- ---------New table---------- -->
+            <!-- ---------Factura---------- -->
             <div class="bg-light m-auto p-4 rounded col-md-7 col-sm-9">
                 <div class="page-content container">
                     <div class="container px-0">
@@ -110,7 +110,7 @@
                                     </div>
                                     <div>
                                         <span class="text-secondary-d1 text-105">Gracias por tu compra</span>
-                                        <div class="pt-4 row col-sm-6 mx-auto">
+                                        <div class="pt-4 row col-sm-6 ml-auto float-right mb-0 pb-0">
                                             <div class="col-xs-6 mx-1 mb-2">
                                                 <a href="/ventas"
                                                 class="waves-effect waves-light btn text-white"
