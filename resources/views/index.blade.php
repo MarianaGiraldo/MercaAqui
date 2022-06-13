@@ -25,13 +25,13 @@
 
     </div>
     <div class="col s6 ">
-      <img src="imagenes/fresh.jpg" alt="Fresh_img">
+      <img src="imagenes/fresh.jpg" alt="Fresh_img" height="100%" width="100%">
     </div>
   </div>
   <br>
   <div class="row">
       <div class="col s6">
-        <img src="imagenes/quality.png" alt="Quality_img" height="350px" width="100%">
+        <img src="imagenes/quality.png" alt="Quality_img" height="100%" width="100%">
       </div>
     <div class="col s6 ">
       <h1>Productos de calidad</h1>
