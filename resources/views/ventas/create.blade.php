@@ -22,7 +22,7 @@
                         <div class="row m-l-0 m-r-0 mb-0">
                             <div class="col-sm-4 bg-c-lite-green user-profile">
                                 <div class="card-block text-center text-white m-auto position-absolute" style="top:30%; right:50%; left:25%; transform: translateY(-25%);">
-                                    <i class="fa-solid fa-file-circle-plus text-center" alt="Venta-Image" style="font-size:7rem;"></i>   
+                                    <i class="fa-solid fa-file-circle-plus text-center" alt="Venta-Image" style="font-size:7rem;"></i>
                                 </div>
                                 <div class="card-block text-center text-white m-auto position-absolute" style="top:45%; left:22%;">
                                     <h4 class="f-w-600 text-center">Nueva Venta</h4>
@@ -34,7 +34,7 @@
                                     @csrf
                                     <div class="row ">
                                         <div class="input-field col s6">
-                                            <input id="fecha_venta" name="fecha_venta" type="date" class="validate"
+                                            <input id="fecha_venta" name="fecha_venta" type="date" class="validate" value="{{$current}}"
                                                 required>
                                             <label for="fecha_venta">Fecha Venta</label>
                                         </div>

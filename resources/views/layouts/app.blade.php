@@ -57,7 +57,6 @@
             font-family: 'Akshar', sans-serif;
             src: url('/font/Akshar/Akshar-Regular.ttf');
         }
-
     </style>
 </head>
 
@@ -70,11 +69,10 @@
                 <a id="logo-container" href="/" class=" navbar-brand col"
                     style="font-family: Akshar; color:#ff9b42; font-size: 4rem">Merca Aqui</a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon "
-                    style="color:#ff9b42;"><i class="fa-solid fa-bars"></i></span>
+                    <span class="navbar-toggler-icon " style="color:#ff9b42;"><i class="fa-solid fa-bars"></i></span>
                 </button>
                 <div class="collapse navbar-collapse float-right" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -85,20 +83,22 @@
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item p-0 mx-2 col-5" style="background-color: #2B4162;">
+                                <li class="nav-item p-0 mx-2" style="background-color: #2B4162;">
                                     <a class="nav-link p-0" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item p-0 mx-2 col-5" style="background-color: #2B4162;">
+                                <li class="nav-item p-0 mx-2" style="background-color: #2B4162;">
                                     <a class="nav-link p-0" href="{{ route('register') }}">{{ __('Registrar') }}</a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item p-0 mx-2" style="background-color: #2B4162;">
-                                <a class="nav-link p-0" href="/usuarios">Vendedores</a>
-                            </li>
+                            @role('Admin')
+                                <li class="nav-item p-0 mx-2" style="background-color: #2B4162;">
+                                    <a class="nav-link p-0" href="/usuarios">Vendedores</a>
+                                </li>
+                            @endrole
                             <li class="nav-item p-0 mx-2" style="background-color: #2B4162;">
                                 <a class="nav-link p-0" href="/productos">Productos</a>
                             </li>
@@ -115,7 +115,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                                                        document.getElementById('logout-form').submit();">
+                                                                                            document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 class VentaController extends Controller
 {
@@ -34,7 +35,7 @@ class VentaController extends Controller
      */
     public function create()
     {
-        return view('ventas.create', ['ventas'=>$this->getVentasList(), 'productos'=>Producto::all(), 'fondo'=>'fondo2.jpg']);
+        return view('ventas.create', ['ventas'=>$this->getVentasList(), 'productos'=>Producto::all(), 'current' =>Carbon::now()->toDateString(), 'fondo'=>'fondo2.jpg']);
     }
 
     /**
@@ -100,7 +101,7 @@ class VentaController extends Controller
             $producto_array['nombre'] = $producto->nombre;
             $producto_array['precio'] = $producto->precio;
             array_push($productos, $producto_array);
-            
+
         }
 
         return view('ventas.show', [
