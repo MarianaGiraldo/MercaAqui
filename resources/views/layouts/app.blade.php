@@ -66,46 +66,47 @@
         <nav class="navbar navbar-expand-lg justify-content-between fixed-top w-100 d-inline" role="navigation"
             style="background-color: #2B4162; height: 80px">
             <div class="mx-5 d-flex mt-0 h-100">
-                <img src="/logo/logo.png" alt="logo" style="width:120px; height:100%" class="mx-0 my-auto">
+                <img src="/logo/logo.png" alt="logo" style="width:6rem; height:100%" class="mx-0 my-auto">
                 <a id="logo-container" href="/" class=" navbar-brand col"
-                    style="font-family: Akshar; color:#ff9b42; font-size: 60px">Merca Aqui</a>
+                    style="font-family: Akshar; color:#ff9b42; font-size: 4rem">Merca Aqui</a>
 
-                <button class="col navbar-toggler" type="button" data-toggle="collapse"
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon "
+                    style="color:#ff9b42;"><i class="fa-solid fa-bars"></i></span>
                 </button>
-                <div class="col collapse navbar-collapse float-right" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse float-right" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                     </ul>
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto float-right">
+                    <ul class="navbar-nav ml-auto float-right" style="display:inline-block; right:10%;">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
+                                <li class="nav-item p-0 mx-2 col-5" style="background-color: #2B4162;">
+                                    <a class="nav-link p-0" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrar') }}</a>
+                                <li class="nav-item p-0 mx-2 col-5" style="background-color: #2B4162;">
+                                    <a class="nav-link p-0" href="{{ route('register') }}">{{ __('Registrar') }}</a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="/usuarios">Vendedores</a>
+                            <li class="nav-item p-0 mx-2" style="background-color: #2B4162;">
+                                <a class="nav-link p-0" href="/usuarios">Vendedores</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/productos">Productos</a>
+                            <li class="nav-item p-0 mx-2" style="background-color: #2B4162;">
+                                <a class="nav-link p-0" href="/productos">Productos</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/ventas">Ventas</a>
+                            <li class="nav-item p-0 mx-2" style="background-color: #2B4162;">
+                                <a class="nav-link p-0" href="/ventas">Ventas</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                            <li class="nav-item p-0 mx-2 dropdown" style="background-color: #2B4162;">
+                                <a id="navbarDropdown" class="nav-link p-0 dropdown-toggle" href="#" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre
                                     style="font-family: Akshar; color:#ff9b42; font-size: 30px">
                                     {{ Auth::user()->nombre }}
