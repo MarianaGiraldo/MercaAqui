@@ -6,7 +6,7 @@
                 <br><br><br>
                 <div class="bg-light w-50 m-auto p-1 rounded h-75">
                     <div class="col overflow-auto h-100">
-                        <h2 class="center-align sticky-top bg-light mt-2">Ventas</h2>
+                        <h2 class="table-title center-align sticky-top bg-light mt-2">Ventas</h2>
                         <table class="highlight">
                             <thead>
                                 <tr>
