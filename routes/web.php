@@ -28,6 +28,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/usuarios/{id}/drop', [\App\Http\Controllers\UserController::class , 'drop' ]);
-Route::get('/productos/{id}/drop', [\App\Http\Controllers\ProductoController::class , 'drop' ]);
-Route::get('/ventas/{id}/drop', [\App\Http\Controllers\VentasController::class , 'drop' ]);
+Route::get('/usuarios/{id}/drop', [UserController::class , 'drop' ]);
+Route::get('/productos/{id}/drop', [ProductoController::class , 'drop' ]);
+Route::get('/ventas/{id}/drop', [VentaController::class , 'drop' ]);
