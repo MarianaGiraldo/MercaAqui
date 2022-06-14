@@ -45,9 +45,8 @@ class UserController extends Controller
             'celular'=>'required',
             'fecha_nacimiento'=>'required',
         ]);
-       
 
-        $newUser -> $this->createNewUser($request);
+        $newUser = $this->createNewUser($request);
         $newUser -> save();
         $newUser->assignRole('Vendedor');
         return redirect('/usuarios');
@@ -138,13 +137,13 @@ class UserController extends Controller
     {
         $user = new User();
         if (isset($request)) {
-            $newUser = new User();
-            $newUser ->nombre = $request->get('nombre');
-            $newUser ->apellido = $request->get('apellido');
-            $newUser ->email = $request->get('email');
-            $newUser ->password = $request->get('password');
-            $newUser ->celular = $request->get('celular');
-            $newUser ->fecha_nacimiento = $request->get('fecha_nacimiento');
+            $user = new User();
+            $user ->nombre = $request->get('nombre');
+            $user ->apellido = $request->get('apellido');
+            $user ->email = $request->get('email');
+            $user ->password = $request->get('password');
+            $user ->celular = $request->get('celular');
+            $user ->fecha_nacimiento = $request->get('fecha_nacimiento');
         } elseif ($flag_test) {
             $user->id = 1;
             $user->nombre = 'David Felipe ';
@@ -170,7 +169,7 @@ class UserController extends Controller
         }
     }
     /**
-     * A test to get update user 
+     * A test to get update user
      *
      * @return void
      */
