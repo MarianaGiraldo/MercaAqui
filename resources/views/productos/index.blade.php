@@ -4,7 +4,7 @@
         <div>
             <div class="parallax-index">
                 <br><br><br>
-                <div class="bg-light w-75 m-auto px-1 pt-0 rounded h-75">
+                <div class="bg-light col-md-6 col-sm-8 m-auto pb-3 pr-0 pl-3 rounded h-75">
                     <div class="col overflow-auto h-100">
                         <h2 class="table-title center-align sticky-top bg-light mt-3">Productos</h2>
 

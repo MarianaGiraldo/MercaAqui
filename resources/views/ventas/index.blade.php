@@ -4,13 +4,13 @@
         <div>
             <div class="parallax-index">
                 <br><br><br>
-                <div class="bg-light w-50 m-auto p-1 rounded h-75">
-                    <div class="col overflow-auto h-100">
+                <div class="bg-light col-md-6 col-sm-8 m-auto pb-3 pr-0 pl-3 rounded h-75">
+                    <div class="col h-100" style="overflow-x: hidden;">
                         <h2 class="table-title center-align sticky-top bg-light mt-2">Ventas</h2>
                         <table class="highlight">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th class="id-col-table">ID</th>
                                     <th>Fecha de la venta</th>
                                     <th>ID del vendedor</th>
                                     <th>Nombre del Cliente</th>
@@ -26,7 +26,7 @@
                                         <td>{{ $venta->vendedor_id }} </td>
                                         <td>{{ $venta->nombre_cliente }} </td>
                                         <td><a href="ventas/{{ $venta->id }}"
-                                                class="waves-effect waves-light btn text-white"
+                                                class="waves-effect waves-light btn btn-small text-white"
                                                 style="background-color: #FF9B42">View venta</a></td>
                                     </tr>
                                 @endforeach

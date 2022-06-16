@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @hasanyrole('Admin|Vendedor')
-<div class="parallax-index">
+<div class="parallax-index" style="height: 100%;">
     <div class="page-content page-container" id="page-content">
         <div class="padding">
             <div class="row  d-flex justify-content-center">

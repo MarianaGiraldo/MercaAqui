@@ -63,6 +63,7 @@
         }
         #navbar-container {
             margin-left: 3rem;
+            margin-right: 3rem;
         }
         #nav-logo {
             width:6rem;
@@ -72,6 +73,15 @@
             padding-top: 1rem;
         }
 
+        table, .table {
+            table-layout: fixed;
+            overflow-wrap: break-word;
+        }
+
+        .id-col-table {
+            width: 7%;
+        }
+
         @media only screen and (max-width: 600px) {
             /* For mobile phones: */
             #logo-container {
@@ -79,6 +89,7 @@
             }
             #navbar-container {
                 margin-left: 0;
+                margin-right: 1rem;
             }
             #nav-logo {
                 width:4rem;
@@ -90,6 +101,12 @@
                 flex-basis: 0;
                 flex-grow: 1;
                 max-width: 100%;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            .btn-small {
+                font-size: 0.7rem;
+                padding-top: 0
             }
 
         }

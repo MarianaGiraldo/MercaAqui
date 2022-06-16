@@ -76,18 +76,18 @@
                                 </div>
                                 <div class="mt-4">
                                     <div class="row text-600 text-white bgc-default-tp1 py-25">
-                                        <div class="d-none d-sm-block col-1">Cantidad</div>
-                                        <div class="col-9 col-sm-6">Descripcion</div>
-                                        <div class="d-none d-sm-block col-4 col-sm-2">Valor Unitario</div>
-                                        <div class="d-none d-sm-block col-sm-1">Total</div>
+                                        <div class="col-1">#</div>
+                                        <div class="col-5">Descripcion</div>
+                                        <div class="col-3">Valor Unitario</div>
+                                        <div class="col-3">Total</div>
                                     </div>
                                     @foreach ($productos as $producto)
                                         <div class="text-95 text-secondary-d3">
                                             <div class="row mb-2 mb-sm-0 py-25">
-                                                <div class="number d-none d-sm-block col-1">{{ $producto['cantidad'] }}</div>
-                                                <div class="col-9 col-sm-6">{{ $producto['nombre'] }}</div>
-                                                <div class="number d-none d-sm-block col-2">${{ $producto['precio'] }}</div>
-                                                <div class="number d-none d-sm-block col-1 text-95">
+                                                <div class="number col-1">{{ $producto['cantidad'] }}</div>
+                                                <div class="col-5">{{ $producto['nombre'] }}</div>
+                                                <div class="number col-3">${{ $producto['precio'] }}</div>
+                                                <div class="number col-3 text-95">
                                                     ${{ $producto['precio'] * $producto['cantidad'] }}</div>
                                             </div>
                                         </div>
@@ -111,12 +111,12 @@
                                     <div>
                                         <span class="text-secondary-d1 text-105">Gracias por tu compra</span>
                                         <div class="pt-4 row col-sm-6 ml-auto float-right mb-0 pb-0">
-                                            <div class="col-xs-6 mx-1 mb-2">
+                                            <div class="d-inline-flex col-xs-6 mx-1 mb-2">
                                                 <a href="/ventas"
                                                 class="waves-effect waves-light btn text-white"
                                                 style="background-color: #FF9B42">Regresar</a>
                                             </div>
-                                            <div class="col-xs-6 mx-1">
+                                            <div class="d-inline-flex col-xs-6 mx-1">
                                                 <a href="/ventas/{{ $venta->id }}/edit"
                                                 class="waves-effect waves-light btn text-white"
                                                 style="background-color: #71A9F7">Editar</a>
