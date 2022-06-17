@@ -15,20 +15,20 @@ class ListsController extends Controller
     {
         $ventas = Venta::all()->toArray();
 
-        return response()->json($ventas, 200);
+        return json_encode($ventas);
     }
 
     public function getProductsList (Request $request)
     {
         $products = Producto::all()->toArray();
 
-        return response()->json($products, 200);
+        return json_encode($products);
     }
 
     public function getUsersList (Request $request)
     {
         $users = User::all()->toArray();
 
-        return response()->json($users, 200);
+        return json_encode($users);
     }
 }
