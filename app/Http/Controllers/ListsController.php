@@ -23,6 +23,6 @@ class ListsController extends Controller
 
     public function getUsersList (Request $request)
     {
-        return User::where('is_admin', 0)->all()->toJson();
+        return User::where('is_admin', 0)->get()->toJson();
     }
 }
