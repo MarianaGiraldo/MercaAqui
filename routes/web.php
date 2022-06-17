@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VentaController;
+use App\Http\Controllers\ListsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/usuarios/{id}/drop', [UserController::class , 'drop' ]);
 Route::get('/productos/{id}/drop', [ProductoController::class , 'drop' ]);
 Route::get('/ventas/{id}/drop', [VentaController::class , 'drop' ]);
+
+Route::get('/getVentas', [ListsController::class, 'getVentasList']);
+Route::get('/getProducts', [ListsController::class, 'getProductsList']);
+Route::get('/getUsers', [ListsController::class, 'getUsersList']);
