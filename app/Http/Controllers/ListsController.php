@@ -13,7 +13,7 @@ class ListsController extends Controller
 
     public function getVentasList (Request $request)
     {
-        return Venta::all()->toJson();
+        return Venta::with('producto')->get()->toJson();
     }
 
     public function getProductsList (Request $request)
