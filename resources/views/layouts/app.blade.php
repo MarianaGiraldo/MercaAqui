@@ -142,7 +142,7 @@
                     <ul class="navbar-nav ml-auto float-right" style="display:inline-block; right:10%;">
                         <li class="nav-item mx-2" style="background-color: #2B4162;">
                             <a class="nav-link p-0" href="/productos">Productos</a>
-                        </li>    
+                        </li>
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -219,7 +219,7 @@
                                         class="mx-1 fa-solid fa-mobile" style="color:#ff9b42"></i></a></li>
                             <li><a class="grey-text text-lighten-3" href="#!">8258745</a><i
                                     class="mx-1 fa-solid fa-phone-flip" style="color:#ff9b42"></i></li>
-                            <li><a class="grey-text text-lighten-3" href="#!">infomercaaqui@gmail.com<i
+                            <li><a class="grey-text text-lighten-3" href="mailto:mercaaqui@gmail.com" style="font-size: 0.75rem">mercaaqui@gmail.com<i
                                         class="mx-1 fa-solid fa-envelope" style="color:#ff9b42"></i></a></li>
                         </ul>
                     </div>
