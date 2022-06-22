@@ -7,6 +7,16 @@
                 <div class="bg-light col-md-6 col-sm-8 m-auto pb-3 pr-0 pl-3 rounded h-75" style=" ">
                     <div class="col h-100" style="overflow-x: hidden;">
                         <h2 class="table-title center-align sticky-top bg-light">Vendedores</h2>
+                        @if ($errors->any())
+                        <div class="w-75 mx-auto" >
+                            <div class="alert alert-danger  my-1" role="alert"> Error! Usuario no eliminado </div>
+                            <ul class="list-group-flush" >
+                                @foreach($errors->all() as $error)
+                                <li class="list-group-item list-group-item-danger">{{$error}} </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
                         <table class="highlight" style="">
                             <thead>
                                 <tr>
