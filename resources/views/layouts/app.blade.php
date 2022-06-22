@@ -65,6 +65,9 @@
             margin-left: 3rem;
             margin-right: 3rem;
         }
+        #navbarSupportedContent , .navbar-toggler {
+            padding-right: 3rem;
+        }
         #nav-logo {
             width:6rem;
             height:100%;
@@ -95,12 +98,16 @@
                 width:4rem;
                 height:80%;
             }
+            #navbarSupportedContent , .navbar-toggler {
+                padding-right: 0.7rem;
+            }
             .nav-item {
                 position: relative;
                 width: 100%;
                 flex-basis: 0;
                 flex-grow: 1;
                 max-width: 100%;
+                text-align: center;
             }
         }
         @media only screen and (max-width: 768px) {
@@ -133,32 +140,32 @@
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto float-right" style="display:inline-block; right:10%;">
+                        <li class="nav-item mx-2" style="background-color: #2B4162;">
+                            <a class="nav-link p-0" href="/productos">Productos</a>
+                        </li>    
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item p-0 mx-2" style="background-color: #2B4162;">
+                                <li class="nav-item mx-2" style="background-color: #2B4162;">
                                     <a class="nav-link p-0" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item p-0 mx-2" style="background-color: #2B4162;">
+                                <li class="nav-item mx-2" style="background-color: #2B4162;">
                                     <a class="nav-link p-0" href="{{ route('register') }}">{{ __('Registrar') }}</a>
                                 </li>
                             @endif
                         @else
                             @role('Admin')
-                                <li class="nav-item p-0 mx-2" style="background-color: #2B4162;">
+                                <li class="nav-item mx-2" style="background-color: #2B4162;">
                                     <a class="nav-link p-0" href="/usuarios">Vendedores</a>
                                 </li>
                             @endrole
-                            <li class="nav-item p-0 mx-2" style="background-color: #2B4162;">
-                                <a class="nav-link p-0" href="/productos">Productos</a>
-                            </li>
-                            <li class="nav-item p-0 mx-2" style="background-color: #2B4162;">
+                            <li class="nav-item mx-2" style="background-color: #2B4162;">
                                 <a class="nav-link p-0" href="/ventas">Ventas</a>
                             </li>
-                            <li class="nav-item p-0 mx-2 dropdown" style="background-color: #2B4162;">
+                            <li class="nav-item mx-2 dropdown" style="background-color: #2B4162;">
                                 <a id="navbarDropdown" class="nav-link p-0 dropdown-toggle" href="#" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre
                                     style="font-family: Akshar; color:#ff9b42; font-size: 30px">
