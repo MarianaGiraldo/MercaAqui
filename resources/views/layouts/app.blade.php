@@ -250,7 +250,7 @@
                             class="fab fa-linkedin-in" style="font-size: 15px"></i></a>
 
                     <!-- Github -->
-                    <a class="btn btn-outline-light btn-floating mx-3 p-0 rounded-circle" href="#!" role="button"><i
+                    <a class="btn btn-outline-light btn-floating mx-3 p-0 rounded-circle" href="https://github.com/MarianaGiraldo/MercaAqui" role="button"><i
                             class="fab fa-github" style="font-size: 15px"></i></a>
                 </section>
                 <!-- Section: Social media -->
