@@ -7,6 +7,15 @@
                 <div class="bg-light col-md-6 col-sm-8 m-auto pb-3 pr-0 pl-3 rounded h-75">
                     <div class="col h-100" style="overflow-x: hidden;">
                         <h2 class="table-title center-align sticky-top bg-light mt-2">Ventas</h2>
+                        @if ($errors->any())
+                        <div class="w-75 mx-auto" >
+                            <ul class="list-group-flush" >
+                                @foreach($errors->all() as $error)
+                                <li class="list-group-item list-group-item-danger">{{$error}} </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
                         <table class="highlight">
                             <thead>
                                 <tr>

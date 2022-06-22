@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                                 <div class="py-4">
-                                    <a href=""
+                                    <a href="/productos"
                                         class="waves-effect waves-light btn text-white" style="background-color: #FF9B42">Regresar</a>
                                     <button type="submit" class="waves-effect waves-light btn float-right text-white" style="background-color: #71A9F7">
                                         {{ __('Crear') }}

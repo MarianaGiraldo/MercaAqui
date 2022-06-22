@@ -187,8 +187,12 @@ class VentaController extends Controller
      */
     public function destroy($id)
     {
-        Venta::destroy($id);
-        return redirect('/ventas');
+        try {
+            Venta::destroy($id);
+            return redirect('/ventas');
+        } catch (\Throwable $th) {
+            return redirect('/ventas')->withErrors("La venta no se ha podido eliminar");
+        }
     }
     public function drop($id)
     {

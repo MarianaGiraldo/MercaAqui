@@ -119,8 +119,12 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::destroy($id);
-        return redirect('/usuarios');
+        try {
+            User::destroy($id);
+            return redirect('/usuarios');
+        } catch (\Throwable $th) {
+            return redirect('/usuarios')->withErrors("El usuario ya está registrado en alguna venta");
+        }
     }
     public function drop($id)
     {

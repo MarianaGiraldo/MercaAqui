@@ -102,8 +102,12 @@ class ProductoController extends Controller
     public function destroy($id, $flag_test = false)
     {
         if (!$flag_test) {
-            Producto::destroy($id);
-            return redirect('/productos');
+            try {
+                Producto::destroy($id);
+                return redirect('/productos');
+            } catch (\Throwable $th) {
+                return redirect('/productos')->withErrors("No se puede eliminar un producto que esté registrado en alguna venta");
+            }
         }
         return $id;
     }
