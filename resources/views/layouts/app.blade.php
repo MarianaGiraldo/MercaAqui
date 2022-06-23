@@ -46,12 +46,12 @@
         @import url('/font/Akshar/Akshar-Regular.ttf');
 
         @isset($fondo) .parallax-index {
-                background-image: url('/imagenes/{{ $fondo }}');
-                width: 100%;
-                height: 100vh;
-                background-attachment: fixed;
-                background-size: cover;
-            }
+            background-image: url('/imagenes/{{ $fondo }}');
+            width: 100%;
+            height: 100vh;
+            background-attachment: fixed;
+            background-size: cover;
+        }
 
         @endisset @font-face {
             font-family: 'Akshar', sans-serif;
@@ -61,22 +61,28 @@
         #logo-container {
             font-size: 4rem;
         }
+
         #navbar-container {
             margin-left: 3rem;
             margin-right: 3rem;
         }
-        #navbarSupportedContent , .navbar-toggler {
+
+        #navbarSupportedContent,
+        .navbar-toggler {
             padding-right: 3rem;
         }
+
         #nav-logo {
-            width:6rem;
-            height:100%;
+            width: 6rem;
+            height: 100%;
         }
+
         .table-title {
             padding-top: 1rem;
         }
 
-        table, .table {
+        table,
+        .table {
             table-layout: fixed;
             overflow-wrap: break-word;
         }
@@ -86,21 +92,27 @@
         }
 
         @media only screen and (max-width: 600px) {
+
             /* For mobile phones: */
             #logo-container {
                 font-size: 2rem;
             }
+
             #navbar-container {
                 margin-left: 0;
                 margin-right: 1rem;
             }
+
             #nav-logo {
-                width:4rem;
-                height:80%;
+                width: 4rem;
+                height: 80%;
             }
-            #navbarSupportedContent , .navbar-toggler {
+
+            #navbarSupportedContent,
+            .navbar-toggler {
                 padding-right: 0.7rem;
             }
+
             .nav-item {
                 position: relative;
                 width: 100%;
@@ -109,15 +121,18 @@
                 max-width: 100%;
                 text-align: center;
             }
+
             .parallax-index {
                 height: 100%;
             }
         }
+
         @media only screen and (max-width: 768px) {
             .btn-small {
                 font-size: 0.8rem;
                 padding-top: 0
             }
+
             .btn {
                 font-size: 0.8rem;
             }
@@ -127,16 +142,12 @@
 
 <body style="margin: 0">
     <div id="app" style="min-height: 100vh">
-        <nav class="navbar navbar-expand-lg justify-content-between fixed-top w-100 d-inline" role="navigation"
-            style="background-color: #2B4162; height: 80px">
-            <div id="navbar-container" class="d-flex mt-0 h-100 w-100" >
+        <nav class="navbar navbar-expand-lg justify-content-between fixed-top w-100 d-inline" role="navigation" style="background-color: #2B4162; height: 80px">
+            <div id="navbar-container" class="d-flex mt-0 h-100 w-100">
                 <img id="nav-logo" src="/logo/logo.png" alt="logo" style="" class="mx-0 my-auto">
-                <a id="logo-container" href="/" class=" navbar-brand col m-0"
-                    style="font-family: Akshar; color:#ff9b42;">Merca Aqui</a>
+                <a id="logo-container" href="/" class=" navbar-brand col m-0" style="font-family: Akshar; color:#ff9b42;">Merca Aqui</a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon " style="color:#ff9b42;"><i class="fa-solid fa-bars"></i></span>
                 </button>
                 <div class="collapse navbar-collapse float-right" id="navbarSupportedContent">
@@ -150,48 +161,44 @@
                         </li>
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item mx-2" style="background-color: #2B4162;">
-                                    <a class="nav-link p-0" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
-                                </li>
-                            @endif
+                        @if (Route::has('login'))
+                        <li class="nav-item mx-2" style="background-color: #2B4162;">
+                            <a class="nav-link p-0" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
+                        </li>
+                        @endif
 
-                            @if (Route::has('register'))
-                                <li class="nav-item mx-2" style="background-color: #2B4162;">
-                                    <a class="nav-link p-0" href="{{ route('register') }}">{{ __('Registrar') }}</a>
-                                </li>
-                            @endif
+                        @if (Route::has('register'))
+                        <li class="nav-item mx-2" style="background-color: #2B4162;">
+                            <a class="nav-link p-0" href="{{ route('register') }}">{{ __('Registrar') }}</a>
+                        </li>
+                        @endif
                         @else
-                            @role('Admin')
-                                <li class="nav-item mx-2" style="background-color: #2B4162;">
-                                    <a class="nav-link p-0" href="/usuarios">Vendedores</a>
-                                </li>
-                            @endrole
-                            <li class="nav-item mx-2" style="background-color: #2B4162;">
-                                <a class="nav-link p-0" href="/ventas">Ventas</a>
-                            </li>
-                            <li class="nav-item mx-2 dropdown" style="background-color: #2B4162;">
-                                <a id="navbarDropdown" class="nav-link p-0 dropdown-toggle" href="#" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre
-                                    style="font-family: Akshar; color:#ff9b42; font-size: 30px">
-                                    {{ Auth::user()->nombre }}
+                        @role('Admin')
+                        <li class="nav-item mx-2" style="background-color: #2B4162;">
+                            <a class="nav-link p-0" href="/usuarios">Vendedores</a>
+                        </li>
+                        @endrole
+                        <li class="nav-item mx-2" style="background-color: #2B4162;">
+                            <a class="nav-link p-0" href="/ventas">Ventas</a>
+                        </li>
+                        <li class="nav-item mx-2 dropdown" style="background-color: #2B4162;">
+                            <a id="navbarDropdown" class="nav-link p-0 dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="font-family: Akshar; color:#ff9b42; font-size: 30px">
+                                {{ Auth::user()->nombre }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                                                                document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                                                                document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                                <a class="dropdown-item" href="/usuarios/{{ Auth::user()->id }}">Mi perfil </a>
+                            </div>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                        class="d-none">
-                                        @csrf
-                                    </form>
-                                    <a class="dropdown-item" href="/usuarios/{{ Auth::user()->id }}">Mi perfil </a>
-                                </div>
-
-                            </li>
+                        </li>
                         @endguest
                     </ul>
                 </div>
@@ -207,25 +214,18 @@
                     <div class="col-6">
                         <h5 style="font-family: Akshar; color:#ff9b42; font-size: 30px">Merca aqui</h5>
                         <ul>
-                            <li><a class="grey-text text-lighten-4" href="/productos"><i class="tiny material-icons"
-                                        style="color:#ff9b42">check</i> Productos</a></li>
-                            <li><a class="grey-text text-lighten-4" href="/usuarios"><i class="tiny material-icons"
-                                        style="color:#ff9b42">check</i> Vendedores</a></li>
-                            <li><a class="grey-text text-lighten-4" href="/ventas"><i class="tiny material-icons"
-                                        style="color:#ff9b42">check</i> Ventas</a></li>
+                            <li><a class="grey-text text-lighten-4" href="/productos"><i class="tiny material-icons" style="color:#ff9b42">check</i> Productos</a></li>
+                            <li><a class="grey-text text-lighten-4" href="/usuarios"><i class="tiny material-icons" style="color:#ff9b42">check</i> Vendedores</a></li>
+                            <li><a class="grey-text text-lighten-4" href="/ventas"><i class="tiny material-icons" style="color:#ff9b42">check</i> Ventas</a></li>
                         </ul>
                     </div>
                     <div class="col-6 align-right text-right">
                         <h5 style="font-family: Akshar; color:#ff9b42; font-size: 30px">Contáctenos</h5>
                         <ul>
-                            <li><a class="grey-text text-lighten-3" href="#!">Cra 9 # 11-26 <i
-                                        class="mx-1 fa-solid fa-house" style="color:#ff9b42"></i></a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!">319587458<i
-                                        class="mx-1 fa-solid fa-mobile" style="color:#ff9b42"></i></a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!">8258745</a><i
-                                    class="mx-1 fa-solid fa-phone-flip" style="color:#ff9b42"></i></li>
-                            <li><a class="grey-text text-lighten-3" href="mailto:mercaaqui@gmail.com" style="font-size: 0.75rem">mercaaqui@gmail.com<i
-                                        class="mx-1 fa-solid fa-envelope" style="color:#ff9b42"></i></a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Cra 9 # 11-26 <i class="mx-1 fa-solid fa-house" style="color:#ff9b42"></i></a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">319587458<i class="mx-1 fa-solid fa-mobile" style="color:#ff9b42"></i></a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">8258745</a><i class="mx-1 fa-solid fa-phone-flip" style="color:#ff9b42"></i></li>
+                            <li><a class="grey-text text-lighten-3" href="mailto:mercaaqui@gmail.com" style="font-size: 0.75rem">mercaaqui@gmail.com<i class="mx-1 fa-solid fa-envelope" style="color:#ff9b42"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -234,29 +234,26 @@
             <div class="container p-2 pb-0 text-center text-white">
                 <!-- Section: Social media -->
                 <section class="mb-1">
-                    <!-- Facebook -->
-                    <a class="btn btn-outline-light btn-floating mx-3 p-0 rounded-circle" href="#!" role="button"><i
-                            class="fab fa-facebook-f" style="font-size: 15px"></i></a>
+                    <div class=" row-cols-md-4">
+                        <!-- Facebook -->
+                        <a class="btn btn-outline-light btn-floating mx-2 p-0 rounded-circle" href="#!" role="button"><i class="fab fa-facebook-f" style="font-size: 15px"></i></a>
 
-                    <!-- Twitter -->
-                    <a class="btn btn-outline-light btn-floating mx-3 p-0 rounded-circle" href="#!" role="button"><i
-                            class="fab fa-twitter" style="font-size: 15px"></i></a>
+                        <!-- Twitter -->
+                        <a class="btn btn-outline-light btn-floating mx-2 p-0 rounded-circle" href="#!" role="button"><i class="fab fa-twitter" style="font-size: 15px"></i></a>
+                    </div>
+
 
                     <!-- Google -->
-                    <a class="btn btn-outline-light btn-floating mx-3 p-0 rounded-circle" href="#!" role="button"><i
-                            class="fab fa-google" style="font-size: 15px"></i></a>
+                    <a class="btn btn-outline-light btn-floating mx-2 p-0 rounded-circle" href="#!" role="button"><i class="fab fa-google" style="font-size: 15px"></i></a>
 
                     <!-- Instagram -->
-                    <a class="btn btn-outline-light btn-floating mx-3 p-0 rounded-circle" href="#!" role="button"><i
-                            class="fab fa-instagram" style="font-size: 15px"></i></a>
+                    <a class="btn btn-outline-light btn-floating mx-2 p-0 rounded-circle" href="#!" role="button"><i class="fab fa-instagram" style="font-size: 15px"></i></a>
 
                     <!-- Linkedin -->
-                    <a class="btn btn-outline-light btn-floating mx-3 p-0 rounded-circle" href="#!" role="button"><i
-                            class="fab fa-linkedin-in" style="font-size: 15px"></i></a>
+                    <a class="btn btn-outline-light btn-floating mx-2 p-0 rounded-circle" href="#!" role="button"><i class="fab fa-linkedin-in" style="font-size: 15px"></i></a>
 
                     <!-- Github -->
-                    <a class="btn btn-outline-light btn-floating mx-3 p-0 rounded-circle" href="https://github.com/MarianaGiraldo/MercaAqui" role="button"><i
-                            class="fab fa-github" style="font-size: 15px"></i></a>
+                    <a class="btn btn-outline-light btn-floating mx-2 p-0 rounded-circle" href="https://github.com/MarianaGiraldo/MercaAqui" role="button"><i class="fab fa-github" style="font-size: 15px"></i></a>
                 </section>
                 <!-- Section: Social media -->
             </div>

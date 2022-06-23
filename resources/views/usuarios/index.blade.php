@@ -4,7 +4,7 @@
         <div>
             <div class="parallax-index">
                 <br><br><br>
-                <div class="bg-light col-md-6 col-sm-8 m-auto pb-3 pr-0 pl-3 rounded h-75" style=" ">
+                <div class="bg-light col-lg-6 col-md-10 col-sm-10 m-auto pb-3 pr-0 pl-3 rounded h-75">
                     <div class="col h-100" style="overflow-x: hidden;">
                         <h2 class="table-title center-align sticky-top bg-light">Vendedores</h2>
                         @if ($errors->any())
@@ -17,10 +17,10 @@
                             </ul>
                         </div>
                         @endif
-                        <table class="highlight" style="">
+                        <table class="highlight">
                             <thead>
                                 <tr>
-                                    <th class="id-col-table">ID</th>
+                                    <th class="id-col-table" style="width: 28px;">ID</th>
                                     <th>Nombre</th>
                                     <th>Apellido</th>
                                     <th>Correo</th>

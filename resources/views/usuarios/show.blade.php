@@ -50,16 +50,16 @@
                                     <div class="float-bottom w-100 pr-5">
                                         <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Acción</h6>
                                         <div class="row py-2">
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 px-1 pb-2">
                                                 <a href="/usuarios/{{ $user->id }}/edit"
                                                     class="d-block waves-effect waves-light btn text-white"
                                                     style="background-color: #71A9F7">Editar</a>
                                             </div>
-                                            <div class="col-sm-4 px-3">
+                                            <div class="col-sm-4 px-1 pb-2">
                                                 <a href="/usuarios/{{ $user->id }}/drop"
                                                     class="d-block waves-effect waves-light btn btn-danger">Borrar</a>
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 px-1 pb-2">
                                                 <a href="/usuarios"
                                                     class="d-block waves-effect waves-light btn text-white"
                                                     style="background-color: #ff9b42">Regresar</a>
