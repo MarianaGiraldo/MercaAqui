@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @role('Admin')
-<div class="parallax-index" style="height: 100%;">
+<div class="parallax-index">
     <div class="page-content page-container" id="page-content">
         <div class="container pt-5">
             @if($errors->any())

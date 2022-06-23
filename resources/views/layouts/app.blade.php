@@ -109,13 +109,18 @@
                 max-width: 100%;
                 text-align: center;
             }
+            .parallax-index {
+                height: 100%;
+            }
         }
         @media only screen and (max-width: 768px) {
             .btn-small {
-                font-size: 0.7rem;
+                font-size: 0.8rem;
                 padding-top: 0
             }
-
+            .btn {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>

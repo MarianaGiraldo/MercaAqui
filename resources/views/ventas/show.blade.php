@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @hasanyrole('Admin|Vendedor')
-        <div class="parallax-index" style="height: 100%;">
+        <div class="parallax-index">
             <br><br><br>
             <!-- ---------Factura---------- -->
             <div class="bg-light m-auto p-4 rounded col-md-7 col-sm-9">
