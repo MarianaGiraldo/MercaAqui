@@ -1,15 +1,15 @@
 @extends('layouts.app')
 @section('content')
 @hasanyrole('Admin|Vendedor')
-<div class="parallax-index">
+<div class="parallax-index" style="height: 100%;">
     <div class="page-content page-container" id="page-content">
         <div class="padding">
             <div class="row  d-flex justify-content-center">
-                <div class="col-xl-6 col-md-12">
+                <div class="col-xl-9 col-md-12">
                     <div class="card user-card-full">
                         <div class="row m-l-0 m-r-0 mb-0">
                             <div class="col-sm-4 bg-c-lite-green user-profile">
-                                <div class="card-block text-center text-white m-auto position-absolute" style="top:25%; transform: translateY(-25%);">
+                                <div class="card-block text-center text-white m-auto position-absolute" style="top:25%; right:22%; transform: translateY(-25%);">
                                     <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div>
                                     <h4 class="f-w-600">{{$user->nombre}} {{$user->apellido}}</h4>
                                     @if($user->is_admin)
@@ -25,7 +25,7 @@
                                 @else
                                 <h5 class="m-b-20 p-b-5 b-b-default f-w-600">Información del Vendedor No. {{$user->id}}</h5>
                                 @endif
-                                <form action="/usuarios/{{ $user->id }}" method="POST">
+                                <form action="/usuarios/{{ $user->id }}" method="POST" class="px-3">
                                     @csrf
                                     @method('put')
                                     <div class="form-group row">
@@ -148,7 +148,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group row offset-lg-4 offset-md-2">
                                         <label for="checkbox-confirm" class="col-md-6 col-form-label ml-4"><input id="checkbox-confirm" type="checkbox" class="form-check-input text-right" name="checkbox_confirmation" style="opacity: 1; pointer-events: auto;" required> {{ __('Acepto manejo de datos personales') }}</label>
                                     </div>
 
