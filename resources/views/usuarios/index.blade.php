@@ -4,7 +4,7 @@
 <div>
     <div class="parallax-index" style="height: 100vh">
         <br><br><br>
-        <div class="bg-light col-lg-6 col-md-10 col-sm-10 m-auto pb-3 pr-0 pl-3 rounded h-75">
+        <div class="bg-light col-lg-8 col-md-10 col-sm-10 m-auto pb-3 pr-0 pl-3 rounded h-75">
             <div class="col overflow-auto h-100">
                 <h2 class="table-title center-align sticky-top bg-light">Vendedores</h2>
                 @if ($errors->any())
@@ -49,6 +49,7 @@
                 <i class="fa fa-plus my-float"></i>
             </a>
         </div>
+        <br><br><br>
     </div>
 </div>
 @else

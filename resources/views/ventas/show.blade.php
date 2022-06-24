@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @hasanyrole('Admin|Vendedor')
-        <div class="parallax-index">
+        <div class="parallax-index" style="height: 100%;">
             <br><br><br>
             <!-- ---------Factura---------- -->
             <div class="bg-light m-auto p-4 rounded col-md-7 col-sm-9">
@@ -77,17 +77,17 @@
                                 <div class="mt-4">
                                     <div class="row text-600 text-white bgc-default-tp1 py-25">
                                         <div class="col-1">#</div>
-                                        <div class="col-5">Descripcion</div>
+                                        <div class="col-4">Descripcion</div>
                                         <div class="col-3">Valor Unitario</div>
-                                        <div class="col-3">Total</div>
+                                        <div class="col-3 text-right">Total</div>
                                     </div>
                                     @foreach ($productos as $producto)
                                         <div class="text-95 text-secondary-d3">
                                             <div class="row mb-2 mb-sm-0 py-25">
                                                 <div class="number col-1">{{ $producto['cantidad'] }}</div>
-                                                <div class="col-5">{{ $producto['nombre'] }}</div>
+                                                <div class="col-4">{{ $producto['nombre'] }}</div>
                                                 <div class="number col-3">${{ $producto['precio'] }}</div>
-                                                <div class="number col-3 text-95">
+                                                <div class="number col-3 text-95 text-right">
                                                     ${{ $producto['precio'] * $producto['cantidad'] }}</div>
                                             </div>
                                         </div>
@@ -129,6 +129,7 @@
                     </div>
                 </div>
             </div>
+            <br><br><br>
         </div>
     @else
         @include('components.authAlert',  ['url' => "/ventas"])

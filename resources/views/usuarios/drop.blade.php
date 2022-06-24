@@ -4,7 +4,7 @@
         <div>
             <div class="parallax-index" style="height: 100vh;">
                 <br><br><br>
-                <div class="card-panel w-50 m-auto  rounded h-auto py-4" style="background-color: #71A9F7">
+                <div class="card-panel w-50 m-auto  rounded h-auto py-4 px-1" style="background-color: #71A9F7">
                     <h1 class="header center-align white-text display-6" style="font-size:2.4rem">Borrar vendedor {{ $dropUser->nombre }} </h1>
                     <div class="row container m-auto w-100">
                         <form action="{{ route('usuarios.destroy', $dropUser->id) }}" method="POST"

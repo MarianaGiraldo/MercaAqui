@@ -24,7 +24,7 @@
                                 <div class="card-block text-center text-white m-auto position-absolute" style="top:30%; right:50%; left:25%; transform: translateY(-25%);">
                                     <i class="fa-solid fa-file-circle-plus text-center" alt="Venta-Image" style="font-size:7rem;"></i>
                                 </div>
-                                <div class="card-block text-center text-white m-auto position-absolute" style="top:45%; left:22%;">
+                                <div class="title card-block text-center text-white m-auto position-absolute" style="top:40%; left:22%;">
                                     <h4 class="f-w-600 text-center">Editar Venta</h4>
                                 </div>
                             </div>

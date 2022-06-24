@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
 <div>
-    <div class="parallax-index">
+    <div class="parallax-index" style="height: 50vh;">
       <br><br><br>
-        <div class="bg-light col-lg-3 col-md-6 col-sm-8 m-auto p-3 rounded">
+        <div class="bg-light col-lg-5 col-md-6 col-sm-8 m-auto p-3 rounded">
             <p class="text-center" style="font-family: Akshar; color:#ff9b42; font-size: 6vh">Merca Aqui</p>
             <p class="text-center" style="font-family: Akshar; color:#ff9b42; font-size: 4vh">El lugar en donde encontrarás lo que necesites</p>
 
