@@ -111,16 +111,16 @@
                                     <div>
                                         <span class="text-secondary-d1 text-105">Gracias por tu compra</span>
                                         <div class="pt-4 row col-sm-6 ml-auto float-right mb-0 pb-0">
-                                            <div class="d-inline-flex col-xs-6 mx-1 mb-2">
+                                            <div class="d-inline-flex col-xs-6 mx-1 mb-2 ">
                                                 <a href="/ventas"
                                                 class="waves-effect waves-light btn text-white"
                                                 style="background-color: #FF9B42">Regresar</a>
                                             </div>
-                                            <div class="d-inline-flex col-xs-6 mx-1">
+                                            <!--div class="d-inline-flex col-xs-6 mx-1">
                                                 <a href="/ventas/{{ $venta->id }}/edit"
                                                 class="waves-effect waves-light btn text-white"
                                                 style="background-color: #71A9F7">Editar</a>
-                                            </div>
+                                            </div-->
                                         </div>
                                     </div>
                                 </div>
